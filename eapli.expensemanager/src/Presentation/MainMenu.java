@@ -12,7 +12,7 @@ import eapli.util.Console;
  */
 public class MainMenu {
     public void mainLoop() {
-        System.out.println("===================");
+        System.out.println("=== ================");
         System.out.println("  EXPENSE MANAGER  ");
         System.out.println("===================\n");
         
