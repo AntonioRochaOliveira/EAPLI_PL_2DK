@@ -8,6 +8,14 @@ package Presentation;
  *
  * @author Joao
  */
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+
+import Controllers.IncomeTypeController;
+
 public class DefIncomeTypesUI {
-    
+
+    IncomeTypeController IncTC = new IncomeTypeController();
 }

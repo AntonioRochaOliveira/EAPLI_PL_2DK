@@ -8,6 +8,6 @@ package Controllers;
  *
  * @author Joao
  */
-public class IncomeTypesControler {
+public class IncomeTypeController {
     
 }
