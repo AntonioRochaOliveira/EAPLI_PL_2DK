@@ -34,7 +34,7 @@ public class MainMenu {
             case 0: 
                 System.out.println("Adeus");
                 break;
-            case 1: 
+            case 1:  
                 ExpenseTypeRegisterUI tr = new ExpenseTypeRegisterUI();
                 tr.mainLoop();
                 break;
