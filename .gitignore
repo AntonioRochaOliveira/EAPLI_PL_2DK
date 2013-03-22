@@ -1,5 +1,25 @@
 /eapli.expensemanager/nbproject/private
 
+
+
+
 /eapli.util/nbproject/private
 
+
+
+
 /eapli.expensemanager/nbproject/private
+
+
+
+
+#Ignora as classes compiladas.
+/eapli.expensemanager/build
+/eapli.util/build
+/eapli.expensemanager/dist
+/eapli.util/dist
+*.class
+# Package Files #
+*.jar
+*.war
+*.ear
