@@ -25,6 +25,7 @@ public class ExpenseTypeRepository {
     }
     
     private boolean validType(ExpenseType expType){
+        if(listExpenseType.size()==0) return true;
         for (int i = 0; i < listExpenseType.size(); i++) {
             if(expType.getName().equals(listExpenseType.get(i).getName()))
                 return false;
