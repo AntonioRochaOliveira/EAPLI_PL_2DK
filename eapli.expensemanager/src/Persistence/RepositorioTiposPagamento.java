@@ -14,16 +14,20 @@ public class RepositorioTiposPagamento {
         if (tipo_pag==null){
             throw new IllegalArgumentException();
         }
-        lista_tipos.add(tipo_pag);
+        getLista_tipos().add(tipo_pag);
     }
     
     public void ListarTiposPagamento(){
         System.out.println("Tipos de Pagamento Disponíveis:\n");
         int i=0;
-        for(TipoPagamento t : lista_tipos){
+        for(TipoPagamento t : getLista_tipos()){
             i++;
             System.out.println(i+" - "+t.getDescricao()+";");
         }
         System.out.println("\n");
+    }
+
+    public ArrayList<TipoPagamento> getLista_tipos() {
+        return lista_tipos;
     }
 }
