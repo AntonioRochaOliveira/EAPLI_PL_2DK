@@ -16,16 +16,16 @@ import java.util.Date;
  */
 class ExpenseRegisterUI {
     public void mainLoop() {
-        System.out.println("* * *  REGISTER AN EXPENSE  * * *\n");
+        System.out.println("* * *  Registar despesa  * * *\n");
         
-        String what = Console.readLine("Description:");
-        Date date = Console.readDate("When:");
-        double value = Console.readDouble("Amount:");
+        String what = Console.readLine("Descricao:");
+        Date date = Console.readDate("Data:");
+        double value = Console.readDouble("Montante:");
         BigDecimal amount = new BigDecimal(value);
         
         ExpenseRegisterController controller = new ExpenseRegisterController();
         controller.registerExpense(what, date, amount);
         
-        System.out.println("expense recorded.");
+        System.out.println("Despesa guardada.");
     }
 }
