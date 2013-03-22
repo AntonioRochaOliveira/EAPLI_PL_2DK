@@ -13,7 +13,7 @@ import Model.IncomeTypes;
  */
 public class IncomeTypeRepository {
     
-    static ArrayList IncTypes =new ArrayList();
+    private static ArrayList IncTypes =new ArrayList();
     
    public static ArrayList getLista(){
        return IncTypes;
