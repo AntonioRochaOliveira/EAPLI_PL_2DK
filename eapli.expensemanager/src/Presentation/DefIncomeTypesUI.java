@@ -19,9 +19,4 @@ public class DefIncomeTypesUI {
             }
         }
     }
-    
-    public static void main( String[] args ){
-        DefIncomeTypesUI test = new DefIncomeTypesUI();
-        test.mainLoop();
-    }
 }
