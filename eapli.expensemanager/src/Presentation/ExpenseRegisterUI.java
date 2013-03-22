@@ -4,9 +4,10 @@
  */
 package Presentation;
 
-import Controllers.ExpenseRegisterController;
+import Controllers.*;
 
 import eapli.util.Console;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -18,13 +19,22 @@ class ExpenseRegisterUI {
     public void mainLoop() {
         System.out.println("* * *  Registar despesa  * * *\n");
         
-        String what = Console.readLine("Descricao:");
-        Date date = Console.readDate("Data:");
-        double value = Console.readDouble("Montante:");
+        DefTipoPagamentoController payController = new DefTipoPagamentoController();
+        ExpenseRegisterController expController = new ExpenseRegisterController();
+        ExpenseTypeRegisterController expTypeController = new ExpenseTypeRegisterController();
+        
+        // MOSTRAR TIPOS DE PAGAMENTO
+        // MOSTRAR TIPOS DE DESPESA
+        
+        String what = Console.readLine("Descricao: ");
+        Date date = Console.readDate("Data (01-01-1990): ");
+        double value = Console.readDouble("Montante: ");
+        int paymentType = Console.readInteger("Tipo de Pagamento: ");
+        int paymentMethod = Console.readInteger("Meio de Pagamento: ");
+        int expenseType = Console.readInteger("Tipo de Despesa: ");
         BigDecimal amount = new BigDecimal(value);
         
-        ExpenseRegisterController controller = new ExpenseRegisterController();
-        controller.registerExpense(what, date, amount);
+        expController.registerExpense(what, date, amount);
         
         System.out.println("Despesa guardada.");
     }
