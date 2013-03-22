@@ -44,8 +44,8 @@ public class MainMenu {
                 //tp.mainLoop();
                 break;
             case 3:
-                //ExpenseRegisterUI ui = new ExpenseRegisterUI();
-                //ui.mainLoop();
+                ExpenseRegisterUI ui = new ExpenseRegisterUI();
+                ui.mainLoop();
                 break;
             case 4:
                 //RegistoEntradaRendimentosUI rer = new RegistoEntradaRendimentosUI();
