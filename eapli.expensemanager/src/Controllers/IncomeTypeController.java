@@ -16,6 +16,7 @@ public class IncomeTypeController {
     
     public static void createIncomeType(String IncomeTypeString){
         IncomeTypes IncType=new IncomeTypes(IncomeTypeString);
+        addIncomeType(IncType);
     }
     
     public static void addIncomeType(IncomeTypes IncType){
