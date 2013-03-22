@@ -4,7 +4,7 @@
  */
 package Presentation;
 
-import Controllers.ExpenseRegisterController;
+import Controllers.ExpenseTypeRegisterController;
 
 import eapli.util.Console;
 import java.math.BigDecimal;
@@ -22,7 +22,7 @@ class ExpenseTypeRegisterUI {
        
         
         ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();
-        controller.registerExpense(name);
+        controller.registerTypeExpense(name);
         
         System.out.println("Tipo de despesa guardada.");
     }

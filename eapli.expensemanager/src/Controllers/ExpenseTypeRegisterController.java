@@ -15,7 +15,7 @@ public class ExpenseTypeRegisterController {
     }
 
     public void registerTypeExpense(String name) {
-        ExpenseType expenseType = new ExpenseType(nome);
+        ExpenseType expenseType = new ExpenseType(name);
         ExpenseTypeRepository repo = new ExpenseTypeRepository();
         repo.save(expenseType);
     }
