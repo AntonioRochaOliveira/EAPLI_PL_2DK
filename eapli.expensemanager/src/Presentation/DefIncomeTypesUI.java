@@ -18,5 +18,10 @@ public class DefIncomeTypesUI {
                 System.out.println( " - " + lista.get(a).toString() + ";");
             }
         }
+        
+        String input = Console.readLine( "Nome do tipo de rendimento a criar - deixar em branco para anular" );
+        if ( !input.equals( "" ) ){
+            IncTC.createIncomeType( input );
+        }
     }
 }
