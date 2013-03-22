@@ -20,16 +20,15 @@ public class ExpenseTypeRepository {
     
     public void save(ExpenseType expType)
     {
-        if (expType==null) throw new IllegalArgumentException();
-        listExpenseType.add(expType);
-      
+        if (expType==null | validType(expType)) throw new IllegalArgumentException();
+        listExpenseType.add(expType);      
     }
     
     private boolean validType(ExpenseType expType){
-        boolean valid = false;
         for (int i = 0; i < listExpenseType.size(); i++) {
-            //if(expType.get)
+            if(expType.getName().equals(listExpenseType.get(i).getName()))
+                return false;
         }
-        return valid;
+        return true;
     }
 }
