@@ -52,8 +52,8 @@ public class MainMenu {
                 //rer.mainLoop();
                 break;
             case 5:
-                //DefIncomeTypeUI dit = new DefIncomeTypeUI();
-                //dit.mainLoop();
+                DefIncomeTypesUI dit = new DefIncomeTypesUI();
+                dit.mainLoop();
                 break;
             case 6:
                 //VisualizacaoSaldoUI vis = new VisualizacaoSaldoUI();
