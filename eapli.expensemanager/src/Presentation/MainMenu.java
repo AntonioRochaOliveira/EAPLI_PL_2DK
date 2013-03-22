@@ -35,23 +35,28 @@ public class MainMenu {
                 System.out.println("Adeus");
                 break;
             case 1: 
-                //regista tipo de despesa
+                ExpenseTypeRegisterUI tr = new ExpenseTypeRegisterUI();
+                tr.mainLoop();
                 break;
-            case 2:
-                //define tipos de pagamento
+            case 2: 
+                DefTipoPagamentoUI tp = new DefTipoPagamentoUI();
+                tp.mainLoop();
                 break;
-                 case 3: 
-                ExpenseRegisterUI ui = new ExpenseRegisterUI();
-                ui.mainLoop();
+                 case 3:
+                     ExpenseRegisterUI ui = new ExpenseRegisterUI();
+                     ui.mainLoop();
                 break;
                 case 4: 
-                //Registo de entrada de rendimentos
+                    RegistoEntradaRendimentosUI rer = new RegistoEntradaRendimentosUI();
+                    rer.mainLoop();
                 break;
                 case 5: 
-                //DEf de tipos de rendimento
+                    DefIncomeTypeUI dit = new DefIncomeTypeUI();
+                    dit.mainLoop();
                 break;
                 case 6: 
-                //inicializa saldo
+                    VisualizacaoSaldoUI vis = new VisualizacaoSaldoUI();
+                    vis.mainLoop();
                 break;
                 case 7: 
                 //visualizar gasto da semana
