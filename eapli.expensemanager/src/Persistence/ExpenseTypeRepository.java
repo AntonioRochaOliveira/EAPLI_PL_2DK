@@ -20,7 +20,7 @@ public class ExpenseTypeRepository {
     
     public void save(ExpenseType expType)
     {
-        if (expType==null | validType(expType)) throw new IllegalArgumentException();
+        if (expType==null || !validType(expType)) throw new IllegalArgumentException();
         listExpenseType.add(expType);      
     }
     
