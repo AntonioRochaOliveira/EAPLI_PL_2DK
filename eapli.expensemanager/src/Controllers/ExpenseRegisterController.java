@@ -22,6 +22,7 @@ public class ExpenseRegisterController {
         Expense expense = new Expense( what, date, amount);
         ExpenseRepository repo = new ExpenseRepository();
         repo.save(expense);
+     
     }
     
 }
