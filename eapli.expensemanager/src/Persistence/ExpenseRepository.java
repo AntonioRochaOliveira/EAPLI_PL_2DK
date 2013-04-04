@@ -24,15 +24,12 @@ public class ExpenseRepository  implements IExpenseRepository
         listExpense.add(exp);
       
     }    
-    public void listarDespesas() {
+    public static void listarDespesas() {
         System.out.println("\n***********************************************");
         for(int i=0; i<listExpense.size(); i++) {            
             System.out.print(listExpense.get(i));
         }
         System.out.println("***********************************************\n");
         
-    }
-    public int getSize() {
-        return listExpense.size();
     }
 }

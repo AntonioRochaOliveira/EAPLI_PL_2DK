@@ -14,18 +14,8 @@ import java.util.Date;
  * @author Paulo Gandra Sousa
  */
 class ExpenseRegisterUI {
-    DefTipoPagamentoController payController;
-    ExpenseRegisterController expController;
-    ExpenseTypeRegisterController expTypeController;
             
-    public ExpenseRegisterUI(DefTipoPagamentoController payController, ExpenseRegisterController expController,
-            ExpenseTypeRegisterController expTypeController) {
-        this.payController = payController;
-        this.expTypeController = expTypeController;
-        this.expController = expController;        
-    }
-    
-    public void mainLoop() {
+     public void mainLoop() {
         System.out.println("* * *  Registar despesa  * * *\n");   
 
         System.out.println("*************************************\nTipos de Pagamento");
@@ -43,7 +33,8 @@ class ExpenseRegisterUI {
         int expenseType = Console.readInteger("Tipo de Despesa: ");
         BigDecimal amount = new BigDecimal(value);
         
-        expController.registerExpense(what, date, amount);
+        ExpenseRegisterController cont = new ExpenseRegisterController();
+        cont.registerExpense(what, date, amount);
         //payController.chooseTypePayment
         //expenseController.chooseTypeExpense
         

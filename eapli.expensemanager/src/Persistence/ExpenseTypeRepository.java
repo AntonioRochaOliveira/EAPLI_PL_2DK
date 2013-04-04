@@ -16,18 +16,25 @@ public class ExpenseTypeRepository {
     // class member
     private static List<ExpenseType> listExpenseType= new ArrayList<ExpenseType>();
 
+    /**
+     * @return the listExpenseType
+     */
+    public static List<ExpenseType> getListExpenseType() {
+        return listExpenseType;
+    }
+
     public ExpenseTypeRepository() {}
     
     public void save(ExpenseType expType)
     {
         if (expType==null || !validType(expType)) throw new IllegalArgumentException();
-        listExpenseType.add(expType);      
+        getListExpenseType().add(expType);      
     }
     
     private boolean validType(ExpenseType expType){
-        if(listExpenseType.size()==0) return true;
-        for (int i = 0; i < listExpenseType.size(); i++) {
-            if(expType.getName().equals(listExpenseType.get(i).getName()))
+        if(getListExpenseType().size()==0) return true;
+        for (int i = 0; i < getListExpenseType().size(); i++) {
+            if(expType.getName().equals(getListExpenseType().get(i).getName()))
                 return false;
         }
         return true;
