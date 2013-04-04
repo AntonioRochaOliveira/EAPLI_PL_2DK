@@ -46,17 +46,20 @@ public class MainMenu {
                     break;
                 case 1:
                     ExpenseTypeRegisterUI tr = new ExpenseTypeRegisterUI();
-                    tr.mainLoop();
-                    ExpenseRepository.listarDespesas();
+                    tr.mainLoop();                    
                     break;
                 case 2:
+                    List<ExpenseType> lista = ExpenseTypeRepository.getListExpenseType();
+                    for (int i = 0; i < lista.size(); i++) {
+                        System.out.println(lista.get(i).getName());
+                    }
                     //DefTipoPagamentoUI tp = new DefTipoPagamentoUI();
                     //tp.mainLoop();
                     break;
                 case 3:
                     ExpenseRegisterUI ui = new ExpenseRegisterUI();
                     ui.mainLoop();
-                    
+                    ExpenseRepository.listarDespesas();;
                     break;
                 case 4:
                     //RegistoEntradaRendimentosUI rer = new RegistoEntradaRendimentosUI();
