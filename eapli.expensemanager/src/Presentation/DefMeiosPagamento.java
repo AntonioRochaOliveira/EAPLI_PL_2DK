@@ -19,8 +19,8 @@ public class DefMeiosPagamento {
         
         String descricao = Console.readLine("Descrição: ");
         
-        DefMeioPagamentoController controller = new DefMeioPagamentoController();
-        controller.NovoMeioPagamento(tipo,descricao);
+        //DefMeioPagamentoController controller = new DefMeioPagamentoController();
+        //controller.NovoMeioPagamento(tipo,descricao);
         
         System.out.println("Novo Tipo de Pagamento adicionado com sucesso!");
     }
