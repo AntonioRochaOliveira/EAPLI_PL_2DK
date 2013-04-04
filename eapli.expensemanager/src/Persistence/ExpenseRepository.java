@@ -4,7 +4,6 @@
  */
 package Persistence;
 import Model.*;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -16,6 +15,10 @@ public class ExpenseRepository  implements IExpenseRepository
     // class member
     private static List<Expense> listExpense= new ArrayList<Expense>();
 
+    public static List<Expense> getListExpense() {
+        return listExpense;
+    }
+
     public ExpenseRepository() {}
     
     public void save(Expense exp)
@@ -25,11 +28,13 @@ public class ExpenseRepository  implements IExpenseRepository
       
     }    
     public static void listarDespesas() {
-        System.out.println("\n***********************************************");
-        for(int i=0; i<listExpense.size(); i++) {            
+        
+        for(int i=0; i<listExpense.size(); i++) {
+            System.out.println("\n***********************************************");
             System.out.print(listExpense.get(i));
+            System.out.println("***********************************************\n");
         }
-        System.out.println("***********************************************\n");
+        
         
     }
 }
