@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class RepositorioMeiosPagamento {
     
-    private ArrayList<MeioPagamento> lista_meiosPagamento = new ArrayList<MeioPagamento>();
+    private static ArrayList<MeioPagamento> lista_meiosPagamento = new ArrayList<MeioPagamento>();
     
     public RepositorioMeiosPagamento(){}
     
-    public void AdicionarTipoPagamento(MeioPagamento meio_pag){
+    public void AdicionarMeioPagamento(MeioPagamento meio_pag){
         
         if (meio_pag==null){
             throw new IllegalArgumentException();
