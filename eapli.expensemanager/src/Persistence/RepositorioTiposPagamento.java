@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class RepositorioTiposPagamento {
     
-    private ArrayList<TipoPagamento> lista_tipos = new ArrayList<TipoPagamento>();
+    private static ArrayList<TipoPagamento> lista_tipos = new ArrayList<TipoPagamento>();
     
     public RepositorioTiposPagamento(){}
     

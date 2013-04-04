@@ -1,13 +1,18 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Presentation;
 
 import Model.TipoPagamento;
 import Persistence.RepositorioTiposPagamento;
 import eapli.util.Console;
-import java.util.Scanner;
 
-public class DefMeiosPagamento {
+public class DefMeiosPagamentoUI {
     public void mainLoop() {
         System.out.println("* * *  NOVO MEIO DE PAGAMENTO  * * *\n");
+        
+        /*DefMeioPagamentoController controller = new DefMeioPagamentoController();*/
         
         RepositorioTiposPagamento rep = new RepositorioTiposPagamento();
         
@@ -19,9 +24,8 @@ public class DefMeiosPagamento {
         
         String descricao = Console.readLine("Descrição: ");
         
-        DefMeioPagamentoController controller = new DefMeioPagamentoController();
-        controller.NovoMeioPagamento(tipo,descricao);
+        /*controller.NovoMeioPagamento(tipo,descricao);*/
         
-        System.out.println("Novo Tipo de Pagamento adicionado com sucesso!");
+        System.out.println("Novo Meio de Pagamento adicionado com sucesso!");
     }
 }
