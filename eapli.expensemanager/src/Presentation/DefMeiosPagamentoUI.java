@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.DefMeioPagamentoController;
 import Model.TipoPagamento;
 import Persistence.RepositorioTiposPagamento;
 import eapli.util.Console;
@@ -12,7 +13,7 @@ public class DefMeiosPagamentoUI {
     public void mainLoop() {
         System.out.println("* * *  NOVO MEIO DE PAGAMENTO  * * *\n");
         
-        /*DefMeioPagamentoController controller = new DefMeioPagamentoController();*/
+        DefMeioPagamentoController controller = new DefMeioPagamentoController();
         
         RepositorioTiposPagamento rep = new RepositorioTiposPagamento();
         
@@ -24,7 +25,7 @@ public class DefMeiosPagamentoUI {
         
         String descricao = Console.readLine("Descrição: ");
         
-        /*controller.NovoMeioPagamento(tipo,descricao);*/
+        controller.NovoMeioPagamento(tipo,descricao);
         
         System.out.println("Novo Meio de Pagamento adicionado com sucesso!");
     }
