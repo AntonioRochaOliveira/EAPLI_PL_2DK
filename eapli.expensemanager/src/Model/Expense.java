@@ -16,13 +16,13 @@ import java.util.Date;
 
 public class Expense {
     
-    String description;
-   
+    Date data;
+    String description;   
     BigDecimal amount;
     
     protected Expense() {}
     
-    public Expense( String description, Date dateOccurred, BigDecimal amount) {
+    public Expense(String description, Date dateOccurred, BigDecimal amount) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -30,17 +30,23 @@ public class Expense {
         if (amount.signum() == -1 || amount.signum() ==  0) {
             throw new IllegalArgumentException();
         }
+        this.data = dateOccurred;
         this.description = description;
         this.amount = amount;
     }
     
-    public Expense( String description, int year, int month, int day, BigDecimal amount) {
+    public Expense(String description, int year, int month, int day, BigDecimal amount) {
         this( description, DateTime.newDate(year, month, day), amount);
     }
     
     public BigDecimal getAmount() {
         return amount;
     }
-
-   
+    
+    @Override
+    public String toString() {
+        return String.format("Descricao: %s\nData: %s\n"
+                + "Montante: %d\n", description, data, amount.intValue());
+    }
+    
 }
