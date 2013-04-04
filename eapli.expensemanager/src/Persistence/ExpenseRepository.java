@@ -25,11 +25,11 @@ public class ExpenseRepository  implements IExpenseRepository
       
     }    
     public void listarDespesas() {
-        System.out.println("\n\n\n\n");
+        System.out.println("\n***********************************************");
         for(int i=0; i<listExpense.size(); i++) {            
-            System.out.println(listExpense.get(i));
+            System.out.print(listExpense.get(i));
         }
-        System.out.println("\n\n\n\n");
+        System.out.println("***********************************************\n");
         
     }
     public int getSize() {

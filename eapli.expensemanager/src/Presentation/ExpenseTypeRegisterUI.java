@@ -18,7 +18,7 @@ class ExpenseTypeRegisterUI {
     public void mainLoop() {
         System.out.println("* * *  Registar tipos de despesa  * * *\n");
         
-        String name = Console.readLine("nome:");
+        String name = Console.readLine("nome: ");
        
         
         ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();

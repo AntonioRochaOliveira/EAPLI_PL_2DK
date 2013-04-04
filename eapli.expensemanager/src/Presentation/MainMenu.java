@@ -17,7 +17,7 @@ public class MainMenu {
 
     public void mainLoop() {
         
-        // CONTROLLERS
+        /* CONTROLLERS */
         DefTipoPagamentoController payController = new DefTipoPagamentoController();
         ExpenseRegisterController expController = new ExpenseRegisterController();
         ExpenseTypeRegisterController expTypeController = new ExpenseTypeRegisterController();

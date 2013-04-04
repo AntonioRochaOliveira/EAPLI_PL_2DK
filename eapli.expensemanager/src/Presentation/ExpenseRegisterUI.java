@@ -28,9 +28,12 @@ class ExpenseRegisterUI {
     public void mainLoop() {
         System.out.println("* * *  Registar despesa  * * *\n");   
 
-        
+        System.out.println("*************************************\nTipos de Pagamento");
         // MOSTRAR TIPOS DE PAGAMENTO payController.listarPaymentsType()
+        System.out.println("*************************************\n");
+        System.out.println("*************************************\nTipos de Despesa");
         // MOSTRAR TIPOS DE DESPESA expTypeConroller.listarExpensesType()
+        System.out.println("*************************************\n");
         
         String what = Console.readLine("Descricao: ");
         Date date = Console.readDate("Data (01-01-1990): ");
@@ -44,6 +47,6 @@ class ExpenseRegisterUI {
         //payController.chooseTypePayment
         //expenseController.chooseTypeExpense
         
-        System.out.println("Despesa guardada.");
+        System.out.println("Despesa guardada com sucesso!");
     }
 }
