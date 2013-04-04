@@ -23,5 +23,16 @@ public class ExpenseRepository  implements IExpenseRepository
         if (exp==null) throw new IllegalArgumentException();
         listExpense.add(exp);
       
+    }    
+    public void listarDespesas() {
+        System.out.println("\n\n\n\n");
+        for(int i=0; i<listExpense.size(); i++) {            
+            System.out.println(listExpense.get(i));
+        }
+        System.out.println("\n\n\n\n");
+        
+    }
+    public int getSize() {
+        return listExpense.size();
     }
 }

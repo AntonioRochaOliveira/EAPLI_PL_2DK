@@ -4,6 +4,9 @@
  */
 package Presentation;
 
+import Controllers.DefTipoPagamentoController;
+import Controllers.ExpenseRegisterController;
+import Controllers.ExpenseTypeRegisterController;
 import eapli.util.Console;
 
 /**
@@ -13,6 +16,12 @@ import eapli.util.Console;
 public class MainMenu {
 
     public void mainLoop() {
+        
+        // CONTROLLERS
+        DefTipoPagamentoController payController = new DefTipoPagamentoController();
+        ExpenseRegisterController expController = new ExpenseRegisterController();
+        ExpenseTypeRegisterController expTypeController = new ExpenseTypeRegisterController();
+        
         System.out.println("===================");
         System.out.println("  EXPENSE MANAGER  ");
         System.out.println("===================\n");
@@ -44,8 +53,9 @@ public class MainMenu {
                 //tp.mainLoop();
                 break;
             case 3:
-                ExpenseRegisterUI ui = new ExpenseRegisterUI();
+                ExpenseRegisterUI ui = new ExpenseRegisterUI(payController, expController, expTypeController);
                 ui.mainLoop();
+                expController.listarDespesas();
                 break;
             case 4:
                 //RegistoEntradaRendimentosUI rer = new RegistoEntradaRendimentosUI();

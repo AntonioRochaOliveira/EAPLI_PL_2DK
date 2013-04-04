@@ -14,14 +14,19 @@ import Persistence.*;
  * @author Paulo Gandra Sousa
  */
 public class ExpenseRegisterController {
-
+    ExpenseRepository repo;
+    
     public ExpenseRegisterController() {
+        repo = new ExpenseRepository();
     }
 
     public void registerExpense(String what, Date date, BigDecimal amount) {
-        Expense expense = new Expense( what, date, amount);
-        ExpenseRepository repo = new ExpenseRepository();
+        Expense expense = new Expense(what, date, amount);        
         repo.save(expense);
+    }
+    
+    public void listarDespesas() {
+        repo.listarDespesas();
     }
     
 }
