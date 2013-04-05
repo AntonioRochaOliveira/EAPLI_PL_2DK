@@ -13,11 +13,12 @@ import java.util.List;
 public class ExpenseRepository  implements IExpenseRepository
 {
     private static ExpenseRepository uniqueRepo = null;
-    private List<Expense> listExpense= null;
+    private static List<Expense> listExpense= null;
 
     public ExpenseRepository() {
         listExpense = new ArrayList<Expense>();
     }    
+    @Override
     public void save(Expense exp)
     {
         if (exp==null) throw new IllegalArgumentException();
@@ -33,9 +34,9 @@ public class ExpenseRepository  implements IExpenseRepository
         }
     }   
     
-    public void listarDespesas() {        
+    public static void listarDespesas() {        
         for(int i=0; i<listExpense.size(); i++) {
-            System.out.println("\n***********************************************");
+            System.out.println("\n***********************************************\nDESPESA " + (i+1) + "\n");
             System.out.print(listExpense.get(i));
             System.out.println("***********************************************\n");
         }        
