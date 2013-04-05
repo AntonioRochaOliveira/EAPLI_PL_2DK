@@ -21,8 +21,7 @@ public class ExpenseRepository  implements IExpenseRepository
     public void save(Expense exp)
     {
         if (exp==null) throw new IllegalArgumentException();
-        listExpense.add(exp);
-      
+        listExpense.add(exp);      
     }
     
     public static ExpenseRepository getUniqueRepo() {
@@ -34,7 +33,7 @@ public class ExpenseRepository  implements IExpenseRepository
         }
     }   
     
-    public static void listarDespesas() {
+    public void listarDespesas() {
         
         for(int i=0; i<listExpense.size(); i++) {
             System.out.println("\n***********************************************");

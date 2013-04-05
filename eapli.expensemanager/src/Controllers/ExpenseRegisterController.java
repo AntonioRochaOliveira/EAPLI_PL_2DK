@@ -17,7 +17,7 @@ public class ExpenseRegisterController {
     ExpenseRepository repo;
     
     public ExpenseRegisterController() {
-        repo = new ExpenseRepository();
+        repo = ExpenseRepository.getUniqueRepo();
     }
 
     public void registerExpense(String what, Date date, BigDecimal amount) {
