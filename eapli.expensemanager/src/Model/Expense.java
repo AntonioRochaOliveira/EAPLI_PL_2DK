@@ -46,7 +46,7 @@ public class Expense {
     @Override
     public String toString() {
         return String.format("Descricao: %s\nData: %s\n"
-                + "Montante: %d\n", description, data, amount.intValue());
+                + "Montante: %d€\n", description, data, amount.intValue());
     }
     
 }
