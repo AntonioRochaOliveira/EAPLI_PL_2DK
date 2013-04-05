@@ -5,7 +5,8 @@
 package Presentation;
 
 import Controllers.IncomeRegisterController;
-import Persistence.RepositorioTiposPagamento;
+import Persistence.IncomeTypeRepository;
+import Persistence.IncomeRepository;
 import eapli.util.Console;
 import java.util.Date;
 
@@ -14,7 +15,8 @@ import java.util.Date;
  * @author Antonio
  */
 public class IncomeRegisterUI {
-    RepositorioTiposPagamento rtp;
+    IncomeTypeRepository itr;
+    IncomeRepository irp;
     
     public void mainLoop() {
         
