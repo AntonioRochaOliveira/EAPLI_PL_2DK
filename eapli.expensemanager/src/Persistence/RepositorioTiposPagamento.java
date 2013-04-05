@@ -12,6 +12,9 @@ public class RepositorioTiposPagamento {
     private RepositorioTiposPagamento(){}
     
     public static RepositorioTiposPagamento instance(){
+        if(uniqueInstance==null){
+            uniqueInstance=new RepositorioTiposPagamento();
+        }
         return uniqueInstance;
     }
     
