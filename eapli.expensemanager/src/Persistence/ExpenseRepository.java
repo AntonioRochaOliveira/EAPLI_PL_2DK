@@ -15,7 +15,7 @@ public class ExpenseRepository  implements IExpenseRepository
     private static ExpenseRepository uniqueRepo = null;
     private static List<Expense> listExpense= null;
 
-    public ExpenseRepository() {
+    private ExpenseRepository() {
         listExpense = new ArrayList<Expense>();
     }    
     @Override
