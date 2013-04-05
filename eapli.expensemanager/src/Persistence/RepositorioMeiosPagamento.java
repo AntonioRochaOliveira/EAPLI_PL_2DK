@@ -1,14 +1,14 @@
 package Persistence;
 
-import Model.TipoPagamento;
 import Model.MeioPagamento;
 import java.util.ArrayList;
 
 public class RepositorioMeiosPagamento {
     
+    private static RepositorioMeiosPagamento uniqueInstance = null;
     private static ArrayList<MeioPagamento> lista_meiosPagamento = new ArrayList<MeioPagamento>();
     
-    public RepositorioMeiosPagamento(){}
+    private RepositorioMeiosPagamento(){}
     
     public void AdicionarMeioPagamento(MeioPagamento meio_pag){
         
@@ -18,18 +18,17 @@ public class RepositorioMeiosPagamento {
         lista_meiosPagamento.add(meio_pag);
     }
     
-    public void ListarMeiosPagamento(){
-        System.out.println("Meios de Pagamento Disponíveis:\n");
-        int i=0;
-        for(MeioPagamento m : lista_meiosPagamento){
-            i++;
-            System.out.println(i+" - "+m.getTipo().getDescricao()+" - "+m.getDescricao()+";");
-        }
-        System.out.println("\n");
-    }
+    
 
     public ArrayList<MeioPagamento> getLista_meiosPagamento() {
         return lista_meiosPagamento;
     }
     
+    public static RepositorioMeiosPagamento instance(){
+        if(uniqueInstance==null){
+            uniqueInstance = new RepositorioMeiosPagamento();
+        }
+        return uniqueInstance;
+    }
+        
 }

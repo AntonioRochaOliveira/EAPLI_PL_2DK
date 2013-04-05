@@ -7,7 +7,16 @@ public class RepositorioTiposPagamento {
     
     private static ArrayList<TipoPagamento> lista_tipos = new ArrayList<TipoPagamento>();
     
-    public RepositorioTiposPagamento(){}
+    private static RepositorioTiposPagamento uniqueInstance = new RepositorioTiposPagamento();
+    
+    private RepositorioTiposPagamento(){}
+    
+    public static RepositorioTiposPagamento instance(){
+        if(uniqueInstance==null){
+            uniqueInstance=new RepositorioTiposPagamento();
+        }
+        return uniqueInstance;
+    }
     
     public void AdicionarTipoPagamento(TipoPagamento tipo_pag){
         

@@ -12,6 +12,6 @@ public class DefMeioPagamentoController {
     
     public void NovoMeioPagamento(TipoPagamento tipo, String descricao){
         MeioPagamento meio_pagamento = new MeioPagamento(tipo, descricao);
-        rep.AdicionarMeioPagamento(meio_pagamento);
+        //RepositorioMeiosPagamento.instance().AdicionarMeioPagamento(meio_pagamento);
     }
 }

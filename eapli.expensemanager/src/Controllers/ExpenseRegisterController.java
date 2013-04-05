@@ -25,8 +25,4 @@ public class ExpenseRegisterController {
         repo.save(expense);
     }
     
-    public void listarDespesas() {
-        repo.listarDespesas();
-    }
-    
 }
