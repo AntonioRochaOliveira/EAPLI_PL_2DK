@@ -12,21 +12,27 @@ import java.util.List;
  */
 public class ExpenseRepository  implements IExpenseRepository
 {
-    // class member
-    private static List<Expense> listExpense= new ArrayList<Expense>();
+    private static ExpenseRepository uniqueRepo = null;
+    private static List<Expense> listExpense= null;
 
-    public static List<Expense> getListExpense() {
-        return listExpense;
-    }
-
-    public ExpenseRepository() {}
-    
+    public ExpenseRepository() {
+        listExpense = new ArrayList<Expense>();
+    }    
     public void save(Expense exp)
     {
         if (exp==null) throw new IllegalArgumentException();
-        listExpense.add(exp);
-      
-    }    
+        listExpense.add(exp);      
+    }
+    
+    public static ExpenseRepository getUniqueRepo() {
+        if(uniqueRepo==null) {
+            return uniqueRepo = new ExpenseRepository();
+        }
+        else {
+            return uniqueRepo;
+        }
+    }   
+    
     public static void listarDespesas() {
         
         for(int i=0; i<listExpense.size(); i++) {
