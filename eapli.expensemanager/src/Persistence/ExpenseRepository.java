@@ -33,7 +33,7 @@ public class ExpenseRepository  implements IExpenseRepository
         }
     }   
     
-    public void listarDespesas() {
+    public static void listarDespesas() {
         
         for(int i=0; i<listExpense.size(); i++) {
             System.out.println("\n***********************************************");
