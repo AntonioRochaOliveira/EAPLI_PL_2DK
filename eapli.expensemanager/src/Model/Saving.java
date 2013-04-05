@@ -3,22 +3,22 @@ package Model;
 public class Saving {
 
     private String nome;
-    private float quantidade;
-    private float atual;
+    private double quantidade;
+    private double atual;
     private String descriçao;
 
-    public Saving(String Nome, float Quantidade, float Atual, String Descriçao) {
+    public Saving(String Nome, double Quantidade, double Atual, String Descriçao) {
         setNome(Nome);
         setQuantidade(Quantidade);
         setAtual(Atual);
         setDescriçao(Descriçao);
     }
 
-    public Saving(String Nome, float Quantidade, String Descriçao) {
-        this(Nome, Quantidade, (float) 0, Descriçao);
+    public Saving(String Nome, double Quantidade, String Descriçao) {
+        this(Nome, Quantidade, (double) 0, Descriçao);
     }
 
-    public Saving(String Nome, float Quantidade) {
+    public Saving(String Nome, double Quantidade) {
         this(Nome, Quantidade, "");
     }
 
@@ -26,11 +26,11 @@ public class Saving {
         return nome;
     }
 
-    public float getQuantidade() {
+    public double getQuantidade() {
         return quantidade;
     }
 
-    public float getAtual() {
+    public double getAtual() {
         return atual;
     }
 
@@ -38,7 +38,7 @@ public class Saving {
         return descriçao;
     }
 
-    public void setQuantidade(float Quantidade) {
+    public void setQuantidade(double Quantidade) {
         quantidade = Quantidade;
     }
 
@@ -50,7 +50,7 @@ public class Saving {
         nome = Nome;
     }
 
-    public void setAtual(float atual) {
+    public void setAtual(double atual) {
         this.atual = atual;
     }
 }
