@@ -62,8 +62,8 @@ public class MainMenu {
                     ExpenseRepository.listarDespesas();;
                     break;
                 case 4:
-                    //RegistoEntradaRendimentosUI rer = new RegistoEntradaRendimentosUI();
-                    //rer.mainLoop();
+                    IncomeRegisterUI rer = new IncomeRegisterUI();
+                    rer.mainLoop();
                     break;
                 case 5:
                     DefIncomeTypesUI dit = new DefIncomeTypesUI();
