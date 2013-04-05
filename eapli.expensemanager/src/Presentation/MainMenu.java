@@ -7,6 +7,7 @@ package Presentation;
 import Controllers.DefTipoPagamentoController;
 import Controllers.ExpenseRegisterController;
 import Controllers.ExpenseTypeRegisterController;
+import Model.Expense;
 import Model.ExpenseType;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
@@ -46,13 +47,10 @@ public class MainMenu {
                     break;
                 case 1:
                     ExpenseTypeRegisterUI tr = new ExpenseTypeRegisterUI();
-                    tr.mainLoop();                    
+                    tr.mainLoop();
+                              
                     break;
                 case 2:
-                    List<ExpenseType> lista = ExpenseTypeRepository.getListExpenseType();
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println(lista.get(i).getName());
-                    }
                     //DefTipoPagamentoUI tp = new DefTipoPagamentoUI();
                     //tp.mainLoop();
                     break;
@@ -77,8 +75,6 @@ public class MainMenu {
                     break;
                 case 8:
                     //consulta de gasto mensal
-                    ExpenseRepository expRepo = ExpenseRepository.getUniqueRepo();
-                    expRepo.listarDespesas();
                     break;
                 default:
                     break;
