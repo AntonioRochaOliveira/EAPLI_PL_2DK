@@ -16,13 +16,17 @@ import java.util.Date;
 class ExpenseRegisterUI {
             
      public void mainLoop() {
+        ExpenseRegisterController cont = new ExpenseRegisterController();
         System.out.println("* * *  Registar despesa  * * *\n");   
-
+       
         System.out.println("*************************************\nTipos de Pagamento");
         // MOSTRAR TIPOS DE PAGAMENTO payController.listarPaymentsType()
         System.out.println("*************************************\n");
         System.out.println("*************************************\nTipos de Despesa");
-        // MOSTRAR TIPOS DE DESPESA expTypeConroller.listarExpensesType()
+        for(int i=0; i<cont.getTypeExpense().size(); i++) {
+            System.out.println(cont.getTypeExpense().get(i).getName());
+        }
+                
         System.out.println("*************************************\n");
         
         String what = Console.readLine("Descricao: ");
@@ -33,7 +37,7 @@ class ExpenseRegisterUI {
         int expenseType = Console.readInteger("Tipo de Despesa: ");
         BigDecimal amount = new BigDecimal(value);
         
-        ExpenseRegisterController cont = new ExpenseRegisterController();
+        
         cont.registerExpense(what, date, amount);
         //payController.chooseTypePayment
         //expenseController.chooseTypeExpense
