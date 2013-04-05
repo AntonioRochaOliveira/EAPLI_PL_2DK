@@ -4,6 +4,7 @@
  */
 package Persistence;
 
+import Model.Expense;
 import Model.ExpenseType;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,10 @@ import java.util.List;
  */
 public class ExpenseTypeRepository {
     // class member
-    private static List<ExpenseType> listExpenseType= new ArrayList<ExpenseType>();
+    
+   private static ExpenseTypeRepository uniqueExpenseTypeRepo = null;
+   private static List<ExpenseType> listExpenseType= null;
+   
 
     /**
      * @return the listExpenseType
@@ -23,7 +27,19 @@ public class ExpenseTypeRepository {
         return listExpenseType;
     }
 
-    public ExpenseTypeRepository() {}
+    private ExpenseTypeRepository() {
+        listExpenseType = new ArrayList<ExpenseType>();
+    }
+    
+    
+    public static ExpenseTypeRepository instance(){
+        if(uniqueExpenseTypeRepo==null) {
+            return uniqueExpenseTypeRepo = new ExpenseTypeRepository();
+        }
+        else {
+            return uniqueExpenseTypeRepo;
+        }
+    } 
     
     public void save(ExpenseType expType)
     {
