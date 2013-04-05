@@ -14,7 +14,8 @@ import java.util.List;
  */
 public class IncomeRepository {
     // class member
-    private static List<Income> listincome= new ArrayList<Income>();
+    int i = 0;
+    private static ArrayList<Income> listincome= new ArrayList<Income>();
 
     public IncomeRepository() {}
     
@@ -22,5 +23,18 @@ public class IncomeRepository {
     {
         if (exp==null) throw new IllegalArgumentException();
         listincome.add(exp);
-}
+    }
+    
+    public void ListarRendimentos(){
+        System.out.println("Rendimentos Disponiveis:\n");
+        for(Income ic : getLista_rendimentos()){
+            i++;
+            System.out.println(i+ " - " + " Rendimento: "+ ic.getValor()+";");
+        }
+        System.out.println("\n");
+    }
+    
+    public ArrayList<Income> getLista_rendimentos() {
+        return listincome;
+    }
 }
