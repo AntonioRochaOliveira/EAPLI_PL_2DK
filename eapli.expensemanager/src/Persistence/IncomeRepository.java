@@ -6,7 +6,6 @@ package Persistence;
 
 import Model.Income;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -22,7 +21,7 @@ public class IncomeRepository {
     public void save(Income exp)
     {
         if (exp==null) throw new IllegalArgumentException();
-        listincome.add(exp);
+        getLista_rendimentos().add(exp);
     }
     
     public void ListarRendimentos(){
