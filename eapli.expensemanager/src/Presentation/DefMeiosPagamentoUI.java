@@ -5,28 +5,34 @@
 package Presentation;
 
 import Controllers.DefMeioPagamentoController;
+import Controllers.DefTipoPagamentoController;
 import Model.TipoPagamento;
-import Persistence.RepositorioTiposPagamento;
 import eapli.util.Console;
 
 public class DefMeiosPagamentoUI {
+    
+    private DefMeioPagamentoController controller_meio;
+    private DefTipoPagamentoController controller_tipo;
+    
+    public DefMeiosPagamentoUI(DefMeioPagamentoController controller_meio, DefTipoPagamentoController controller_tipo){
+        this.controller_meio=controller_meio;   
+        this.controller_tipo=controller_tipo;   
+    }
     public void mainLoop() {
         System.out.println("* * *  NOVO MEIO DE PAGAMENTO  * * *\n");
         
-        DefMeioPagamentoController controller = new DefMeioPagamentoController();
-        
-        RepositorioTiposPagamento rep = new RepositorioTiposPagamento();
-        
-        rep.ListarTiposPagamento();
+        controller_tipo.getRepositorioTiposPagamento().ListarTiposPagamento();
         
         int escolha = Console.readInteger("Escolha um dos Tipos de Pagamento: ");
         
-        TipoPagamento tipo = rep.getLista_tipos().get(escolha-1);
+        TipoPagamento tipo = controller_tipo.getRepositorioTiposPagamento().getLista_tipos().get(escolha-1);
         
         String descricao = Console.readLine("Descrição: ");
         
-        controller.NovoMeioPagamento(tipo,descricao);
+        controller_meio.NovoMeioPagamento(tipo,descricao);
         
         System.out.println("Novo Meio de Pagamento adicionado com sucesso!");
     }
+    
+    
 }
