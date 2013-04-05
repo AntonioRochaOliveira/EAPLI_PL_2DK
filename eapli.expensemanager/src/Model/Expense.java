@@ -42,6 +42,14 @@ public class Expense {
     public BigDecimal getAmount() {
         return amount;
     }
+
+    public Date getData() {
+        return data;
+    }
+
+    public String getDescription() {
+        return description;
+    }
     
     @Override
     public String toString() {
