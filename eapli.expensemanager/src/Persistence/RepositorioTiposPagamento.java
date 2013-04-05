@@ -25,16 +25,6 @@ public class RepositorioTiposPagamento {
         }
         getLista_tipos().add(tipo_pag);
     }
-    
-    public void ListarTiposPagamento(){
-        System.out.println("Tipos de Pagamento Disponíveis:\n");
-        int i=0;
-        for(TipoPagamento t : getLista_tipos()){
-            i++;
-            System.out.println(i+" - "+t.getDescricao()+";");
-        }
-        System.out.println("\n");
-    }
 
     public ArrayList<TipoPagamento> getLista_tipos() {
         return lista_tipos;
