@@ -59,8 +59,6 @@ public class MainMenu {
                 case 3:
                     ExpenseRegisterUI ui = new ExpenseRegisterUI();
                     ui.mainLoop();
-                    ExpenseRepository expRepo = ExpenseRepository.getUniqueRepo();
-                    expRepo.listarDespesas();
                     break;
                 case 4:
                     IncomeRegisterUI rer = new IncomeRegisterUI();
@@ -79,6 +77,8 @@ public class MainMenu {
                     break;
                 case 8:
                     //consulta de gasto mensal
+                    ExpenseRepository expRepo = ExpenseRepository.getUniqueRepo();
+                    expRepo.listarDespesas();
                     break;
                 default:
                     break;
