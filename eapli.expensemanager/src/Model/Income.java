@@ -5,7 +5,6 @@
 package Model;
 
 import eapli.util.DateTime;
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -13,7 +12,7 @@ import java.util.Date;
  * @author Antonio
  */
 public class Income {
-    int valor;
+    private int valor;
     String descricao;
     String Tipo;
     
@@ -33,4 +32,13 @@ public class Income {
     public Income( int valor, int year, int month, int day, String descricao , String Tipo) {
         this( valor, DateTime.newDate(year, month, day), descricao , Tipo);
     }
+
+    /**
+     * @return the valor
+     */
+    public int getValor() {
+        return valor;
+    }
+    
+    
 }
