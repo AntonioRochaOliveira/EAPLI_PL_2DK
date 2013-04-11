@@ -67,8 +67,8 @@ public class MainMenu {
                     dit.mainLoop();
                     break;
                 case 6:
-                    VisualizacaoSaldoUI vis = new VisualizacaoSaldoUI();
-                    vis.mainLoop();
+                   // VisualizacaoSaldoUI vis = new VisualizacaoSaldoUI();
+                   // vis.mainLoop();
                     break;
                 case 7:
                     //visualizar gasto da semana
