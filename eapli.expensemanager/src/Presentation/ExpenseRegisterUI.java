@@ -19,12 +19,14 @@ class ExpenseRegisterUI {
         ExpenseRegisterController cont = new ExpenseRegisterController();
         System.out.println("* * *  Registar despesa  * * *\n");   
        
-        System.out.println("*************************************\nTipos de Pagamento");
-        // MOSTRAR TIPOS DE PAGAMENTO payController.listarPaymentsType()
+        System.out.println("*************************************\nMeios de Pagamento");
+        for(int i=0; i<cont.getMeioDePagamento().size();i++){
+            System.out.println((i+1)+"- "+cont.getMeioDePagamento().get(i).getDescricao());  
+        }
         System.out.println("*************************************\n");
         System.out.println("*************************************\nTipos de Despesa");
         for(int i=0; i<cont.getTypeExpense().size(); i++) {
-            System.out.println(cont.getTypeExpense().get(i).getName());
+            System.out.println((i+1)+"- "+cont.getTypeExpense().get(i).getName());
         }
                 
         System.out.println("*************************************\n");

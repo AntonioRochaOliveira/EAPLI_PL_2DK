@@ -4,15 +4,7 @@
  */
 package Presentation;
 
-import Controllers.DefTipoPagamentoController;
-import Controllers.ExpenseRegisterController;
-import Controllers.ExpenseTypeRegisterController;
-import Model.Expense;
-import Model.ExpenseType;
-import Persistence.ExpenseRepository;
-import Persistence.ExpenseTypeRepository;
 import eapli.util.Console;
-import java.util.List;
 
 /**
  *
@@ -52,16 +44,20 @@ public class MainMenu {
                               
                     break;
                 case 2:
-                    //DefTipoPagamentoUI tp = new DefTipoPagamentoUI();
-                    //tp.mainLoop();
+                    DefTiposPagamentoUI tp = new DefTiposPagamentoUI();
+                    tp.mainLoop();
                     break;
                 case 3:
                     ExpenseRegisterUI ui = new ExpenseRegisterUI();
+                    SaldoUI saldo = new SaldoUI();
                     ui.mainLoop();
+                    saldo.mostraSaldo();
                     break;
                 case 4:
                     IncomeRegisterUI rer = new IncomeRegisterUI();
+                    SaldoUI saldo2 = new SaldoUI();
                     rer.mainLoop();
+                    saldo2.mostraSaldo();
                     break;
                 case 5:
                     DefIncomeTypesUI dit = new DefIncomeTypesUI();
@@ -81,7 +77,8 @@ public class MainMenu {
                     //estabelecer poupancas
                     break;
                 case 10:
-                    //definir meios de pagamento
+                    DefMeiosPagamentoUI mp = new DefMeiosPagamentoUI();
+                    mp.mainLoop();
                 default:
                     break;
             }

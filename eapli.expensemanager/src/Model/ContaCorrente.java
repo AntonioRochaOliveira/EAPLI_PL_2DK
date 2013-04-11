@@ -15,19 +15,21 @@ import java.math.BigDecimal;
  */
 public class ContaCorrente {
     
-    private static ExpenseRepository repo;
+    private static ExpenseRepository despesas;
+    private static IncomeRepository rendimentos;
     private static List <Expense> lista_despesas=new ArrayList();
     private static ArrayList <Income> lista_rendimentos=new ArrayList();
     
     public float getSaldo(){
-        repo = ExpenseRepository.getUniqueRepo();
+        despesas = ExpenseRepository.getUniqueRepo();
+        rendimentos = IncomeRepository.getUniqueRepo();
         float saldoPositivo=0;
         float saldoNegativo=0;
         float saldo;
         BigDecimal bd;
         
-        lista_despesas=repo.getListExpense();
-        //lista_rendimentos.getLista_rendimentos();
+        lista_despesas=despesas.getListExpense();
+        lista_rendimentos=rendimentos.getLista_rendimentos();
         
         for(int i=0;i<lista_despesas.size();i++){
             bd=lista_despesas.get(i).getAmount();

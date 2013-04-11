@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.Expense;
 import Model.ExpenseType;
+import Model.MeioPagamento;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -28,7 +29,13 @@ public class ExpenseRegisterController {
     }
     
     public List<ExpenseType> getTypeExpense() {
-        return ExpenseTypeRepository.getListExpenseType();
+        ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+        return extyre.getListExpenseType();
+    }
+    
+    public List<MeioPagamento> getMeioDePagamento(){
+        RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
+        return repM.getLista_meiosPagamento();
     }
     
 }

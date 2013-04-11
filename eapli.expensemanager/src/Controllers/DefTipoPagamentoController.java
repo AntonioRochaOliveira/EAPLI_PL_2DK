@@ -1,9 +1,13 @@
 package Controllers;
 
 import Model.TipoPagamento;
+import Persistence.RepositorioMeiosPagamento;
 import Persistence.RepositorioTiposPagamento;
 
 public class DefTipoPagamentoController {
+    
+    RepositorioTiposPagamento rep = RepositorioTiposPagamento.instance();
+    
     public DefTipoPagamentoController(){}
     
     public void NovoTipoPagamento(String descricao){
@@ -14,7 +18,7 @@ public class DefTipoPagamentoController {
     public void ListarTiposPagamento(){
         System.out.println("Tipos de Pagamento Disponíveis:\n");
         int i=0;
-        for(TipoPagamento t : RepositorioTiposPagamento.instance().getLista_tipos()){
+        for(TipoPagamento t : rep.getLista_tipos()){
             i++;
             System.out.println(i+" - "+t.getDescricao()+";");
         }
