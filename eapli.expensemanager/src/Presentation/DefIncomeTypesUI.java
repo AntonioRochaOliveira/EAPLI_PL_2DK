@@ -17,6 +17,7 @@ public class DefIncomeTypesUI {
             for ( int a = 0 ; a < lista.size() ; a++ ){
                 System.out.println( " - " + lista.get(a).toString() + ";");
             }
+            System.out.println("");
         }
         
         String input = Console.readLine( "Nome do tipo de rendimento a criar - deixar em branco para anular" );
