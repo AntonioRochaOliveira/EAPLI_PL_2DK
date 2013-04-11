@@ -19,10 +19,12 @@ public class Expense {
     Date data;
     String description;   
     BigDecimal amount;
+    ExpenseType tipo;
+    MeioPagamento meioPag;
     
     protected Expense() {}
     
-    public Expense(String description, Date dateOccurred, BigDecimal amount) {
+    public Expense(String description, Date dateOccurred, BigDecimal amount, ExpenseType tipo, MeioPagamento mp) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -33,10 +35,12 @@ public class Expense {
         this.data = dateOccurred;
         this.description = description;
         this.amount = amount;
+        this.tipo = tipo;
+        meioPag = mp;
     }
     
-    public Expense(String description, int year, int month, int day, BigDecimal amount) {
-        this( description, DateTime.newDate(year, month, day), amount);
+    public Expense(String description, int year, int month, int day, BigDecimal amount, ExpenseType tipo, MeioPagamento mp) {
+        this( description, DateTime.newDate(year, month, day), amount, tipo, mp);
     }
     
     public BigDecimal getAmount() {
@@ -51,10 +55,26 @@ public class Expense {
         return description;
     }
     
+    
+    public ExpenseType getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(ExpenseType tipo) {
+        this.tipo = tipo;
+    }
+
+    public MeioPagamento getMeioPag() {
+        return meioPag;
+    }
+
+    public void setMeioPag(MeioPagamento meioPag) {
+        this.meioPag = meioPag;
+    }
+    
     @Override
     public String toString() {
-        return String.format("Descricao: %s\nData: %s\n"
-                + "Montante: %d€\n", description, data, amount.intValue());
+        return String.format("Descricao: %s\nData: %s\nMontante: %d€\nTipo de despesa: %s\nMeio de pagamento: %s", description, data, amount.intValue(), tipo.getName(), meioPag.getDescricao());
     }
     
 }

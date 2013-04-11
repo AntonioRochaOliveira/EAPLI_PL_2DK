@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.Expense;
 import Model.ExpenseType;
+import Model.MeioPagamento;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -22,13 +23,19 @@ public class ExpenseRegisterController {
         repo = ExpenseRepository.getUniqueRepo();
     }
 
-    public void registerExpense(String what, Date date, BigDecimal amount) {
-        Expense expense = new Expense(what, date, amount);        
+    public void registerExpense(String what, Date date, BigDecimal amount, ExpenseType tipo, MeioPagamento mp) {
+        Expense expense = new Expense(what, date, amount, tipo, mp);        
         repo.save(expense);
     }
     
     public List<ExpenseType> getTypeExpense() {
-        return ExpenseTypeRepository.getListExpenseType();
+        ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+        return extyre.getListExpenseType();
+    }
+    
+    public List<MeioPagamento> getMeioDePagamento(){
+        RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
+        return repM.getLista_meiosPagamento();
     }
     
 }

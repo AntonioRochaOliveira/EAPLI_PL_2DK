@@ -14,34 +14,45 @@ import java.util.Date;
  * @author Paulo Gandra Sousa
  */
 class ExpenseRegisterUI {
-            
-     public void mainLoop() {
+
+    public void mainLoop() {
         ExpenseRegisterController cont = new ExpenseRegisterController();
-        System.out.println("* * *  Registar despesa  * * *\n");   
-       
-        System.out.println("*************************************\nTipos de Pagamento");
-        // MOSTRAR TIPOS DE PAGAMENTO payController.listarPaymentsType()
-        System.out.println("*************************************\n");
-        System.out.println("*************************************\nTipos de Despesa");
-        for(int i=0; i<cont.getTypeExpense().size(); i++) {
-            System.out.println(cont.getTypeExpense().get(i).getName());
+        if (cont.getMeioDePagamento().size() > 0 && cont.getTypeExpense().size() > 0) {
+            System.out.println("* * *  Registar despesa  * * *\n");
+
+            
+            String what = Console.readLine("Descricao: ");
+            Date date = Console.readDate("Data (01-01-1990): ");
+            double value = Console.readDouble("Montante: ");
+            System.out.println("\nLista de meios de Pagamento");
+            for (int i = 0; i < cont.getMeioDePagamento().size(); i++) {
+                System.out.println((i + 1) + "- " + cont.getMeioDePagamento().get(i).getDescricao());
+            }
+            int opc_meio = Console.readInteger("Meio de Pagamento: ");
+            while (opc_meio > cont.getMeioDePagamento().size() || opc_meio < 1) {
+                opc_meio = Console.readInteger("Não existe esse meio de pagamento, Insira um válido: ");
+            }
+            System.out.println("\n");
+            System.out.println("\nLista de tipos de Despesa");
+            for (int i = 0; i < cont.getTypeExpense().size(); i++) {
+                System.out.println((i + 1) + "- " + cont.getTypeExpense().get(i).getName());
+            }
+
+            System.out.println("\n");
+            int opc_tipo = Console.readInteger("Tipo de Despesa: ");
+            while (opc_tipo > cont.getTypeExpense().size() || opc_tipo < 1) {
+                opc_tipo = Console.readInteger("Não existe esse tipo de despesa, Insira um válido: ");
+            }
+            BigDecimal amount = new BigDecimal(value);
+
+
+            cont.registerExpense(what, date, amount, cont.getTypeExpense().get(opc_tipo-1), cont.getMeioDePagamento().get(opc_meio-1));
+
+
+            System.out.println("Despesa guardada com sucesso!");
+
         }
-                
-        System.out.println("*************************************\n");
-        
-        String what = Console.readLine("Descricao: ");
-        Date date = Console.readDate("Data (01-01-1990): ");
-        double value = Console.readDouble("Montante: ");
-        int paymentType = Console.readInteger("Tipo de Pagamento: ");
-        int paymentMethod = Console.readInteger("Meio de Pagamento: ");
-        int expenseType = Console.readInteger("Tipo de Despesa: ");
-        BigDecimal amount = new BigDecimal(value);
-        
-        
-        cont.registerExpense(what, date, amount);
-        //payController.chooseTypePayment
-        //expenseController.chooseTypeExpense
-        
-        System.out.println("Despesa guardada com sucesso!");
+        else
+            System.out.println("Não existe tipos de despesa ou meios de pagamento!");
     }
 }

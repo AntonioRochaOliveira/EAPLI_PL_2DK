@@ -4,15 +4,8 @@
  */
 package Presentation;
 
-import Controllers.DefTipoPagamentoController;
-import Controllers.ExpenseRegisterController;
-import Controllers.ExpenseTypeRegisterController;
-import Model.Expense;
-import Model.ExpenseType;
-import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import eapli.util.Console;
-import java.util.List;
 
 /**
  *
@@ -38,9 +31,14 @@ public class MainMenu {
             System.out.println("9. Estabelecer poupanças");
             System.out.println("10. Definir meios de pagamento.");
             System.out.println("0. Sair\n\n");
+            SaldoUI saldo = new SaldoUI();
+            saldo.mostraSaldo();
 
-
-            int option = Console.readInteger("Escolhe uma opcao");
+            int option = Console.readInteger("Escolhe uma opcao");  
+            if(option==0){ 
+                System.out.println("Adeus");
+                break;
+            }
 
             switch (option) {
                 case 0:
@@ -52,11 +50,11 @@ public class MainMenu {
                               
                     break;
                 case 2:
-                    //DefTipoPagamentoUI tp = new DefTipoPagamentoUI();
-                    //tp.mainLoop();
+                    DefTiposPagamentoUI tp = new DefTiposPagamentoUI();
+                    tp.mainLoop();
                     break;
                 case 3:
-                    ExpenseRegisterUI ui = new ExpenseRegisterUI();
+                    ExpenseRegisterUI ui = new ExpenseRegisterUI(); 
                     ui.mainLoop();
                     break;
                 case 4:
@@ -68,8 +66,8 @@ public class MainMenu {
                     dit.mainLoop();
                     break;
                 case 6:
-                   // VisualizacaoSaldoUI vis = new VisualizacaoSaldoUI();
-                   // vis.mainLoop();
+                    InicializacaoSaldoUI ini = new InicializacaoSaldoUI();
+                    ini.mainLoop();
                     break;
                 case 7:
                     //visualizar gasto da semana
@@ -81,7 +79,8 @@ public class MainMenu {
                     //estabelecer poupancas
                     break;
                 case 10:
-                    //definir meios de pagamento
+                    DefMeiosPagamentoUI mp = new DefMeiosPagamentoUI();
+                    mp.mainLoop();
                 default:
                     break;
             }
