@@ -35,6 +35,10 @@ public class MainMenu {
             saldo.mostraSaldo();
 
             int option = Console.readInteger("Escolhe uma opcao");  
+            if(option==0){ 
+                System.out.println("Adeus");
+                break;
+            }
 
             switch (option) {
                 case 0:

@@ -23,8 +23,8 @@ public class ExpenseRegisterController {
         repo = ExpenseRepository.getUniqueRepo();
     }
 
-    public void registerExpense(String what, Date date, BigDecimal amount) {
-        Expense expense = new Expense(what, date, amount);        
+    public void registerExpense(String what, Date date, BigDecimal amount, ExpenseType tipo, MeioPagamento mp) {
+        Expense expense = new Expense(what, date, amount, tipo, mp);        
         repo.save(expense);
     }
     
