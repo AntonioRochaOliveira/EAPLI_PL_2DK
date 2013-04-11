@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Persistence.ExpenseTypeRepository;
 import eapli.util.Console;
 
 /**
@@ -30,9 +31,10 @@ public class MainMenu {
             System.out.println("9. Estabelecer poupanças");
             System.out.println("10. Definir meios de pagamento.");
             System.out.println("0. Sair\n\n");
+            SaldoUI saldo = new SaldoUI();
+            saldo.mostraSaldo();
 
-
-            int option = Console.readInteger("Escolhe uma opcao");
+            int option = Console.readInteger("Escolhe uma opcao");  
 
             switch (option) {
                 case 0:
@@ -48,24 +50,20 @@ public class MainMenu {
                     tp.mainLoop();
                     break;
                 case 3:
-                    ExpenseRegisterUI ui = new ExpenseRegisterUI();
-                    SaldoUI saldo = new SaldoUI();
+                    ExpenseRegisterUI ui = new ExpenseRegisterUI(); 
                     ui.mainLoop();
-                    saldo.mostraSaldo();
                     break;
                 case 4:
                     IncomeRegisterUI rer = new IncomeRegisterUI();
-                    SaldoUI saldo2 = new SaldoUI();
                     rer.mainLoop();
-                    saldo2.mostraSaldo();
                     break;
                 case 5:
                     DefIncomeTypesUI dit = new DefIncomeTypesUI();
                     dit.mainLoop();
                     break;
                 case 6:
-                   // VisualizacaoSaldoUI vis = new VisualizacaoSaldoUI();
-                   // vis.mainLoop();
+                    InicializacaoSaldoUI ini = new InicializacaoSaldoUI();
+                    ini.mainLoop();
                     break;
                 case 7:
                     //visualizar gasto da semana
