@@ -21,7 +21,7 @@ public class ExpenseRepository implements IExpenseRepository {
         listExpense = new ArrayList<Expense>();
     }
 
-    public static List<Expense> getListExpense() {
+    public List<Expense> getListExpense() {
         return listExpense;
     }
 
