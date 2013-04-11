@@ -11,10 +11,13 @@ import java.util.ArrayList;
  *
  * @author Antonio
  */
+
+//Eu Pedro Passo alterei esta classe para se tornar um singleton e adicionei o metodo getUniqueRepo()
 public class IncomeRepository {
     // class member
     int i = 0;
     private static ArrayList<Income> listincome= new ArrayList<Income>();
+     private static IncomeRepository uniqueRepo = null;
 
     public IncomeRepository() {}
     
@@ -35,5 +38,13 @@ public class IncomeRepository {
     
     public ArrayList<Income> getLista_rendimentos() {
         return listincome;
+    }
+    
+    public static IncomeRepository getUniqueRepo() {
+        if (uniqueRepo == null) {
+            return uniqueRepo = new IncomeRepository();
+        } else {
+            return uniqueRepo;
+        }
     }
 }

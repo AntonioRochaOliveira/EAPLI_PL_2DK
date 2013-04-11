@@ -14,4 +14,7 @@ public class IncomeTypes {
         this.IncomeType = IncomeType;
     }
     
+    public String toString(){
+        return IncomeType;
+    }
 }
