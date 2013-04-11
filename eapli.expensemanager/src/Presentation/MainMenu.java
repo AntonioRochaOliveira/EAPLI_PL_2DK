@@ -81,7 +81,8 @@ public class MainMenu {
                     //estabelecer poupancas
                     break;
                 case 10:
-                    //definir meios de pagamento
+                    DefMeiosPagamentoUI mp = new DefMeiosPagamentoUI();
+                    mp.mainLoop();
                 default:
                     break;
             }
