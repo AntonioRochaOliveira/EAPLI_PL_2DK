@@ -20,9 +20,13 @@ public class DefIncomeTypesUI {
             System.out.println("");
         }
         
+        boolean adicionar = true;
         String input = Console.readLine( "Nome do tipo de rendimento a criar - deixar em branco para anular" );
-        if ( !input.equals( "" ) ){
-            IncTC.createIncomeType( input );
+        while( !input.equals( "" ) && adicionar ){
+            adicionar = !IncTC.createIncomeType( input );
+            if( adicionar ){
+                input = Console.readLine( "Já existe - introduza de novo ou deixe em branco" );
+            }
         }
     }
 }
