@@ -18,9 +18,15 @@ public class DefMeioPagamentoController {
     public void ListarMeiosPagamento(){
     System.out.println("Meios de Pagamento Disponíveis:\n");
         int i=0;
-        for(MeioPagamento m : rep.getLista_meiosPagamento()){
-          i++;
-           System.out.println(i+" - "+m.getTipo().getDescricao()+" - "+m.getDescricao()+";");
+        
+        if(!rep.getLista_meiosPagamento().isEmpty()){
+            for(MeioPagamento m : rep.getLista_meiosPagamento()){
+            i++;
+          
+            System.out.println(i+" - "+m.getTipo().getDescricao()+" - "+m.getDescricao()+";");
+            }
+        }else{
+            System.out.println("Não existem Meios Pagamento Guardados \n");
         }
         System.out.println("\n");
    }
