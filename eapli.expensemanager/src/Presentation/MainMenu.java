@@ -52,8 +52,8 @@ public class MainMenu {
                               
                     break;
                 case 2:
-                    //DefTipoPagamentoUI tp = new DefTipoPagamentoUI();
-                    //tp.mainLoop();
+                    DefTiposPagamentoUI tp = new DefTiposPagamentoUI();
+                    tp.mainLoop();
                     break;
                 case 3:
                     ExpenseRegisterUI ui = new ExpenseRegisterUI();

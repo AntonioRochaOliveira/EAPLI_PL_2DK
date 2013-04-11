@@ -23,9 +23,7 @@ class ExpenseRegisterUI {
         // MOSTRAR TIPOS DE PAGAMENTO payController.listarPaymentsType()
         System.out.println("*************************************\n");
         System.out.println("*************************************\nTipos de Despesa");
-        for(int i=0; i<cont.getTypeExpense().size(); i++) {
-            System.out.println(cont.getTypeExpense().get(i).getName());
-        }
+         //listar tipos de despesa
                 
         System.out.println("*************************************\n");
         
