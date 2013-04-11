@@ -33,6 +33,8 @@ public class MainMenu {
 
 
             int option = Console.readInteger("Escolhe uma opcao");
+            SaldoUI saldo = new SaldoUI();
+            saldo.mostraSaldo();
 
             switch (option) {
                 case 0:
@@ -48,16 +50,12 @@ public class MainMenu {
                     tp.mainLoop();
                     break;
                 case 3:
-                    ExpenseRegisterUI ui = new ExpenseRegisterUI();
-                    SaldoUI saldo = new SaldoUI();
+                    ExpenseRegisterUI ui = new ExpenseRegisterUI(); 
                     ui.mainLoop();
-                    saldo.mostraSaldo();
                     break;
                 case 4:
                     IncomeRegisterUI rer = new IncomeRegisterUI();
-                    SaldoUI saldo2 = new SaldoUI();
                     rer.mainLoop();
-                    saldo2.mostraSaldo();
                     break;
                 case 5:
                     DefIncomeTypesUI dit = new DefIncomeTypesUI();
