@@ -35,7 +35,8 @@ public class MainMenu {
             System.out.println("6. Inicialização do saldo");
             System.out.println("7. Visualização de gasto da semana");
             System.out.println("8. Consulta de gastos mensais");
-
+            System.out.println("9. Estabelecer poupanças");
+            System.out.println("10. Definir meios de pagamento.");
             System.out.println("0. Sair\n\n");
 
 
@@ -76,6 +77,11 @@ public class MainMenu {
                 case 8:
                     //consulta de gasto mensal
                     break;
+                case 9:
+                    //estabelecer poupancas
+                    break;
+                case 10:
+                    //definir meios de pagamento
                 default:
                     break;
             }
