@@ -30,11 +30,10 @@ public class MainMenu {
             System.out.println("9. Estabelecer poupanças");
             System.out.println("10. Definir meios de pagamento.");
             System.out.println("0. Sair\n\n");
-
-
-            int option = Console.readInteger("Escolhe uma opcao");
             SaldoUI saldo = new SaldoUI();
             saldo.mostraSaldo();
+
+            int option = Console.readInteger("Escolhe uma opcao");  
 
             switch (option) {
                 case 0:
