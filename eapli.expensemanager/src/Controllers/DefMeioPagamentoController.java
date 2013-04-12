@@ -1,13 +1,16 @@
 package Controllers;
 
 import Model.MeioPagamento;
-import Persistence.RepositorioMeiosPagamento;
 import Model.TipoPagamento;
+import Persistence.RepositorioMeiosPagamento;
+import Persistence.RepositorioTiposPagamento;
 
 
 public class DefMeioPagamentoController {
     
     RepositorioMeiosPagamento rep = RepositorioMeiosPagamento.instance();
+    RepositorioTiposPagamento rep_tipos = RepositorioTiposPagamento.instance();
+    
     public DefMeioPagamentoController(){}
     
     public void NovoMeioPagamento(TipoPagamento tipo, String descricao){
@@ -18,17 +21,26 @@ public class DefMeioPagamentoController {
     public void ListarMeiosPagamento(){
     System.out.println("Meios de Pagamento Disponíveis:\n");
         int i=0;
-        
-        if(!rep.getLista_meiosPagamento().isEmpty()){
-            for(MeioPagamento m : rep.getLista_meiosPagamento()){
-            i++;
-          
-            System.out.println(i+" - "+m.getTipo().getDescricao()+" - "+m.getDescricao()+";");
-            }
-        }else{
-            System.out.println("Não existem Meios Pagamento Guardados \n");
+        for(MeioPagamento m : rep.getLista_meiosPagamento()){
+          i++;
+           System.out.println(i+" - "+m.getTipo().getDescricao()+" - "+m.getDescricao()+";");
         }
         System.out.println("\n");
+   }
+   
+   public void ListarTiposPagamento(){
+        System.out.println("Tipos de Pagamento Disponíveis:\n");
+        int i=0;
+        for(TipoPagamento t : rep_tipos.getLista_tipos()){
+            i++;
+            System.out.println(i+" - "+t.getDescricao()+";");
+        }
+        System.out.println("\n");
+   }
+    
+   public TipoPagamento getTipoPagamento(int escolha){
+       TipoPagamento tipo=RepositorioTiposPagamento.instance().getLista_tipos().get(escolha-1);
+       return tipo;
    }
 
 }
