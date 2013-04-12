@@ -7,7 +7,7 @@ import Model.IncomeTypes;
 //Eu Antonio Carvalho alterei esta classe para se tornar um singleton e adicionei o metodo getUniqueRepo()
 public class IncomeTypeRepository {
     
-   private static ArrayList IncTypes =new ArrayList();
+   private static ArrayList<IncomeTypes> IncTypes =new ArrayList();
    private static IncomeTypeRepository uniqueRepo = null;
     
    public static ArrayList<IncomeTypes> getLista(){
