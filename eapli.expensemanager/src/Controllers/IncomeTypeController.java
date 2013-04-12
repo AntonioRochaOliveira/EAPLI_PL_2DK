@@ -4,7 +4,14 @@ import Persistence.IncomeTypeRepository;
 import java.util.ArrayList;
 import Model.IncomeTypes;
 
+//Eu Antonio Carvalho alterei esta classe para ter acesso a alguns metodos que nao estava a conseguir
+//nomeadamente aceder ao repositorio
 public class IncomeTypeController {
+    IncomeTypeRepository inct;
+    
+    public IncomeTypeController() {
+        inct = IncomeTypeRepository.getUniqueRepo();
+    }
     
     public static boolean createIncomeType(String IncomeTypeString){
         ArrayList<IncomeTypes> lista = getLista();

@@ -13,10 +13,11 @@ import Model.Income;
 public class IncomeRegisterController {
     IncomeRepository inco;
     
+    
     public IncomeRegisterController() {
         inco = IncomeRepository.getUniqueRepo();
     }
-
+    
     public void registerIncome(int valor, Date date, String descriçao, String Tipo) {
         Income inc = new Income( valor, date, descriçao , Tipo);      
         inco.save(inc);
