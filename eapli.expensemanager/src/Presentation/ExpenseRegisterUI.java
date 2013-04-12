@@ -26,7 +26,7 @@ class ExpenseRegisterUI {
             double value = Console.readDouble("Montante: ");
             System.out.println("\nLista de meios de Pagamento");
             for (int i = 0; i < cont.getMeioDePagamento().size(); i++) {
-                System.out.println((i + 1) + "- " + cont.getMeioDePagamento().get(i).getDescricao());
+                System.out.println(cont.getMeioDePagamento().get(i));
             }
             int opc_meio = Console.readInteger("Meio de Pagamento: ");
             while (opc_meio > cont.getMeioDePagamento().size() || opc_meio < 1) {
@@ -35,7 +35,7 @@ class ExpenseRegisterUI {
             System.out.println("\n");
             System.out.println("\nLista de tipos de Despesa");
             for (int i = 0; i < cont.getTypeExpense().size(); i++) {
-                System.out.println((i + 1) + "- " + cont.getTypeExpense().get(i).getName());
+                System.out.println(cont.getTypeExpense().get(i));
             }
 
             System.out.println("\n");
@@ -44,11 +44,7 @@ class ExpenseRegisterUI {
                 opc_tipo = Console.readInteger("Não existe esse tipo de despesa, Insira um válido: ");
             }
             BigDecimal amount = new BigDecimal(value);
-
-
-            cont.registerExpense(what, date, amount, cont.getTypeExpense().get(opc_tipo-1), cont.getMeioDePagamento().get(opc_meio-1));
-
-
+            cont.registerExpense(what, date, amount, opc_tipo-1, opc_meio-1);
             System.out.println("Despesa guardada com sucesso!");
 
         }
