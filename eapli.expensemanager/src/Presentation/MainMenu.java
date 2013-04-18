@@ -22,14 +22,14 @@ public class MainMenu {
 
             System.out.println("1. Registar tipos de despesa");
             System.out.println("2. Definir tipos de pagamento");
-            System.out.println("3. Registar despesa");
-            System.out.println("4. Registo de entrada de rendimentos");
-            System.out.println("5. Definição de tipos de rendimento");
-            System.out.println("6. Inicialização do saldo");
-            System.out.println("7. Visualização de gasto da semana");
-            System.out.println("8. Consulta de gastos mensais");
-            System.out.println("9. Estabelecer poupanças");
-            System.out.println("10. Definir meios de pagamento.");
+            System.out.println("3. Registar movimento");
+            System.out.println("4. Definição de tipos de rendimento");
+            System.out.println("5. Inicialização do saldo");
+            System.out.println("6. Visualização de gasto da semana");
+            System.out.println("7. Consulta de gastos mensais");
+            System.out.println("8. Estabelecer poupanças");
+            System.out.println("9. Definir meios de pagamento.");
+            System.out.println("10. Consultar despesas (NOT WORKING).");
             System.out.println("0. Sair\n\n");
             SaldoUI saldo = new SaldoUI();
             saldo.mostraSaldo();
