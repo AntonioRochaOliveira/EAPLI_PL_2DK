@@ -36,9 +36,4 @@ public class DefIncomeTypesUI extends BaseUI{
             }
         }
     }
-    
-    public static void main(String[] args) {
-        DefIncomeTypesUI menu = new DefIncomeTypesUI();
-        menu.mainLoop();
-    }
 }
