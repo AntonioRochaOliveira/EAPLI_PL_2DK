@@ -14,7 +14,7 @@ import java.util.Date;
  *
  * @author Paulo Gandra Sousa
  */
-class ExpenseTypeRegisterUI {
+class ExpenseTypeRegisterUI extends BaseUI{
     public void mainLoop() {
         System.out.println("* * *  Registar tipos de despesa  * * *\n");
         
