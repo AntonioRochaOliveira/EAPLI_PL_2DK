@@ -12,22 +12,22 @@ import java.util.List;
  *
  * @author losa
  */
-public class ExpenseRepository implements IExpenseRepository {
+public class MovimentoRepository implements IExpenseRepository {
 
-    private static ExpenseRepository uniqueRepo = null;
-    private static List<Expense> listExpense = null;
+    private static MovimentoRepository uniqueRepo = null;
+    private static List<Movimentos> listExpense = null;
 
-    private ExpenseRepository() {
-        listExpense = new ArrayList<Expense>();
+    private MovimentoRepository() {
+        listExpense = new ArrayList<Movimentos>();
     }
 
-    public List<Expense> getListExpense() {
+    public List<Movimentos> getListExpense() {
         return listExpense;
     }
 
-    public static ExpenseRepository getUniqueRepo() {
+    public static MovimentoRepository getUniqueRepo() {
         if (uniqueRepo == null) {
-            return uniqueRepo = new ExpenseRepository();
+            return uniqueRepo = new MovimentoRepository();
         } else {
             return uniqueRepo;
         }

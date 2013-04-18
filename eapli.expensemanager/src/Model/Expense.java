@@ -14,11 +14,7 @@ import java.util.Date;
  * @author Paulo Gandra Sousa
  */
 
-public class Expense {
-    
-    Date data;
-    String description;   
-    BigDecimal amount;
+public class Expense extends Movimentos {
     ExpenseType tipo;
     MeioPagamento meioPag;
     
@@ -32,29 +28,14 @@ public class Expense {
         if (amount.signum() == -1 || amount.signum() ==  0) {
             throw new IllegalArgumentException();
         }
-        this.data = dateOccurred;
-        this.description = description;
-        this.amount = amount;
+        super(description, dateOccurred, amount);
         this.tipo = tipo;
-        meioPag = mp;
+        this.meioPag = mp;
     }
     
     public Expense(String description, int year, int month, int day, BigDecimal amount, ExpenseType tipo, MeioPagamento mp) {
         this( description, DateTime.newDate(year, month, day), amount, tipo, mp);
     }
-    
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-    
     
     public ExpenseType getTipo() {
         return tipo;
@@ -74,7 +55,7 @@ public class Expense {
     
     @Override
     public String toString() {
-        return String.format("Descricao: %s\nData: %s\nMontante: %d€\nTipo de despesa: %s\nMeio de pagamento: %s", description, data, amount.intValue(), tipo.getName(), meioPag.getDescricao());
+        return String.format("%s\nTipo de despesa: %s\nMeio de pagamento: %s", super.toString(), tipo.getName(), meioPag.getDescricao());
     }
     
 }

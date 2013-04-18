@@ -15,13 +15,13 @@ import java.math.BigDecimal;
  */
 public class ContaCorrente {
     
-    private static ExpenseRepository despesas;
+    private static MovimentoRepository despesas;
     private static IncomeRepository rendimentos;
     private static List <Expense> lista_despesas=new ArrayList();
     private static ArrayList <Income> lista_rendimentos=new ArrayList();
     
     public float getSaldo(){
-        despesas = ExpenseRepository.getUniqueRepo();
+        despesas = MovimentoRepository.getUniqueRepo();
         rendimentos = IncomeRepository.getUniqueRepo();
         float saldoPositivo=0;
         float saldoNegativo=0;

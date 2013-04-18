@@ -18,10 +18,10 @@ import java.util.List;
  * @author Paulo Gandra Sousa
  */
 public class ExpenseRegisterController {
-    ExpenseRepository repo;
+    MovimentoRepository repo;
     
     public ExpenseRegisterController() {
-        repo = ExpenseRepository.getUniqueRepo();
+        repo = MovimentoRepository.getUniqueRepo();
     }
 
     public void registerExpense(String what, Date date, BigDecimal amount, int tipo, int mp) {
