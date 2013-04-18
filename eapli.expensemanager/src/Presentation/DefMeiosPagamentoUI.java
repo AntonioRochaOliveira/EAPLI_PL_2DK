@@ -1,8 +1,13 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Presentation;
 
 import Controllers.DefMeioPagamentoController;
 import Controllers.DefTipoPagamentoController;
 import Model.TipoPagamento;
+import Persistence.RepositorioTiposPagamento;
 import eapli.util.Console;
 
 public class DefMeiosPagamentoUI {
@@ -16,7 +21,7 @@ public class DefMeiosPagamentoUI {
         
         int escolha = Console.readInteger("Escolha um dos Tipos de Pagamento: ");
         
-        TipoPagamento tipo = cont_meio.getTipoPagamento(escolha);
+        TipoPagamento tipo = RepositorioTiposPagamento.instance().getLista_tipos().get(escolha-1);
         
         String descricao = Console.readLine("Descrição: ");
         
