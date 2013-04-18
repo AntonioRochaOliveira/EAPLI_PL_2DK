@@ -18,6 +18,10 @@ public class IncomeRegisterController {
         inco = IncomeRepository.getUniqueRepo();
     }
     
+    public void newincome(){
+        
+    }
+    
     public void registerIncome(int valor, Date date, String descriçao, String Tipo) {
         Income inc = new Income( valor, date, descriçao , Tipo);      
         inco.save(inc);
