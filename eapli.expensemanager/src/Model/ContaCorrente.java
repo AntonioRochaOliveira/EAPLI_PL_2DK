@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  *
@@ -19,6 +20,23 @@ public class ContaCorrente {
     private static IncomeRepository rendimentos;
     private static List <Expense> lista_despesas=new ArrayList();
     private static ArrayList <Income> lista_rendimentos=new ArrayList();
+    
+    public int getGastoMensalAnterior() {
+        int total = 0;
+        Date dataActual = new Date();
+        List<Expense> temp = despesas.getListExpense();
+        for(int i=0; i<temp.size(); i++) {
+            if((temp.get(i).getData().getMonth()+1)==dataActual.getMonth() && 
+                    temp.get(i).getData().getYear()==dataActual.getYear()) {
+                total = total + temp.get(i).getAmount().intValue();
+            }
+            else if(temp.get(i).getData().getMonth()==12 && dataActual.getMonth()==1 && (temp.get(i).getData().getYear()+1)==dataActual.getYear()) {
+                total = total + temp.get(i).getAmount().intValue();
+            }
+        }
+        return total;        
+    }
+    
     
     public float getSaldo(){
         despesas = ExpenseRepository.getUniqueRepo();
