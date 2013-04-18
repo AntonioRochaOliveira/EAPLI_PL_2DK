@@ -1,6 +1,7 @@
 package Model;
 
 import eapli.util.DateTime;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -8,34 +9,45 @@ import java.util.Date;
  * @author Antonio
  */
 public class Movimentos {
-    
-public class Income {
-    private int valor;
+    BigDecimal amount;
     String descricao;
-    String Tipo;
+    Date data;   
     
     
-    protected Income() {}
+    protected Movimentos() {}
     
-    public Income( int valor, Date dateOccurred, String descricao , String Tipo) {
+    public Movimentos( BigDecimal amount, Date dateOccurred, String descricao) {
         if (descricao == null || dateOccurred == null) {
             throw new IllegalArgumentException();
         }
         // cannot record a negative expense or a zero EUR expense
         this.descricao = descricao;
-        this.valor = valor;
-        this.Tipo=Tipo;
-    }
-    
-    public Income( int valor, int year, int month, int day, String descricao , String Tipo) {
-        this( valor, DateTime.newDate(year, month, day), descricao , Tipo);
+        this.amount = amount;
+        this.data = dateOccurred;
+    }    
+
+    public BigDecimal getAmount() {
+        return amount;
     }
 
-    /**
-     * @return the valor
-     */
-    public int getValor() {
-        return valor;
-    }    
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
 }
-}
+
