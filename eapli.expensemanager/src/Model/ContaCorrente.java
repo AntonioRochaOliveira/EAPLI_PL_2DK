@@ -26,18 +26,19 @@ public class ContaCorrente {
         float saldoPositivo=0;
         float saldoNegativo=0;
         float saldo;
-        BigDecimal bd;
+        BigDecimal bd1, bd2;
         
         lista_despesas=despesas.getListExpense();
         lista_rendimentos=rendimentos.getLista_rendimentos();
         
         for(int i=0;i<lista_despesas.size();i++){
-            bd=lista_despesas.get(i).getAmount();
-            saldoNegativo+=bd.floatValue();
+            bd1=lista_despesas.get(i).getAmount();
+            saldoNegativo+=bd1.floatValue();
         }
         
         for(int i=0;i<lista_rendimentos.size();i++){
-            saldoPositivo+=lista_rendimentos.get(i).getValor();
+            bd2=lista_rendimentos.get(i).getValor();
+            saldoPositivo+=bd2.floatValue();
         }
         
         saldo=saldoPositivo-saldoNegativo;
