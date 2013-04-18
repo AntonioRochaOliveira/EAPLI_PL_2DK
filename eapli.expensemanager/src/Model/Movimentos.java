@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import eapli.util.DateTime;
@@ -11,7 +7,9 @@ import java.util.Date;
  *
  * @author Antonio
  */
-public class Income extends Movimentos{
+public class Movimentos {
+    
+public class Income {
     private int valor;
     String descricao;
     String Tipo;
@@ -38,7 +36,6 @@ public class Income extends Movimentos{
      */
     public int getValor() {
         return valor;
-    }
-    
-    
+    }    
+}
 }
