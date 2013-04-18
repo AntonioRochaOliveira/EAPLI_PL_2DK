@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author Paulo Gandra Sousa
  */
-class ExpenseRegisterUI {
+class ExpenseRegisterUI extends BaseUI {
 
     public void mainLoop() {
         ExpenseRegisterController cont = new ExpenseRegisterController();
@@ -44,7 +44,8 @@ class ExpenseRegisterUI {
             }
             BigDecimal amount = new BigDecimal(value);
             cont.registerExpense(what, date, amount, opc_tipo-1, opc_meio-1);
-            System.out.println("Despesa guardada com sucesso!");
+            System.out.println("Despesa guardada com sucesso!\n");
+            System.out.println(cont.getSaldo()+"");
 
         }
         else
