@@ -20,20 +20,12 @@ public class StablishSavingUI {
             }
         }
         
-        /*String input = Console.readLine( "Nome do objectivo a criar - deixar em branco para anular" );
-        if ( !input.equals( "" ) ){
-            double valor = Console.readDouble( "Valor" );
-            String desc = Console.readLine( "Descrição [opcional]" );
-            cn.stablishSaving( input , valor , desc );
-        }*/
-        
         String input = Console.readLine( "Nome do tipo de rendimento a criar - deixar em branco para anular" );
         while( !input.equals( "" ) ){
             try {
                 double valor = Console.readDouble( "Valor" );
                 String desc = Console.readLine( "Descrição [opcional]" );
                 cn.stablishSaving( input , valor , desc );
-               // IncTC.createIncomeType( input );
                 input = "";
             } catch ( DuplicateSavingException a ) {
                 input = Console.readLine( "Já existe - introduza de novo ou deixe em branco" );
