@@ -49,5 +49,12 @@ public class Movimentos {
     public void setData(Date data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "Amount:" + amount + "\nDescricao: " + descricao + "\nData: " + data;
+    }
+    
+    
 }
 

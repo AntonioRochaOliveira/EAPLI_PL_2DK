@@ -20,23 +20,12 @@ public class Expense extends Movimentos {
     
     protected Expense() {}
     
-    public Expense(String description, Date dateOccurred, BigDecimal amount, ExpenseType tipo, MeioPagamento mp) {
-        if (description == null || dateOccurred == null || amount == null) {
-            throw new IllegalArgumentException();
-        }
-        // cannot record a negative expense or a zero EUR expense
-        if (amount.signum() == -1 || amount.signum() ==  0) {
-            throw new IllegalArgumentException();
-        }
-        super(description, dateOccurred, amount);
+    public Expense(BigDecimal amount, Date dateOccurred, String descricao, ExpenseType tipo, MeioPagamento mp) {
+        super(amount, dateOccurred, descricao);
         this.tipo = tipo;
         this.meioPag = mp;
-    }
-    
-    public Expense(String description, int year, int month, int day, BigDecimal amount, ExpenseType tipo, MeioPagamento mp) {
-        this( description, DateTime.newDate(year, month, day), amount, tipo, mp);
-    }
-    
+    }    
+ 
     public ExpenseType getTipo() {
         return tipo;
     }

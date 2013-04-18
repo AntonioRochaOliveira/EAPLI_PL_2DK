@@ -18,16 +18,16 @@ import java.util.List;
  * @author Paulo Gandra Sousa
  */
 public class ExpenseRegisterController {
-    MovimentoRepository repo;
+    ExpenseRepository repo;
     
     public ExpenseRegisterController() {
-        repo = MovimentoRepository.getUniqueRepo();
+        repo = ExpenseRepository.getUniqueRepo();
     }
 
     public void registerExpense(String what, Date date, BigDecimal amount, int tipo, int mp) {
         RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
         ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
-        Expense expense = new Expense(what, date, amount, extyre.getListExpenseType().get(tipo),repM.getLista_meiosPagamento().get(mp));        
+        Expense expense = new Expense(amount, date, what, extyre.getListExpenseType().get(tipo),repM.getLista_meiosPagamento().get(mp));        
         repo.save(expense);
     }
     
