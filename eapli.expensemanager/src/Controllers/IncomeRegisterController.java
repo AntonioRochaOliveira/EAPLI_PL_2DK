@@ -3,6 +3,8 @@ package Controllers;
 import java.util.Date;
 import Persistence.IncomeRepository;
 import Model.Income;
+import Model.Movimentos;
+import java.math.BigDecimal;
 /**
  *
  * @author Antonio
@@ -22,8 +24,8 @@ public class IncomeRegisterController {
         
     }
     
-    public void registerIncome(int valor, Date date, String descriçao, String Tipo) {
-        Income inc = new Income( valor, date, descriçao , Tipo);      
-        inco.save(inc);
+    public void registerIncome(BigDecimal valor, Date date, String descriçao, String Tipo) {
+        Movimentos inc = new Income(valor, date, descriçao, null);      
+        //inco.save(inc);
     }
 }

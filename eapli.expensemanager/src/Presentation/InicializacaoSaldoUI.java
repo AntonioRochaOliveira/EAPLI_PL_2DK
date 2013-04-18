@@ -10,12 +10,14 @@ import Persistence.IncomeRepository;
 import eapli.util.Console;
 import java.util.Date;
 
-public class InicializacaoSaldoUI {
+public class InicializacaoSaldoUI extends BaseUI{
+    
     IncomeRepository irp;
     
     public void mainLoop() {
         
         System.out.println("* * *  Inicializar Saldo  * * *\n");
+        displaySaldo();
         int valorS = Console.readInteger("Inserir valor:");
         Date data = Console.readDate("Data:");
         String descricao = Console.readLine("Descricao:");  
