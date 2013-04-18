@@ -11,5 +11,7 @@ import Controllers.BaseController;
 public class BaseUI {
     BaseController BaseContr=new BaseController();
     public BaseUI(){
+        System.out.println("Saldo corrente: "+ BaseContr.getSaldo());
+        
     }
 }
