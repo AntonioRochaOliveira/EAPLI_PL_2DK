@@ -9,7 +9,7 @@ import Persistence.*;
  *
  * @author Paulo Sergio Monteiro
  */
-public class ExpenseTypeRegisterController {
+public class ExpenseTypeRegisterController extends BaseController{
 
     public ExpenseTypeRegisterController() {
     }
