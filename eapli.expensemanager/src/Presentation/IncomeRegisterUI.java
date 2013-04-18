@@ -8,6 +8,7 @@ import Controllers.IncomeRegisterController;
 import Controllers.IncomeTypeController;
 import Persistence.IncomeRepository;
 import eapli.util.Console;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -25,7 +26,7 @@ public class IncomeRegisterUI {
         String descriçao = Console.readLine("Description:");
         String Tipo = Console.readLine("Type of Income:");
         IncomeRegisterController controller = new IncomeRegisterController();
-        controller.registerIncome(valor, date, descriçao, Tipo);
+        controller.registerIncome(BigDecimal.ZERO, date, descriçao, Tipo);
         
         System.out.println("Income recorded.");
     }
