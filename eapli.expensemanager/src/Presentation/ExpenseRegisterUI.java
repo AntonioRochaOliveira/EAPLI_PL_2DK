@@ -19,7 +19,6 @@ class ExpenseRegisterUI {
         ExpenseRegisterController cont = new ExpenseRegisterController();
         if (cont.getMeioDePagamento().size() > 0 && cont.getTypeExpense().size() > 0) {
             System.out.println("* * *  Registar despesa  * * *\n");
-
             
             String what = Console.readLine("Descricao: ");
             Date date = Console.readDate("Data (01-01-1990): ");

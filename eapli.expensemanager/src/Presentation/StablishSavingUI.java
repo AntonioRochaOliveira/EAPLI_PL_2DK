@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import Controllers.StablishSavingController;
 import Persistence.DuplicateSavingException;
 
-public class StablishSavingUI {
+public class StablishSavingUI extends BaseUI{
     StablishSavingController cn = new StablishSavingController();
     
     public void mainLoop(){
+        System.out.println("");
+        
+        displaySaldo();
         System.out.println( "* * *  NOVO OBJECTIVO DE POUPANÇA  * * *\n" );
         
         ArrayList<Saving> lista = cn.getList();
