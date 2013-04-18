@@ -16,7 +16,6 @@ public class DefMeiosPagamentoUI {
         System.out.println("* * *  NOVO MEIO DE PAGAMENTO  * * *\n");
         
         DefMeioPagamentoController cont_meio = new DefMeioPagamentoController();
-        DefTipoPagamentoController cont_tipo = new DefTipoPagamentoController();
         
         cont_meio.ListarTiposPagamento();
         
