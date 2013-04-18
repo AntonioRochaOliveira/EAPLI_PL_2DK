@@ -8,10 +8,13 @@ import Persistence.DuplicateIncomeTypeException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DefIncomeTypesUI {
+public class DefIncomeTypesUI extends BaseUI{
     IncomeTypeController IncTC = new IncomeTypeController();
     
     public void mainLoop(){
+        System.out.println("");
+        
+        displaySaldo();
         System.out.println( "* * *  NOVO TIPO DE RENDIMENTO  * * *\n" );
         
         ArrayList lista = IncTC.getLista();
@@ -32,5 +35,10 @@ public class DefIncomeTypesUI {
                 input = Console.readLine( "Já existe - introduza de novo ou deixe em branco" );
             }
         }
+    }
+    
+    public static void main(String[] args) {
+        DefIncomeTypesUI menu = new DefIncomeTypesUI();
+        menu.mainLoop();
     }
 }

@@ -4,11 +4,15 @@ import Model.Saving;
 import eapli.util.Console;
 import java.util.ArrayList;
 import Controllers.StablishSavingController;
+import Persistence.DuplicateSavingException;
 
-public class StablishSavingUI {
+public class StablishSavingUI extends BaseUI{
     StablishSavingController cn = new StablishSavingController();
     
     public void mainLoop(){
+        System.out.println("");
+        
+        displaySaldo();
         System.out.println( "* * *  NOVO OBJECTIVO DE POUPANÇA  * * *\n" );
         
         ArrayList<Saving> lista = cn.getList();
@@ -19,11 +23,16 @@ public class StablishSavingUI {
             }
         }
         
-        String input = Console.readLine( "Nome do objectivo a criar - deixar em branco para anular" );
-        if ( !input.equals( "" ) ){
-            double valor = Console.readDouble( "Valor" );
-            String desc = Console.readLine( "Descrição [opcional]" );
-            cn.stablishSaving( input , valor , desc );
+        String input = Console.readLine( "Nome do tipo de rendimento a criar - deixar em branco para anular" );
+        while( !input.equals( "" ) ){
+            try {
+                double valor = Console.readDouble( "Valor" );
+                String desc = Console.readLine( "Descrição [opcional]" );
+                cn.stablishSaving( input , valor , desc );
+                input = "";
+            } catch ( DuplicateSavingException a ) {
+                input = Console.readLine( "Já existe - introduza de novo ou deixe em branco" );
+            }
         }
     }
 }
