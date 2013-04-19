@@ -21,6 +21,22 @@ public class Saving {
     public Saving(String Nome, double Quantidade) {
         this(Nome, Quantidade, "");
     }
+    
+    public double adicionarDPoupança(double quantidade){
+        //retorna valor que falta para completar a poupança
+        setAtual(getAtual()+quantidade);
+        return getQuantidade()-getAtual();
+    }
+    
+    public boolean retiraDPoupança(double quantidade){
+        //se verdadeiro concluiu o processo com sucesso
+        boolean x=false;
+        if(getAtual()>quantidade){
+            setAtual(getAtual()-quantidade);
+            x=true;
+        }
+        return x;
+    }
 
     public String getNome() {
         return nome;

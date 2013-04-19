@@ -30,10 +30,9 @@ public class MainMenu {
             System.out.println("8. Consulta de gastos mensais");
             System.out.println("9. Estabelecer poupanças");
             System.out.println("10. Definir meios de pagamento.");
+            System.out.println("11. Consultar despesas");
             System.out.println("0. Sair\n\n");
-            SaldoUI saldo = new SaldoUI();
-            saldo.mostraSaldo();
-
+            
             int option = Console.readInteger("Escolhe uma opcao");  
             if(option==0){ 
                 System.out.println("Adeus");

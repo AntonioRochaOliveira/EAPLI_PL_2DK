@@ -17,7 +17,7 @@ public class IncomeRepository {
     // class member
     int i = 0;
     private static ArrayList<Income> listincome= new ArrayList<Income>();
-     private static IncomeRepository uniqueRepo = null;
+    private static IncomeRepository uniqueRepo = null;
 
     public IncomeRepository() {}
     

@@ -6,39 +6,32 @@ package Model;
 
 import eapli.util.DateTime;
 import java.util.Date;
+import Model.Movimentos;
+import java.math.BigDecimal;
 
 /**
  *
  * @author Antonio
  */
-public class Income {
-    private int valor;
-    String descricao;
-    String Tipo;
-    
-    
+public class Income extends Movimentos{
+    IncomeTypes Tipo;
     protected Income() {}
     
-    public Income( int valor, Date dateOccurred, String descricao , String Tipo) {
-        if (descricao == null || dateOccurred == null) {
-            throw new IllegalArgumentException();
-        }
-        // cannot record a negative expense or a zero EUR expense
-        this.descricao = descricao;
-        this.valor = valor;
+    public Income( BigDecimal valor, Date dateOccurred, String descricao , IncomeTypes Tipo) {
+        super(valor,dateOccurred,descricao);
         this.Tipo=Tipo;
     }
-    
-    public Income( int valor, int year, int month, int day, String descricao , String Tipo) {
-        this( valor, DateTime.newDate(year, month, day), descricao , Tipo);
+
+    public IncomeTypes getTipo() {
+        return Tipo;
     }
 
-    /**
-     * @return the valor
-     */
-    public int getValor() {
-        return valor;
+    public void setTipo(IncomeTypes Tipo) {
+        this.Tipo = Tipo;
     }
     
+    public BigDecimal getValor(){
+        return amount;
+    }
     
 }
