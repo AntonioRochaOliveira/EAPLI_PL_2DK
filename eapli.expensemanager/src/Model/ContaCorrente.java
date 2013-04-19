@@ -58,12 +58,17 @@ public class ContaCorrente {
     public int GastosSemanalAnterior() {
         despesas = ExpenseRepository.getUniqueRepo();
         lista_despesas = despesas.getListExpense();
-        Calendar dataActual = Calendar.getInstance(); 
+        Calendar dataActual = Calendar.getInstance();
+        dataActual.setTime(new Date());
         int total = 0;
         for(int i=0; i<lista_despesas.size(); i++) {
             Calendar data = Calendar.getInstance();
-            data.setTime(lista_despesas.get(i).getData());            
-            if(dataActual.get(Calendar.WEEK_OF_YEAR)-1==data.get(Calendar.WEEK_OF_YEAR))
+            data.setTime(lista_despesas.get(i).getData());
+            System.out.println(dataActual);
+            System.out.println(data);
+            System.out.println(dataActual.get(Calendar.WEEK_OF_YEAR));
+            System.out.println(data.get(Calendar.WEEK_OF_YEAR));
+            if(dataActual.get(Calendar.WEEK_OF_YEAR)==data.get(Calendar.WEEK_OF_YEAR)+1)
                 total = total + lista_despesas.get(i).getAmount().intValue();           
         }
         return total;
@@ -72,7 +77,8 @@ public class ContaCorrente {
     public int GastosSemanalActual() {
         despesas = ExpenseRepository.getUniqueRepo();
         lista_despesas = despesas.getListExpense();
-        Calendar dataActual = Calendar.getInstance(); 
+        Calendar dataActual = Calendar.getInstance();
+        dataActual.setTime(new Date());
         int total = 0;
         for(int i=0; i<lista_despesas.size(); i++) {
             Calendar data = Calendar.getInstance();
