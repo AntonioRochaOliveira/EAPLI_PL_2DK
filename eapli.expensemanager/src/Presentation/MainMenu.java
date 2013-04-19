@@ -16,8 +16,7 @@ public class MainMenu {
     public void mainLoop() {
 
         while (true) {
-            GastosUI asd = new GastosUI();
-            
+           
             System.out.println("===================");
             System.out.println("  EXPENSE MANAGER  ");
             System.out.println("===================\n");
@@ -32,7 +31,7 @@ public class MainMenu {
             System.out.println("8. Consulta de gastos mensais");
             System.out.println("9. Estabelecer poupanças");
             System.out.println("10. Definir meios de pagamento.");
-            System.out.println("11. Consultar despesas");
+            System.out.println("11. Gastos");
             System.out.println("0. Sair\n\n");
             
             int option = Console.readInteger("Escolhe uma opcao");  
@@ -82,6 +81,10 @@ public class MainMenu {
                 case 10:
                     DefMeiosPagamentoUI mp = new DefMeiosPagamentoUI();
                     mp.mainLoop();
+                    break;
+                case 11:
+                    GastosUI g = new GastosUI();
+                    g.mainLoop();
                 default:
                     break;
             }
