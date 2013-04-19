@@ -3,7 +3,7 @@ package Controllers;
 import Model.ContaCorrente;
 
 public class BaseController {
-    ContaCorrente contaCorr=new ContaCorrente();
+    ContaCorrente contaCorr = ContaCorrente.instance();
     public BaseController() {
     }
     

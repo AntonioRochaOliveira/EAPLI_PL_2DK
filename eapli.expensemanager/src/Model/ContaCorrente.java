@@ -15,11 +15,19 @@ import java.util.Date;
  * @author TOSHIBA
  */
 public class ContaCorrente {
-    
+    private static ContaCorrente unique;
     private static ExpenseRepository despesas;
     private static IncomeRepository rendimentos;
     private static List <Expense> lista_despesas=new ArrayList();
     private static ArrayList <Income> lista_rendimentos=new ArrayList();
+    
+    private ContaCorrente() {
+        unique = new ContaCorrente();
+    }
+    
+    public static ContaCorrente instance() {
+        return unique;
+    }
     
     public int getGastoMensalAnterior() {
         int total = 0;
@@ -31,6 +39,20 @@ public class ContaCorrente {
                 total = total + temp.get(i).getAmount().intValue();
             }
             else if(temp.get(i).getData().getMonth()==12 && dataActual.getMonth()==1 && (temp.get(i).getData().getYear()+1)==dataActual.getYear()) {
+                total = total + temp.get(i).getAmount().intValue();
+            }
+        }
+        return total;        
+    }
+    
+    public int getGastoMensalActual() {
+        int total = 0;
+        Date dataActual = new Date();
+        System.out.println(dataActual);
+        List<Expense> temp = despesas.getListExpense();
+        for(int i=0; i<temp.size(); i++) {
+            if(temp.get(i).getData().getMonth()==dataActual.getMonth() 
+                    && temp.get(i).getData().getYear()==dataActual.getYear()) {
                 total = total + temp.get(i).getAmount().intValue();
             }
         }

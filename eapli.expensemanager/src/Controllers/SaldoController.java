@@ -21,7 +21,7 @@ public class SaldoController {
     }
 
     public float Saldo(){
-        ContaCorrente cc=new ContaCorrente();
+        ContaCorrente cc = ContaCorrente.instance();
         float saldo;
         
         saldo=cc.getSaldo();

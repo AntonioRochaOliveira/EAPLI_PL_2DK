@@ -16,6 +16,8 @@ public class MainMenu {
     public void mainLoop() {
 
         while (true) {
+            GastosUI asd = new GastosUI();
+            
             System.out.println("===================");
             System.out.println("  EXPENSE MANAGER  ");
             System.out.println("===================\n");
