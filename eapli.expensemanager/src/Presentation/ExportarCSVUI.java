@@ -18,7 +18,7 @@ public class ExportarCSVUI extends BaseUI{
         Date data2 = Console.readDate( "Data de fim:" );
         
         System.out.println( "\nA exportar gastos..." );
-        exp.exportarGastosCSV( nome , data1 , data2 );
+        //exp.exportarGastosCSV( nome , data1 , data2 );
         
         System.out.println( "\nA exportar receitas..." );
         exp.exportarReceitasCSV( nome , data1 , data2 );
