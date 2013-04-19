@@ -1,5 +1,6 @@
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.WithdrawfromSavingController;
 import Model.Income;
 import eapli.util.Console;
@@ -31,6 +32,21 @@ public class WithdrawfromSavingUI extends BaseUI {
             controller.adicionarRendimentoPoupança(i);
         }
         
+    }
+
+    @Override
+    public BaseController getController() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getTitle() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void showBody() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }
