@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import Model.Expense;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -45,15 +46,16 @@ public class ExpenseRegisterControllerTest {
     @Test
     public void testRegisterExpense() {
         System.out.println("registerExpense");
-        String what = "";
-        Date date = null;
-        BigDecimal amount = null;
-        int tipo = 0;
-        int mp = 0;
+        String what = "comida";
+        Date date = new Date(1990, 14, 8);
+        BigDecimal amount = new BigDecimal(2);
+        int tipo = 1;
+        int mp = 1;
         ExpenseRegisterController instance = new ExpenseRegisterController();
         instance.registerExpense(what, date, amount, tipo, mp);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // Expense exp = new Expense(2, new Date(1990, 14, 8), "comida", 
+        
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +79,7 @@ public class ExpenseRegisterControllerTest {
     public void testGetMeioDePagamento() {
         System.out.println("getMeioDePagamento");
         ExpenseRegisterController instance = new ExpenseRegisterController();
-        List expResult = null;
+        List expResult = new List();
         List result = instance.getMeioDePagamento();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
