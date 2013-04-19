@@ -24,10 +24,10 @@ public class ExpenseRegisterController extends BaseController {
         repo = ExpenseRepository.getUniqueRepo();
     }
 
-    public void registerExpense(String what, Date date, BigDecimal amount, int tipo, int mp) {
+    public void registerExpense(String what, Date date, BigDecimal amount, String tipo, String mp) {
         RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
         ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
-        Expense expense = new Expense(amount, date, what, extyre.getListExpenseType().get(tipo),repM.getLista_meiosPagamento().get(mp));        
+        Expense expense = new Expense(amount, date, what, extyre.getExpenseTypeByDescription(tipo), null);        
         repo.save(expense);
     }
     
@@ -35,7 +35,7 @@ public class ExpenseRegisterController extends BaseController {
         ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
         List<String> lista = new ArrayList<String>();
         for(int i=0; i<extyre.getListExpenseType().size(); i++) {
-            lista.add((i+1)+" - "+extyre.getListExpenseType().get(i).getName());
+            lista.add(extyre.getListExpenseType().get(i).getName());
         }
         return lista;
     }
@@ -45,7 +45,7 @@ public class ExpenseRegisterController extends BaseController {
         ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
         List<String> lista = new ArrayList<String>();
         for(int i=0; i<repM.getLista_meiosPagamento().size(); i++) {
-            lista.add((i+1)+" - "+repM.getLista_meiosPagamento().get(i).getDescricao());
+            lista.add(repM.getLista_meiosPagamento().get(i).getDescricao());
         }
         return lista;
     }
