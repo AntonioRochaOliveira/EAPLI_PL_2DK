@@ -18,11 +18,21 @@ class ExpenseTypeRegisterUI extends BaseUI{
     public void mainLoop() {
         System.out.println("* * *  Registar tipos de despesa  * * *\n");
         
+        boolean invalido=true;
+        
+        do{
+        
         String name = Console.readLine("nome: ");
        
         
         ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();
-        controller.registerTypeExpense(name);
+        try{
+             controller.registerTypeExpense(name);
+             invalido=false;
+        }catch(IllegalArgumentException e){
+            System.out.println("Nome inválido!");
+        }
+        }while(invalido);
         
         System.out.println("Tipo de despesa guardada.");
     }

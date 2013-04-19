@@ -4,18 +4,28 @@ import eapli.util.Console;
 import java.util.ArrayList;
 
 import Controllers.IncomeTypeController;
+import Controllers.BaseController;
 import Persistence.DuplicateIncomeTypeException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DefIncomeTypesUI extends BaseUI{
     IncomeTypeController IncTC = new IncomeTypeController();
+   
+    public BaseController getController(){
+        return IncTC;
+    }
+    
+    public String getTitle(){
+        return "NOVO TIPO DE RENDIMENTO";
+    }
+    
+    public void showBody(){
+        mainLoop();
+    }
     
     public void mainLoop(){
         System.out.println("");
-        
-        displaySaldo();
-        System.out.println( "* * *  NOVO TIPO DE RENDIMENTO  * * *\n" );
         
         ArrayList lista = IncTC.getLista();
         if ( lista.size() != 0 ){

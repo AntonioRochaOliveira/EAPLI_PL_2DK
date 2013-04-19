@@ -59,4 +59,22 @@ public class IncomeRegisterControllerTest {
         System.out.println("Valor: " + valor +"\nData: " + date + "\nDescricao: " + descriçao + "\nTipo: " + Tipo);
         // TODO review the generated test code and remove the default call to fail.
     }
+    
+    @Test
+    public void testRegisterIncome2() {
+        BigDecimal n1 = new BigDecimal(1);
+        Date d1 = new Date(1999, 07, 27);
+        String dc = "Cenas";
+        IncomeTypes IT = new IncomeTypes("Salario");
+        
+        System.out.println("registerIncome");
+        BigDecimal valor = n1;
+        Date date = d1;
+        String descriçao = dc;
+        IncomeTypes Tipo = IT;
+        IncomeRegisterController instance = new IncomeRegisterController();
+        instance.registerIncome(valor, date, descriçao, Tipo);
+        System.out.println("Valor: " + valor +"\nData: " + date + "\nDescricao: " + descriçao + "\nTipo: " + Tipo);
+        // TODO review the generated test code and remove the default call to fail.
+    }
 }
