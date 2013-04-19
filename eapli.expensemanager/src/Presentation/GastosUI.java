@@ -4,6 +4,8 @@
  */
 package Presentation;
 
+import Controllers.GastosController;
+
 /**
  *
  * @author i110558
@@ -12,6 +14,7 @@ public class GastosUI {
     public GastosUI() {}
     
     public void mainLoop() {
-        System.out.println("TESTE: ");
+        GastosController cont = new GastosController();
+        System.out.println("TESTE: "+cont.GastosMensalActual());
     }
 }

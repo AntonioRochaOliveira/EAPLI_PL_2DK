@@ -14,7 +14,7 @@ public class GastosController extends BaseController {
     public GastosController() {}
     
     public int GastosMensalAnterior() {
-        return contaCorr.getGastoMensalAnterior();
+        return contaCorr.GastosMensalActual();
     }
 
     public int GastosSemanalAnterior() {
@@ -22,7 +22,7 @@ public class GastosController extends BaseController {
     }
     
     public int GastosMensalActual() {
-        return contaCorr.getGastoMensalActual();
+        return contaCorr.GastosMensalActual();
     }
 
     public int GastosSemanalActual() {

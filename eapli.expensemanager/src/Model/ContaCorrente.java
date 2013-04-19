@@ -15,21 +15,15 @@ import java.util.Date;
  * @author TOSHIBA
  */
 public class ContaCorrente {
-    private static ContaCorrente unique;
     private static ExpenseRepository despesas;
     private static IncomeRepository rendimentos;
-    private static List <Expense> lista_despesas=new ArrayList();
-    private static ArrayList <Income> lista_rendimentos=new ArrayList();
+    private static List <Expense> lista_despesas = new ArrayList();
+    private static ArrayList <Income> lista_rendimentos = new ArrayList();
     
-    private ContaCorrente() {
-        unique = new ContaCorrente();
-    }
+    public ContaCorrente() {}
     
-    public static ContaCorrente instance() {
-        return unique;
-    }
     
-    public int getGastoMensalAnterior() {
+    public int GastosMensalAnterior() {
         int total = 0;
         Date dataActual = new Date();
         List<Expense> temp = despesas.getListExpense();
@@ -45,7 +39,7 @@ public class ContaCorrente {
         return total;        
     }
     
-    public int getGastoMensalActual() {
+    public int GastosMensalActual() {
         int total = 0;
         Date dataActual = new Date();
         System.out.println(dataActual);
