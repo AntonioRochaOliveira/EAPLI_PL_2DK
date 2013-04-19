@@ -3,11 +3,13 @@ package Controllers;
 import Model.ContaCorrente;
 
 public class BaseController {
-    ContaCorrente contaCorr=new ContaCorrente();
+
+    ContaCorrente contaCorr = new ContaCorrente();
+
     public BaseController() {
     }
-    
-    public float getSaldo(){
+
+    public float getSaldo() {
         return contaCorr.getSaldo();
     }
 }
