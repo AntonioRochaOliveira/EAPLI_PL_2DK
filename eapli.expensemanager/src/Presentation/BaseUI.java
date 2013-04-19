@@ -15,7 +15,7 @@ public abstract class BaseUI {
     public abstract String getTitle();
     
     public void showHeader(){
-        System.out.println("*****  "+getTitle()+"  *****");
+        System.out.println("*****  "+getTitle()+"  ***** \n");
     }    
     public abstract void showBody();
 
