@@ -4,13 +4,14 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.DefMeioPagamentoController;
 import Controllers.DefTipoPagamentoController;
 import Model.TipoPagamento;
 import Persistence.RepositorioTiposPagamento;
 import eapli.util.Console;
 
-public class DefMeiosPagamentoUI {
+public class DefMeiosPagamentoUI extends BaseUI {
     
     public void mainLoop() {
         System.out.println("* * *  NOVO MEIO DE PAGAMENTO  * * *\n");
@@ -28,6 +29,21 @@ public class DefMeiosPagamentoUI {
         cont_meio.NovoMeioPagamento(tipo,descricao);
         
         System.out.println("Novo Meio de Pagamento adicionado com sucesso!");
+    }
+
+    @Override
+    public BaseController getController() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getTitle() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void showBody() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

@@ -20,7 +20,7 @@ class ExpenseTypeRegisterUI extends BaseUI{
     private String title = "Registar tipos de despesa";
     private ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();
     
-    public void ShowBody() {
+    public void showBody() {
          boolean invalido =true;
          do{
            String name = Console.readLine("nome: ");  

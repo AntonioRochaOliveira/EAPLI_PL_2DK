@@ -2,14 +2,24 @@ package Presentation;
 
 import Controllers.BaseController;
 
-public class BaseUI {
-
-    BaseController BaseContr = new BaseController();
-
-    public BaseUI() {
+public abstract class BaseUI {
+    
+    public void show(){
+        showHeader();
+        showBody();
+        showFooter();
     }
+    
+    public abstract BaseController getController();
+    
+    public abstract String getTitle();
+    
+    public void showHeader(){
+        System.out.println("*****  "+getTitle()+"  ***** \n");
+    }    
+    public abstract void showBody();
 
-    public void displaySaldo() {
-        System.out.println("Saldo corrente: " + BaseContr.getSaldo());
+    public void showFooter(){
+        System.out.println("Saldo corrente: " + getController().getSaldo());
     }
 }
