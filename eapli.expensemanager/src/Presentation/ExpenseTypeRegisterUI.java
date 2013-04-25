@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.ExpenseTypeRegisterController;
 
 import eapli.util.Console;
@@ -15,25 +16,35 @@ import java.util.Date;
  * @author Paulo Gandra Sousa
  */
 class ExpenseTypeRegisterUI extends BaseUI{
-    public void mainLoop() {
-        System.out.println("* * *  Registar tipos de despesa  * * *\n");
-        
-        boolean invalido=true;
-        
-        do{
-        
-        String name = Console.readLine("nome: ");
-       
-        
-        ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();
-        try{
-             controller.registerTypeExpense(name);
-             invalido=false;
-        }catch(IllegalArgumentException e){
-            System.out.println("Nome inválido!");
-        }
+    
+    private String title = "Registar tipos de despesa";
+    private ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();
+    
+    public void showBody() {
+         boolean invalido =true;
+         do{
+           String name = Console.readLine("nome: ");  
+           try{
+               controller.registerTypeExpense(name);  
+               invalido =false;
+           }catch(IllegalArgumentException e){
+               System.out.println("Nome Invalido!");
+           }
         }while(invalido);
-        
-        System.out.println("Tipo de despesa guardada.");
+       System.out.println("Tipo de despesa guardada.");
+    }
+
+    /**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @return the controller
+     */
+    public BaseController getController() {
+        return controller;
     }
 }
