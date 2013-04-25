@@ -5,7 +5,7 @@ import Persistence.DuplicateSavingException;
 import java.util.ArrayList;
 import Persistence.SavingRepository;
 
-public class StablishSavingController {
+public class StablishSavingController extends BaseController{
     public static void stablishSaving( String nome , double valor , String descricao ) throws DuplicateSavingException{
         Saving tmp = new Saving( nome , valor , descricao );
         addSaving( tmp );
