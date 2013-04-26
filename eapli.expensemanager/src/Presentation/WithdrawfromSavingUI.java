@@ -6,12 +6,18 @@ import Model.Income;
 import eapli.util.Console;
 
 public class WithdrawfromSavingUI extends BaseUI {
-    
-     public void mainLoop() {
-        
-        System.out.println("* * *  RETIRAR DINHEIRO DE POUPANÇA  * * *\n");
-        
-        WithdrawfromSavingController controller = new WithdrawfromSavingController();
+     
+    private WithdrawfromSavingController controller = new WithdrawfromSavingController();
+    private String title = "* * *  RETIRAR DINHEIRO DE POUPANÇA  * * *\n";
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public void showBody() {
+        System.out.println();
         
         controller.ListarPoupanças();
         
@@ -30,23 +36,12 @@ public class WithdrawfromSavingUI extends BaseUI {
            System.out.println("Sucesso! "+valor+" Euros retirados da Poupança!\n");
             Income i = controller.criarRendimentoPoupança(valor,descricao);
             controller.adicionarRendimentoPoupança(i);
-        }
-        
+        } 
     }
-
+    
     @Override
     public BaseController getController() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void showBody() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return controller;
     }
     
 }

@@ -3,7 +3,7 @@ package Controllers;
 import Model.TipoPagamento;
 import Persistence.RepositorioTiposPagamento;
 
-public class DefTipoPagamentoController {
+public class DefTipoPagamentoController extends BaseController {
     
     RepositorioTiposPagamento rep = RepositorioTiposPagamento.instance();
     
