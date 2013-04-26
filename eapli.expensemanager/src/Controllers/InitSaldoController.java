@@ -12,11 +12,14 @@ import java.math.BigDecimal;
 import java.util.Date;
 import Model.IncomeTypes;
 
-/**
- *
- * @author TOSHIBA
- */
-public class InitSaldoController {
+
+/*alteracao da classe InitSaldoController , pois era necessario a reformulação da mesma 
+ * e o grupo responsável nao estava presente.
+ * 
+ * Paulo Monteiro 1110255
+*/
+
+public class InitSaldoController  extends BaseController{
     IncomeRepository inco;
     IncomeTypes tipoS;
     
