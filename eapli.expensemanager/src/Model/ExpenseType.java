@@ -15,7 +15,7 @@ public class ExpenseType {
     /**
      * @create a new object ExpenseType
      */    
-    protected ExpenseType() {}
+    private ExpenseType() {}
     
     /**
      * @create a new object ExpenseType
@@ -23,7 +23,7 @@ public class ExpenseType {
      */
     
     public ExpenseType( String name) {
-        if (name == null) {
+        if (name == null || name == "") {
             throw new IllegalArgumentException();
         }
         this.name = name;

@@ -13,10 +13,22 @@ import java.util.Date;
  *
  * @author Paulo Gandra Sousa
  */
-class ExpenseRegisterUI extends BaseUI {
+public class ExpenseRegisterUI extends BaseUI {
+    private String title = "Registar tipos de despesa";
+    private ExpenseRegisterController cont = new ExpenseRegisterController();
 
-    public void mainLoop() {
-        ExpenseRegisterController cont = new ExpenseRegisterController();
+    @Override
+    public BaseController getController() {
+        return cont;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public void showBody() {
         if (cont.getMeioDePagamento().size() > 0 && cont.getTypeExpense().size() > 0) {
             System.out.println("* * *  Registar despesa  * * *\n");
             
@@ -25,7 +37,7 @@ class ExpenseRegisterUI extends BaseUI {
             double value = Console.readDouble("Montante: ");
             System.out.println("\nLista de meios de Pagamento");
             for (int i = 0; i < cont.getMeioDePagamento().size(); i++) {
-                System.out.println(cont.getMeioDePagamento().get(i));
+                System.out.println((i+1)+" - "+cont.getMeioDePagamento().get(i));
             }
             int opc_meio = Console.readInteger("Meio de Pagamento: ");
             while (opc_meio > cont.getMeioDePagamento().size() || opc_meio < 1) {
@@ -33,15 +45,14 @@ class ExpenseRegisterUI extends BaseUI {
             }
             System.out.println("\nLista de tipos de Despesa");
             for (int i = 0; i < cont.getTypeExpense().size(); i++) {
-                System.out.println(cont.getTypeExpense().get(i));
+                System.out.println((i+1)+" - "+cont.getTypeExpense().get(i));
             }
-
             int opc_tipo = Console.readInteger("Tipo de Despesa: ");
             while (opc_tipo > cont.getTypeExpense().size() || opc_tipo < 1) {
                 opc_tipo = Console.readInteger("Não existe esse tipo de despesa, Insira um válido: ");
             }
             BigDecimal amount = new BigDecimal(value);
-            cont.registerExpense(what, date, amount, opc_tipo-1, opc_meio-1);
+            cont.registerExpense(what, date, amount, cont.getTypeExpense().get(opc_tipo-1), cont.getTypeExpense().get(opc_meio-1));
             System.out.println("Despesa guardada com sucesso!\n");
             System.out.println(cont.getSaldo()+"");
 

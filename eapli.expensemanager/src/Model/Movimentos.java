@@ -20,6 +20,9 @@ public class Movimentos {
         if (descricao == null || dateOccurred == null) {
             throw new IllegalArgumentException();
         }
+        if (amount.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException();
+        }
         // cannot record a negative expense or a zero EUR expense
         this.descricao = descricao;
         this.amount = amount;

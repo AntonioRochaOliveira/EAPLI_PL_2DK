@@ -13,24 +13,20 @@ import java.util.*;
 public class GastosController extends BaseController {
     public GastosController() {}
     
-    public List<String> GastosMensalAnterior() {
-        List<String> lista = new ArrayList<String>();
-        return lista;
+    public int GastosMensalAnterior() {
+        return contaCorr.GastosMensalAnterior();
     }
 
-    public List<String> GastosSemanalAnterior() {
-        List<String> lista = new ArrayList<String>();
-        return lista;
+    public int GastosSemanalAnterior() {
+        return contaCorr.GastosSemanalAnterior();
     }
     
-    public List<String> GastosMensalActual() {
-        List<String> lista = new ArrayList<String>();
-        return lista;
+    public int GastosMensalActual() {
+        return contaCorr.GastosMensalActual();
     }
 
-    public List<String> GastosSemanalActual() {
-        List<String> lista = new ArrayList<String>();
-        return lista;
+    public int GastosSemanalActual() {
+        return contaCorr.GastosSemanalActual();
     }
     
     
