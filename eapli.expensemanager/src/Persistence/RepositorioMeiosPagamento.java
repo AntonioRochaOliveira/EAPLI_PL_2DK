@@ -30,5 +30,15 @@ public class RepositorioMeiosPagamento {
         }
         return uniqueInstance;
     }
+    
+    public MeioPagamento getMeioPagamento(String descricao){
+        MeioPagamento tmp = null;
+        for(MeioPagamento m : lista_meiosPagamento){
+            if(m.getDescricao().compareTo(descricao)==0){
+                tmp=m;
+            }
+        }
+        return tmp;
+    }
         
 }

@@ -21,7 +21,7 @@ public class Income extends Movimentos{
         super(valor,dateOccurred,descricao);
         this.Tipo=Tipo;
     }
-
+  
     public IncomeTypes getTipo() {
         return Tipo;
     }

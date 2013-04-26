@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-public class ExportarController {
+public class ExportarController extends BaseController {
     
     
     public static void exportarGastosCSV( String nome , Date data1 , Date data2 ) throws IOException{

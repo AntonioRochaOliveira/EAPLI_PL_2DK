@@ -60,4 +60,17 @@ public class ExpenseTypeRepository {
         }
         return true;
     }
+    
+    public ExpenseType getExpenseTypeByDescription(String name){
+        
+        int pos=0;
+        for (int i = 0; i < listExpenseType.size(); i++) {
+            if(listExpenseType.get(i).getName().equals(name)){
+                pos=i;
+            }
+                
+        }
+        return listExpenseType.get(pos);
+    }
+    
 }
