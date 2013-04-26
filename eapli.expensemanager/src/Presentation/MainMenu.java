@@ -46,27 +46,27 @@ public class MainMenu {
                     break;
                 case 1:
                     ExpenseTypeRegisterUI tr = new ExpenseTypeRegisterUI();
-                    tr.showBody();                             
+                    tr.show();                             
                     break;
                 case 2:
                     DefTiposPagamentoUI tp = new DefTiposPagamentoUI();
-                    tp.mainLoop();
+                    tp.show();
                     break;
                 case 3:
                     ExpenseRegisterUI ui = new ExpenseRegisterUI(); 
-                    ui.showBody();
+                    ui.show();
                     break;
                 case 4:
                     IncomeRegisterUI rer = new IncomeRegisterUI();
-                    rer.mainLoop();
+                    //rer.show();
                     break;
                 case 5:
                     DefIncomeTypesUI dit = new DefIncomeTypesUI();
-                    dit.mainLoop();
+                    dit.show();
                     break;
                 case 6:
                     InicializacaoSaldoUI ini = new InicializacaoSaldoUI();
-                    ini.mainLoop();
+                    ini.show();
                     break;
                 case 7:
                     //visualizar gasto da semana
@@ -79,11 +79,11 @@ public class MainMenu {
                     break;
                 case 10:
                     DefMeiosPagamentoUI mp = new DefMeiosPagamentoUI();
-                    mp.mainLoop();
+                    mp.show();
                     break;
                 case 11:
                     GastosUI g = new GastosUI();
-                    g.showBody();
+                    g.show();
                 default:
                     break;
             }

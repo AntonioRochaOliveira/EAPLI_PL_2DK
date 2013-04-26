@@ -29,9 +29,7 @@ public class ExpenseRegisterUI extends BaseUI {
 
     @Override
     public void showBody() {
-        if (cont.getMeioDePagamento().size() > 0 && cont.getTypeExpense().size() > 0) {
-            System.out.println("* * *  Registar despesa  * * *\n");
-            
+        if (cont.getMeioDePagamento().size() > 0 && cont.getTypeExpense().size() > 0) {          
             String what = Console.readLine("Descricao: ");
             Date date = Console.readDate("Data (01-01-1990): ");
             double value = Console.readDouble("Montante: ");
@@ -54,8 +52,6 @@ public class ExpenseRegisterUI extends BaseUI {
             BigDecimal amount = new BigDecimal(value);
             cont.registerExpense(what, date, amount, cont.getTypeExpense().get(opc_tipo-1), cont.getTypeExpense().get(opc_meio-1));
             System.out.println("Despesa guardada com sucesso!\n");
-            System.out.println(cont.getSaldo()+"");
-
         }
         else
             System.out.println("Não existe tipos de despesa ou meios de pagamento!");
