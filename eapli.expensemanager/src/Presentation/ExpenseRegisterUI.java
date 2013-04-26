@@ -14,9 +14,21 @@ import java.util.Date;
  * @author Paulo Gandra Sousa
  */
 public class ExpenseRegisterUI extends BaseUI {
+    private String title = "Registar tipos de despesa";
+    private ExpenseRegisterController cont = new ExpenseRegisterController();
 
-    public void mainLoop() {
-        ExpenseRegisterController cont = new ExpenseRegisterController();
+    @Override
+    public BaseController getController() {
+        return cont;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public void showBody() {
         if (cont.getMeioDePagamento().size() > 0 && cont.getTypeExpense().size() > 0) {
             System.out.println("* * *  Registar despesa  * * *\n");
             
@@ -47,20 +59,5 @@ public class ExpenseRegisterUI extends BaseUI {
         }
         else
             System.out.println("Não existe tipos de despesa ou meios de pagamento!");
-    }
-
-    @Override
-    public BaseController getController() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void showBody() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

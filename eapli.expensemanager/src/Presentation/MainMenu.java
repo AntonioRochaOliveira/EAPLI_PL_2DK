@@ -46,7 +46,7 @@ public class MainMenu {
                     break;
                 case 1:
                     ExpenseTypeRegisterUI tr = new ExpenseTypeRegisterUI();
-                    tr.mainLoop();                             
+                    tr.showBody();                             
                     break;
                 case 2:
                     DefTiposPagamentoUI tp = new DefTiposPagamentoUI();
@@ -54,7 +54,7 @@ public class MainMenu {
                     break;
                 case 3:
                     ExpenseRegisterUI ui = new ExpenseRegisterUI(); 
-                    ui.mainLoop();
+                    ui.showBody();
                     break;
                 case 4:
                     IncomeRegisterUI rer = new IncomeRegisterUI();
@@ -83,7 +83,7 @@ public class MainMenu {
                     break;
                 case 11:
                     GastosUI g = new GastosUI();
-                    g.mainLoop();
+                    g.showBody();
                 default:
                     break;
             }
