@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.GastosController;
 import eapli.util.Console;
 
@@ -25,5 +26,20 @@ public class GastosUI extends BaseUI {
         System.out.println("Gasto da semana actual: "+cont.GastosSemanalActual()+"€");
         new java.util.Scanner(System.in).nextLine();
 
+    }
+
+    @Override
+    public BaseController getController() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getTitle() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void showBody() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

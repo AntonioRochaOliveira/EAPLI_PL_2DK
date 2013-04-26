@@ -14,11 +14,11 @@ public class GastosController extends BaseController {
     public GastosController() {}
     
     public int GastosMensalAnterior() {
-        return contaCorr.GastosMensalActual();
+        return contaCorr.GastosMensalAnterior();
     }
 
     public int GastosSemanalAnterior() {
-        return 0;
+        return contaCorr.GastosSemanalAnterior();
     }
     
     public int GastosMensalActual() {
@@ -26,7 +26,7 @@ public class GastosController extends BaseController {
     }
 
     public int GastosSemanalActual() {
-        return 0;
+        return contaCorr.GastosSemanalActual();
     }
     
     
