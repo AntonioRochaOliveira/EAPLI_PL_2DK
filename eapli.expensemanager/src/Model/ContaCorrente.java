@@ -64,10 +64,6 @@ public class ContaCorrente {
         for(int i=0; i<lista_despesas.size(); i++) {
             Calendar data = Calendar.getInstance();
             data.setTime(lista_despesas.get(i).getData());
-            System.out.println(dataActual);
-            System.out.println(data);
-            System.out.println(dataActual.get(Calendar.WEEK_OF_YEAR));
-            System.out.println(data.get(Calendar.WEEK_OF_YEAR));
             if(dataActual.get(Calendar.WEEK_OF_YEAR)==data.get(Calendar.WEEK_OF_YEAR)+1)
                 total = total + lista_despesas.get(i).getAmount().intValue();           
         }
