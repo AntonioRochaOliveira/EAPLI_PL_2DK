@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author Paulo Gandra Sousa
  */
-class ExpenseRegisterUI extends BaseUI {
+public class ExpenseRegisterUI extends BaseUI {
 
     public void mainLoop() {
         ExpenseRegisterController cont = new ExpenseRegisterController();
@@ -47,5 +47,20 @@ class ExpenseRegisterUI extends BaseUI {
         }
         else
             System.out.println("Não existe tipos de despesa ou meios de pagamento!");
+    }
+
+    @Override
+    public BaseController getController() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getTitle() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void showBody() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
