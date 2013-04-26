@@ -8,7 +8,7 @@ import Persistence.SavingRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class WithdrawfromSavingController {
+public class WithdrawfromSavingController extends BaseController {
     
     public WithdrawfromSavingController(){}
     

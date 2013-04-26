@@ -5,10 +5,25 @@ import Controllers.DefTipoPagamentoController;
 import eapli.util.Console;
 
 public class DefTiposPagamentoUI extends BaseUI {
-    public DefTiposPagamentoUI(){}
     
-    public void mainLoop() {
-        System.out.println("* * *  NOVO TIPO DE PAGAMENTO  * * *\n");
+    private String title = "* * *  NOVO TIPO DE PAGAMENTO  * * *\n";
+    private DefTipoPagamentoController controller = new DefTipoPagamentoController();
+    
+    public DefTiposPagamentoUI(){}
+
+    @Override
+    public BaseController getController() {
+        return controller;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public void showBody() {
+        System.out.println();
         
         String descricao = Console.readLine("Nome/Descrição: ");
         
@@ -17,20 +32,5 @@ public class DefTiposPagamentoUI extends BaseUI {
         controller.NovoTipoPagamento(descricao);
         
         System.out.println("Novo Tipo de Pagamento adicionado com sucesso!");
-    }
-
-    @Override
-    public BaseController getController() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void showBody() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

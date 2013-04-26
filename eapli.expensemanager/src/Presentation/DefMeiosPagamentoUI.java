@@ -13,11 +13,21 @@ import eapli.util.Console;
 
 public class DefMeiosPagamentoUI extends BaseUI {
     
-    public void mainLoop() {
-        System.out.println("* * *  NOVO MEIO DE PAGAMENTO  * * *\n");
-        
-        DefMeioPagamentoController cont_meio = new DefMeioPagamentoController();
-        
+    private DefMeioPagamentoController cont_meio = new DefMeioPagamentoController();
+    private String title = "* * *  NOVO MEIO DE PAGAMENTO  * * *\n";
+
+    @Override
+    public BaseController getController() {
+        return cont_meio;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public void showBody() {
         cont_meio.ListarTiposPagamento();
         
         int escolha = Console.readInteger("Escolha um dos Tipos de Pagamento: ");
@@ -30,20 +40,4 @@ public class DefMeiosPagamentoUI extends BaseUI {
         
         System.out.println("Novo Meio de Pagamento adicionado com sucesso!");
     }
-
-    @Override
-    public BaseController getController() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void showBody() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
 }

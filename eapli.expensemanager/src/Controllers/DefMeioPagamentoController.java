@@ -6,7 +6,7 @@ import Persistence.RepositorioMeiosPagamento;
 import Persistence.RepositorioTiposPagamento;
 
 
-public class DefMeioPagamentoController {
+public class DefMeioPagamentoController extends BaseController {
     
     RepositorioMeiosPagamento rep = RepositorioMeiosPagamento.instance();
     RepositorioTiposPagamento rep_tipos = RepositorioTiposPagamento.instance();
