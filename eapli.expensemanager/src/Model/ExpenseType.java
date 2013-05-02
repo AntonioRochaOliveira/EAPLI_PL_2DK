@@ -4,14 +4,19 @@
  */
 package Model;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author i110341
  */
-public class ExpenseType {
-    
-    private String name;
-    
+@Entity
+public class ExpenseType implements Serializable  {
+    @Id
+     String name;
+     String longName;
     /**
      * @create a new object ExpenseType
      */    
@@ -22,11 +27,12 @@ public class ExpenseType {
      * @param name the name of ExpenseType
      */
     
-    public ExpenseType( String name) {
+    public ExpenseType( String name, String longName) {
         if (name == null || name == "") {
             throw new IllegalArgumentException();
         }
         this.name = name;
+        this.longName = longName;
     }
 
     /**
@@ -36,6 +42,9 @@ public class ExpenseType {
         return name;
     }
 
+    public String getlongName() {
+        return longName;
+    }
     /**
      * @param name the name to set
      */

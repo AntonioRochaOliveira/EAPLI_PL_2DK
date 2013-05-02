@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import Persistence.ExpenseTypeRepository;
 import Model.Expense;
 import Model.ExpenseType;
 import Model.MeioPagamento;
@@ -26,13 +27,17 @@ public class ExpenseRegisterController extends BaseController {
 
     public void registerExpense(String what, Date date, BigDecimal amount, String tipo, String mp) {
         RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
-        ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+        //ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+        ExpenseTypeRepository extyre = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
+
         Expense expense = new Expense(amount, date, what, extyre.getExpenseTypeByDescription(tipo), null);        
         repo.save(expense);
     }
     
     public List<String> getTypeExpense() {
-        ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+        //ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+        ExpenseTypeRepository extyre = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
+
         List<String> lista = new ArrayList<String>();
         for(int i=0; i<extyre.getListExpenseType().size(); i++) {
             lista.add(extyre.getListExpenseType().get(i).getName());
@@ -42,7 +47,7 @@ public class ExpenseRegisterController extends BaseController {
     
     public List<String> getMeioDePagamento(){
         RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
-        ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+        
         List<String> lista = new ArrayList<String>();
         for(int i=0; i<repM.getLista_meiosPagamento().size(); i++) {
             lista.add(repM.getLista_meiosPagamento().get(i).getDescricao());

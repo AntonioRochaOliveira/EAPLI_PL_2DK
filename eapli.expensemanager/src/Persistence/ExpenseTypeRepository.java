@@ -14,63 +14,15 @@ import java.util.Collections;
  *
  * @author i110341
  */
-public class ExpenseTypeRepository {
+public interface ExpenseTypeRepository {
     // class member
     
-    private static ExpenseTypeRepository uniqueExpenseTypeRepo = null;
-    private static List<ExpenseType> listExpenseType= null;
-   
-
-    private ExpenseTypeRepository() {
-        listExpenseType = new ArrayList<ExpenseType>();
-    }
+    public ExpenseType save(ExpenseType expType);
     
+    public boolean validType(ExpenseType expType);
     
-    public static ExpenseTypeRepository instance(){
-        if(uniqueExpenseTypeRepo==null) {
-            return uniqueExpenseTypeRepo = new ExpenseTypeRepository();
-        }
-        else {
-            return uniqueExpenseTypeRepo;
-        }
-    }
+    public ExpenseType getExpenseTypeByDescription(String name);
     
-    /**
-     * @return the listExpenseType
-     */
-    public static List<ExpenseType> getListExpenseType() {
-        List<ExpenseType> list = new ArrayList<ExpenseType>();
-        for (ExpenseType e : listExpenseType) {
-            list.add(new ExpenseType(e.getName()));
-        }
-        return list;
-    }
-    
-    public void save(ExpenseType expType)
-    {
-        if (expType==null || !validType(expType)) throw new IllegalArgumentException();
-        listExpenseType.add(expType);      
-    }
-    
-    private boolean validType(ExpenseType expType){
-        if(listExpenseType.size()==0) return true;
-        for (int i = 0; i < listExpenseType.size(); i++) {
-            if(expType.getName().equals(listExpenseType.get(i).getName()))
-                return false;
-        }
-        return true;
-    }
-    
-    public ExpenseType getExpenseTypeByDescription(String name){
-        
-        int pos=0;
-        for (int i = 0; i < listExpenseType.size(); i++) {
-            if(listExpenseType.get(i).getName().equals(name)){
-                pos=i;
-            }
+   public  List<ExpenseType> getListExpenseType();
                 
-        }
-        return listExpenseType.get(pos);
-    }
-    
 }
