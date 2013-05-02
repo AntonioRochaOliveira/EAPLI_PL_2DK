@@ -12,5 +12,8 @@ public interface RepositoryFactory {
     
  //    ExpenseRepository expenseRepository();
 
-    ExpenseTypeRepository expenseTypeRepository();   
+    ExpenseTypeRepository expenseTypeRepository();  
+    RepositorioTiposPagamento RepositorioTiposPagamento();
+    RepositorioMeiosPagamento RepositorioMeiosPagamento();
+    
 }
