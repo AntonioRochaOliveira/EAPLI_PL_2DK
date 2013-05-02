@@ -11,6 +11,7 @@
       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
     </properties>
   </persistence-unit>
+
   <persistence-unit name="DerbyexpensemanagerPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Model.ExpenseType</class>
@@ -22,5 +23,4 @@
       <property name="eclipselink.ddl-generation" value="create-tables"/>
     </properties>
   </persistence-unit>
-
 </persistence>

@@ -11,4 +11,6 @@ package Persistence;
 public interface RepositoryFactory {    
     ExpenseRepository expenseRepository();
     ExpenseTypeRepository expenseTypeRepository();   
+    RepositorioTiposPagamento RepositorioTiposPagamento();
+    RepositorioMeiosPagamento RepositorioMeiosPagamento();
 }
