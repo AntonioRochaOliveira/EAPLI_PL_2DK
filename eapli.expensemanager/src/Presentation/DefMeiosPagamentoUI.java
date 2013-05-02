@@ -32,7 +32,7 @@ public class DefMeiosPagamentoUI extends BaseUI {
         
         int escolha = Console.readInteger("Escolha um dos Tipos de Pagamento: ");
         
-        TipoPagamento tipo = RepositorioTiposPagamento.instance().getLista_tipos().get(escolha-1);
+        TipoPagamento tipo = cont_meio.getTipoPagamento(escolha);
         
         String descricao = Console.readLine("Descrição: ");
         
