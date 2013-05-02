@@ -2,14 +2,15 @@ package Controllers;
 
 import Model.MeioPagamento;
 import Model.TipoPagamento;
+import Persistence.PersistenceFactory;
 import Persistence.RepositorioMeiosPagamento;
 import Persistence.RepositorioTiposPagamento;
 
 
 public class DefMeioPagamentoController extends BaseController {
     
-    RepositorioMeiosPagamento rep = RepositorioMeiosPagamento.instance();
-    RepositorioTiposPagamento rep_tipos = RepositorioTiposPagamento.instance();
+    RepositorioMeiosPagamento rep = PersistenceFactory.buildPersistenceFactory().RepositorioMeiosPagamento();
+    RepositorioTiposPagamento rep_tipos =PersistenceFactory.buildPersistenceFactory().RepositorioTiposPagamento();
     
     public DefMeioPagamentoController(){}
     
