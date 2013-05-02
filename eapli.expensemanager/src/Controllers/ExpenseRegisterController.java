@@ -26,7 +26,7 @@ public class ExpenseRegisterController extends BaseController {
     }
 
     public void registerExpense(String what, Date date, BigDecimal amount, String tipo, String mp) {
-        RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
+        RepositorioMeiosPagamento repM = PersistenceFactory.buildPersistenceFactory().RepositorioMeiosPagamento();
         ExpenseTypeRepository extyre = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
 
         Expense expense = new Expense(amount, date, what, extyre.getExpenseTypeByDescription(tipo), repM.getMeioPagamento(mp));        
@@ -45,7 +45,7 @@ public class ExpenseRegisterController extends BaseController {
     }
     
     public List<String> getMeioDePagamento(){
-        RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
+        RepositorioMeiosPagamento repM =PersistenceFactory.buildPersistenceFactory().RepositorioMeiosPagamento();
         
         List<String> lista = new ArrayList<String>();
         for(int i=0; i<repM.getLista_meiosPagamento().size(); i++) {
