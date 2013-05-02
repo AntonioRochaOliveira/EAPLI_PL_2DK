@@ -4,6 +4,8 @@
  */
 package Persistence;
 
+import Persistence.InMemory.RepositorioTiposPagamentoImpl;
+
 /**
  *
  * @author arocha
@@ -25,5 +27,21 @@ class JpaRepositoryFactory implements RepositoryFactory {
     public ExpenseTypeRepository expenseTypeRepository() {
         return new Persistence.JPA.ExpenseTypeRepositoryImpl();
     }
+
+    @Override
+    public ExpenseRepository expenseRepository() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Persistence.RepositorioTiposPagamento RepositorioTiposPagamento() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Persistence.RepositorioMeiosPagamento RepositorioMeiosPagamento() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }
 

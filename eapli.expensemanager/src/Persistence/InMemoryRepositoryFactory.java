@@ -21,4 +21,19 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
         return new Persistence.InMemory.ExpenseTypeRepositoryImpl();
     }
 
+    @Override
+    public ExpenseRepository expenseRepository() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Persistence.RepositorioTiposPagamento RepositorioTiposPagamento() {
+        return new Persistence.InMemory.RepositorioTiposPagamentoImpl();
+    }
+
+    @Override
+    public Persistence.RepositorioMeiosPagamento RepositorioMeiosPagamento() {
+        return new Persistence.InMemory.RepositorioMeiosPagamentoImpl();
+    }
+
 }

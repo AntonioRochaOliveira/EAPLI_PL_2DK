@@ -1,17 +1,18 @@
 package Controllers;
 
 import Model.TipoPagamento;
+import Persistence.PersistenceFactory;
 import Persistence.RepositorioTiposPagamento;
 
 public class DefTipoPagamentoController extends BaseController {
     
-    RepositorioTiposPagamento rep = RepositorioTiposPagamento.instance();
+    RepositorioTiposPagamento rep = PersistenceFactory.buildPersistenceFactory().RepositorioTiposPagamento();
     
     public DefTipoPagamentoController(){}
     
     public void NovoTipoPagamento(String descricao){
         TipoPagamento tipo_pagamento = new TipoPagamento(descricao);
-        RepositorioTiposPagamento.instance().AdicionarTipoPagamento(tipo_pagamento);
+        rep.AdicionarTipoPagamento(tipo_pagamento);
     }
     
 }
