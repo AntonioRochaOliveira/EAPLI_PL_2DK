@@ -30,7 +30,7 @@ import javax.persistence.Query;
 public  class JpaRepository<T, PK extends Serializable> {
 
     @PersistenceUnit
-    static protected EntityManagerFactory emf = Persistence.createEntityManagerFactory("expensemanagerPU");
+    static protected EntityManagerFactory emf = Persistence.createEntityManagerFactory("DerbyexpensemanagerPU");
 
     protected EntityManager getEntityManager() {
         EntityManager entityManager = emf.createEntityManager();

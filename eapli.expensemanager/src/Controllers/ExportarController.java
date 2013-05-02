@@ -2,6 +2,7 @@ package Controllers;
 
 import Model.Expense;
 import Persistence.ExpenseRepository;
+import Persistence.PersistenceFactory;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class ExportarController extends BaseController {
         FileWriter ficheiro = new FileWriter( nome );
         BufferedWriter output = new BufferedWriter( ficheiro );
         
-        List<Expense> gastos = ExpenseRepository.getUniqueRepo().getListExpense();
+        List<Expense> gastos = PersistenceFactory.buildPersistenceFactory().expenseRepository().getListExpense();
         
         for ( int i = 0 ; i < gastos.size() ; i++ ) {
             output.write( gastos.get(i).getDescricao() + "\n" );

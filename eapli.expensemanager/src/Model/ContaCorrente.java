@@ -7,6 +7,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 import Persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
@@ -25,7 +26,7 @@ public class ContaCorrente {
     
     
     public int GastosMensalAnterior() {
-        despesas = ExpenseRepository.getUniqueRepo();
+        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         int total = 0;
         Date dataActual = new Date();
         List<Expense> lista_despesas = despesas.getListExpense();
@@ -42,7 +43,7 @@ public class ContaCorrente {
     }
     
     public int GastosMensalActual() {
-        despesas = ExpenseRepository.getUniqueRepo();
+        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         int total = 0;
         Date dataActual = new Date();
         lista_despesas = despesas.getListExpense();
@@ -56,7 +57,7 @@ public class ContaCorrente {
     }
     
     public int GastosSemanalAnterior() {
-        despesas = ExpenseRepository.getUniqueRepo();
+        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         lista_despesas = despesas.getListExpense();
         Calendar dataActual = Calendar.getInstance();
         dataActual.setTime(new Date());
@@ -71,7 +72,7 @@ public class ContaCorrente {
     }
     
     public int GastosSemanalActual() {
-        despesas = ExpenseRepository.getUniqueRepo();
+        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         lista_despesas = despesas.getListExpense();
         Calendar dataActual = Calendar.getInstance();
         dataActual.setTime(new Date());
@@ -87,7 +88,7 @@ public class ContaCorrente {
     
     
     public float getSaldo(){
-        despesas = ExpenseRepository.getUniqueRepo();
+        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         rendimentos = IncomeRepository.getUniqueRepo();
         float saldoPositivo=0;
         float saldoNegativo=0;
