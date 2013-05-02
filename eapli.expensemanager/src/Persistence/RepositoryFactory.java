@@ -8,12 +8,7 @@ package Persistence;
  *
  * @author arocha
  */
-public interface RepositoryFactory {
-    
- //    ExpenseRepository expenseRepository();
-
-    ExpenseTypeRepository expenseTypeRepository();  
-    RepositorioTiposPagamento RepositorioTiposPagamento();
-    RepositorioMeiosPagamento RepositorioMeiosPagamento();
-    
+public interface RepositoryFactory {    
+    ExpenseRepository expenseRepository();
+    ExpenseTypeRepository expenseTypeRepository();   
 }

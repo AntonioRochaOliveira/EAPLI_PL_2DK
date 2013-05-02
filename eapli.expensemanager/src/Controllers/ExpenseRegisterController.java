@@ -22,20 +22,19 @@ public class ExpenseRegisterController extends BaseController {
     ExpenseRepository repo;
     
     public ExpenseRegisterController() {
-        repo = ExpenseRepository.getUniqueRepo();
+        repo = PersistenceFactory.buildPersistenceFactory().expenseRepository();
     }
 
     public void registerExpense(String what, Date date, BigDecimal amount, String tipo, String mp) {
         RepositorioMeiosPagamento repM = RepositorioMeiosPagamento.instance();
-        //ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
         ExpenseTypeRepository extyre = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
 
-        Expense expense = new Expense(amount, date, what, extyre.getExpenseTypeByDescription(tipo), null);        
+        Expense expense = new Expense(amount, date, what, extyre.getExpenseTypeByDescription(tipo), repM.getMeioPagamento(mp));        
         repo.save(expense);
     }
     
     public List<String> getTypeExpense() {
-        //ExpenseTypeRepository extyre = ExpenseTypeRepository.instance();
+
         ExpenseTypeRepository extyre = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
 
         List<String> lista = new ArrayList<String>();

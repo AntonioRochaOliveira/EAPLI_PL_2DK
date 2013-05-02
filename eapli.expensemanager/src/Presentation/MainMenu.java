@@ -58,7 +58,7 @@ public class MainMenu {
                     break;
                 case 4:
                     IncomeRegisterUI rer = new IncomeRegisterUI();
-                    rer.show();
+                    //rer.show();
                     break;
                 case 5:
                     DefIncomeTypesUI dit = new DefIncomeTypesUI();

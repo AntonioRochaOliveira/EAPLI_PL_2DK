@@ -4,7 +4,8 @@
  */
 package Presentation;
 
-import Controllers.*;
+import Controllers.IncomeRegisterController;
+import Controllers.IncomeTypeController;
 import Model.IncomeTypes;
 import Persistence.IncomeRepository;
 import eapli.util.Console;
@@ -15,25 +16,11 @@ import java.util.Date;
  *
  * @author Antonio
  */
-public class IncomeRegisterUI extends BaseUI {
+public class IncomeRegisterUI {
     IncomeTypeController irt;
     IncomeRepository irp;
     
-    private String title = "Registar Rendimentos";
-    private IncomeRegisterController irc = new IncomeRegisterController();
-    
-    @Override
-    public BaseController getController() {
-       return irc;
-    }
-
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public void showBody() {
+    public void mainLoop() {
         System.out.println("* * *  REGISTER AN INCOME  * * *\n");
         int valor = Console.readInteger("Income Value:");
         BigDecimal amount = new BigDecimal(valor);

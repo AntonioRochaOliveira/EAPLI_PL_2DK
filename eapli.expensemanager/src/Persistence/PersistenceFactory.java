@@ -17,8 +17,8 @@ public class PersistenceFactory {
     }
 
     public static RepositoryFactory buildPersistenceFactory() {
-    JpaRepositoryFactory repo = new JpaRepositoryFactory();
-     //InMemoryRepositoryFactory repo= new InMemoryRepositoryFactory();
+    //JpaRepositoryFactory repo = new JpaRepositoryFactory();
+    InMemoryRepositoryFactory repo= new InMemoryRepositoryFactory();
         return (RepositoryFactory)  repo;
   
     }
