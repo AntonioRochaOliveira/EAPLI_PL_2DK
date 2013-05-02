@@ -40,7 +40,7 @@ public class DefMeioPagamentoController extends BaseController {
    }
     
    public TipoPagamento getTipoPagamento(int escolha){
-       TipoPagamento tipo=RepositorioTiposPagamento.instance().getLista_tipos().get(escolha-1);
+       TipoPagamento tipo=rep_tipos.getLista_tipos().get(escolha-1);
        return tipo;
    }
 
