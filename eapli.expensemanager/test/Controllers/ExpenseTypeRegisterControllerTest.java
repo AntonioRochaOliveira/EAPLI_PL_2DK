@@ -13,6 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Persistence.ExpenseTypeRepository;
+import Persistence.PersistenceFactory;
 /**
  *
  * @author paulo
@@ -45,10 +46,11 @@ public class ExpenseTypeRegisterControllerTest {
     public void testRegisterTypeExpense() {
         System.out.println("registerTypeExpense");
         String name = "xpto";
+        String longName = "xptoLong";
         ExpenseTypeRegisterController instance = new ExpenseTypeRegisterController();
         instance.registerTypeExpense(name);
-        ExpenseTypeRepository repo = ExpenseTypeRepository.instance();
-        ExpenseType e = new ExpenseType(name);
+        ExpenseTypeRepository repo = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
+        ExpenseType e = new ExpenseType(name, longName);
         
         assertEquals(repo.getExpenseTypeByDescription(name).getName(),e.getName());
         // TODO review the generated test code and remove the default call to fail.
