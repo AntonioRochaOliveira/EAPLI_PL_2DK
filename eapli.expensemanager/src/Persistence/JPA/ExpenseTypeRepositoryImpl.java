@@ -40,15 +40,22 @@ public class ExpenseTypeRepositoryImpl extends JpaRepository<ExpenseType, String
         return expenseType;
     }
 
+    
+     
 //    @Override
 //    public ExpenseType findForName(String key) {
 //        return super.read(key);
 //    }
     
+    
+    // ------> metodo validType ja esta implementado como sendo o "findOrCreate" 
+    /* 
         public boolean validType(ExpenseType expType){
-        //ToDO
+        //ToDO  
         return true;
     }
+    */
+    
     
         public ExpenseType getExpenseTypeByDescription(String name){
         //TODO: Name is Key?
@@ -58,7 +65,24 @@ public class ExpenseTypeRepositoryImpl extends JpaRepository<ExpenseType, String
     public  List<ExpenseType> getListExpenseType() {
         List<ExpenseType> list = new ArrayList<ExpenseType>();
         // To Do: See All
-        list.add(new ExpenseType("xx", "xx"));
+         
+        
+        EntityManager em = getEntityManager();
+        assert em != null;
+
+        
+        Query q = em.createQuery("SELECT et FROM ExpenseType");
+        list = q.getResultList();
+       
+        /*
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).getName());
+        }
+        */
+        
+//        list.add(new ExpenseType("xx", "xx"));
+        
+        
 //        for (ExpenseType e : listExpenseType) {
 //            list.add(new ExpenseType(e.getName(), e.getlongName()));
 //        }
