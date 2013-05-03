@@ -13,9 +13,6 @@ import java.util.List;
  * @author i110558
  */
  public class ExpenseRepositoryImpl extends JpaRepository<Expense, String> implements ExpenseRepository {
-
-    private static ExpenseRepositoryImpl uniqueRepo = new ExpenseRepositoryImpl();;
-    private static List<Expense> listExpense = new ArrayList<Expense>();
     
     private ExpenseRepositoryImpl() {}
      
@@ -23,7 +20,6 @@ import java.util.List;
     public List<Expense> getListExpense() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
   
     public static ExpenseRepository instance() {
         throw new UnsupportedOperationException("Not supported yet.");
