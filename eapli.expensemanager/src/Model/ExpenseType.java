@@ -20,7 +20,10 @@ public class ExpenseType implements Serializable  {
     /**
      * @create a new object ExpenseType
      */    
-    private ExpenseType() {}
+    protected ExpenseType() {
+        name ="";
+        longName= "";
+    }
     
     /**
      * @create a new object ExpenseType
