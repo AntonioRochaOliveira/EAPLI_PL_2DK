@@ -41,9 +41,9 @@ public class ExpenseTypeTest {
      */
     @Test
     public void testNULLName() {
-        System.out.println("creating new instance with null name");
+        System.out.println("creating new instance with null names");
         try {
-            ExpenseType instance = new ExpenseType(null);
+            ExpenseType instance = new ExpenseType(null,null);
             fail("Allow null name.");
         } catch(IllegalArgumentException e) { 
             System.out.println("Argumento invalido! - nome nulo ou vazio");
@@ -55,9 +55,9 @@ public class ExpenseTypeTest {
      */
     @Test
     public void testEmptyName() {
-        System.out.println("creating new instance with empty name");
+        System.out.println("creating new instance with empty names");
         try {
-            ExpenseType instance = new ExpenseType("");
+            ExpenseType instance = new ExpenseType("","");
             fail("Allow empty name.");
         } catch(IllegalArgumentException e) { 
             System.out.println("Argumento invalido! - nome nulo ou vazio");
@@ -70,7 +70,7 @@ public class ExpenseTypeTest {
     @Test
     public void testGetName() {
         System.out.println("getName");
-        ExpenseType instance = new ExpenseType("nome");
+        ExpenseType instance = new ExpenseType("nome", "longName");
         String expResult = "nome";
         String result = instance.getName();
         assertEquals(expResult, result);
@@ -84,8 +84,36 @@ public class ExpenseTypeTest {
     public void testSetName() {
         System.out.println("setName");
         String name = "name";
-        ExpenseType instance = new ExpenseType("nome");
+        ExpenseType instance = new ExpenseType("nome", "longName");
         instance.setName(name);
+        String expResult = "name";
+        String result = instance.getName();
+        assertEquals(expResult, result);
+        
+    }
+    
+    /**
+     * Test of getName method, of class ExpenseType.
+     */
+    @Test
+    public void testGetLongName() {
+        System.out.println("getLongName");
+        ExpenseType instance = new ExpenseType("nome", "longName");
+        String expResult = "longName";
+        String result = instance.getName();
+        assertEquals(expResult, result);
+        
+    }
+    
+    /**
+     * Test of setName method, of class ExpenseType.
+     */
+    @Test
+    public void testSetLongName() {
+        System.out.println("setLongName");
+        String longName = "name";
+        ExpenseType instance = new ExpenseType("nome", "longName");
+        instance.setLongName(longName);
         String expResult = "name";
         String result = instance.getName();
         assertEquals(expResult, result);
