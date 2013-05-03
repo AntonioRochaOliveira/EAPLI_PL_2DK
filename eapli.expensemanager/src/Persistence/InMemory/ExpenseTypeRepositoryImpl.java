@@ -64,7 +64,7 @@ public class ExpenseTypeRepositoryImpl implements ExpenseTypeRepository {
     public  List<ExpenseType> getListExpenseType() {
         List<ExpenseType> list = new ArrayList<ExpenseType>();
         for (ExpenseType e : listExpenseType) {
-            list.add(new ExpenseType(e.getName(), e.getlongName()));
+            list.add(new ExpenseType(e.getName(), e.getLongName()));
         }
         return list;
     }

@@ -23,7 +23,7 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
 
     @Override
     public ExpenseRepository expenseRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Persistence.InMemory.ExpenseRepositoryImpl();
     }
 
     @Override

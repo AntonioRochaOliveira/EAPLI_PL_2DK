@@ -13,7 +13,7 @@ import java.util.Date;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author i110341
  */
 class ExpenseTypeRegisterUI extends BaseUI{
     

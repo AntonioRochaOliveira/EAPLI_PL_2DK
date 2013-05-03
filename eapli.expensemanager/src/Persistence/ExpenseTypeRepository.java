@@ -19,7 +19,8 @@ public interface ExpenseTypeRepository {
     
     public ExpenseType save(ExpenseType expType);
     
-    public boolean validType(ExpenseType expType);
+    // ----> metodo validType ja esta implementado como sendo o "findOrCreate" 
+    //public boolean validType(ExpenseType expType);
     
     public ExpenseType getExpenseTypeByDescription(String name);
     

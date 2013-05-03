@@ -17,7 +17,6 @@ public class ExpenseRepositoryImpl implements ExpenseRepository {
     private static ExpenseRepository uniqueRepo = new ExpenseRepositoryImpl();;
     private static List<Expense> listExpense = new ArrayList<Expense>();
     
-    private ExpenseRepositoryImpl() {}
     
     @Override
     public List<Expense> getListExpense() {
@@ -25,11 +24,12 @@ public class ExpenseRepositoryImpl implements ExpenseRepository {
     }
 
     @Override
-    public void save(Expense exp) {
+    public Expense save(Expense exp) {
         if (exp == null) {
             throw new IllegalArgumentException();
         }
         listExpense.add(exp);
+        return exp;
     }
 
     public static ExpenseRepository instance() {
