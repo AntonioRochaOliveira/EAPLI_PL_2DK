@@ -100,7 +100,7 @@ public class ExpenseTypeTest {
         System.out.println("getLongName");
         ExpenseType instance = new ExpenseType("nome", "longName");
         String expResult = "longName";
-        String result = instance.getName();
+        String result = instance.getLongName();
         assertEquals(expResult, result);
         
     }
@@ -115,7 +115,7 @@ public class ExpenseTypeTest {
         ExpenseType instance = new ExpenseType("nome", "longName");
         instance.setLongName(longName);
         String expResult = "name";
-        String result = instance.getName();
+        String result = instance.getLongName();
         assertEquals(expResult, result);
         
     }
