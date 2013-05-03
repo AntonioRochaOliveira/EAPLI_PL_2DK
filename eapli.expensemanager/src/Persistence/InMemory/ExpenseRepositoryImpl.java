@@ -25,11 +25,12 @@ public class ExpenseRepositoryImpl implements ExpenseRepository {
     }
 
     @Override
-    public void save(Expense exp) {
+    public Expense save(Expense exp) {
         if (exp == null) {
             throw new IllegalArgumentException();
         }
         listExpense.add(exp);
+        return exp;
     }
 
     public static ExpenseRepository instance() {
