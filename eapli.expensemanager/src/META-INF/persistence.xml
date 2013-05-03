@@ -14,7 +14,6 @@
 
   <persistence-unit name="DerbyexpensemanagerPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>Model.ExpenseType</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.password" value="app"/>

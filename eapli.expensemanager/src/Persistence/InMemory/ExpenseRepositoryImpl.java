@@ -17,7 +17,6 @@ public class ExpenseRepositoryImpl implements ExpenseRepository {
     private static ExpenseRepository uniqueRepo = new ExpenseRepositoryImpl();;
     private static List<Expense> listExpense = new ArrayList<Expense>();
     
-    private ExpenseRepositoryImpl() {}
     
     @Override
     public List<Expense> getListExpense() {

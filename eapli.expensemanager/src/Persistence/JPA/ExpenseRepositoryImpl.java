@@ -14,7 +14,6 @@ import java.util.List;
  */
  public class ExpenseRepositoryImpl extends JpaRepository<Expense, String> implements ExpenseRepository {
     
-    private ExpenseRepositoryImpl() {}
      
     @Override
     public List<Expense> getListExpense() {
