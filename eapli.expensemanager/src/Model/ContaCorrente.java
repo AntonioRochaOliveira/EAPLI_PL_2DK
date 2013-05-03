@@ -17,7 +17,7 @@ import java.util.Date;
  * @author TOSHIBA
  */
 public class ContaCorrente {
-    private static ExpenseRepository despesas;
+    private static ExpenseRepository despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
     private static IncomeRepository rendimentos;
     private static List <Expense> lista_despesas = new ArrayList();
     private static ArrayList <Income> lista_rendimentos = new ArrayList();
@@ -26,7 +26,6 @@ public class ContaCorrente {
     
     
     public int GastosMensalAnterior() {
-        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         int total = 0;
         Date dataActual = new Date();
         List<Expense> lista_despesas = despesas.getListExpense();
@@ -43,7 +42,6 @@ public class ContaCorrente {
     }
     
     public int GastosMensalActual() {
-        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         int total = 0;
         Date dataActual = new Date();
         lista_despesas = despesas.getListExpense();
@@ -57,7 +55,6 @@ public class ContaCorrente {
     }
     
     public int GastosSemanalAnterior() {
-        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         lista_despesas = despesas.getListExpense();
         Calendar dataActual = Calendar.getInstance();
         dataActual.setTime(new Date());
@@ -72,7 +69,6 @@ public class ContaCorrente {
     }
     
     public int GastosSemanalActual() {
-        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         lista_despesas = despesas.getListExpense();
         Calendar dataActual = Calendar.getInstance();
         dataActual.setTime(new Date());
@@ -88,7 +84,6 @@ public class ContaCorrente {
     
     
     public float getSaldo(){
-        despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
         rendimentos = IncomeRepository.getUniqueRepo();
         float saldoPositivo=0;
         float saldoNegativo=0;

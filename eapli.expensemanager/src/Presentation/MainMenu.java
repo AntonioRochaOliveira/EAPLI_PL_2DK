@@ -4,7 +4,9 @@
  */
 package Presentation;
 
+import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
+import Persistence.PersistenceFactory;
 import eapli.util.Console;
 
 /**
