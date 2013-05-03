@@ -3,12 +3,14 @@ package Model;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.Date;
-
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 /**
  *
  * @author Antonio
  */
 public class Movimentos {
+    //@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
     BigDecimal amount;
     String descricao;
     Date data;   
