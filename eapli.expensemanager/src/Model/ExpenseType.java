@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class ExpenseType implements Serializable  {
     @Id
      String name;
-     String longName;
+     private String longName;
     /**
      * @create a new object ExpenseType
      */    
@@ -31,7 +31,7 @@ public class ExpenseType implements Serializable  {
      */
     
     public ExpenseType( String name, String longName) {
-        if (name == null || name == "") {
+        if (name == null || name == "" || longName == null || longName == "") {
             throw new IllegalArgumentException();
         }
         this.name = name;
@@ -45,14 +45,25 @@ public class ExpenseType implements Serializable  {
         return name;
     }
 
-    public String getlongName() {
-        return longName;
-    }
     /**
      * @param name the name to set
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the longName
+     */
+    public String getLongName() {
+        return longName;
+    }
+
+    /**
+     * @param longName the longName to set
+     */
+    public void setLongName(String longName) {
+        this.longName = longName;
     }
     
     
