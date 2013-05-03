@@ -22,7 +22,7 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
     }
 
     @Override
-    public ExpenseRepository expenseRepository() {
+    public Persistence.ExpenseRepository expenseRepository() {
         return new Persistence.InMemory.ExpenseRepositoryImpl();
     }
 

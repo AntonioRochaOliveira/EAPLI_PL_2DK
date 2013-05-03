@@ -19,11 +19,9 @@ import java.util.List;
  * @author Paulo Gandra Sousa
  */
 public class ExpenseRegisterController extends BaseController {
-    ExpenseRepository repo;
+    ExpenseRepository repo = PersistenceFactory.buildPersistenceFactory().expenseRepository();;
     
-    public ExpenseRegisterController() {
-        repo = PersistenceFactory.buildPersistenceFactory().expenseRepository();
-    }
+    public ExpenseRegisterController() {}
 
     public void registerExpense(String what, Date date, BigDecimal amount, String tipo, String mp) {
         RepositorioMeiosPagamento repM = PersistenceFactory.buildPersistenceFactory().RepositorioMeiosPagamento();
