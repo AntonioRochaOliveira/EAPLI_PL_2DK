@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-  <persistence-unit name="expensemanagerPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>Model.ExpenseType</class>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost//data//expensemanager2DK"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-      <property name="javax.persistence.jdbc.user" value="sa"/>
-      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-    </properties>
-  </persistence-unit>
 
   <persistence-unit name="DerbyexpensemanagerPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
