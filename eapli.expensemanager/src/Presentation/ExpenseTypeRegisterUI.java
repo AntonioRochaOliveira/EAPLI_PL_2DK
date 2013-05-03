@@ -24,8 +24,9 @@ class ExpenseTypeRegisterUI extends BaseUI{
          boolean invalido =true;
          do{
            String name = Console.readLine("nome: ");  
+           String longName = Console.readLine("Descricao: ");  
            try{
-               controller.registerTypeExpense(name);  
+               controller.registerTypeExpense(name, longName);  
                invalido =false;
            }catch(IllegalArgumentException e){
                System.out.println("Nome Invalido!");
