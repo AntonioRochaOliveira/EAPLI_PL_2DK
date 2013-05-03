@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class ExpenseType implements Serializable  {
     @Id
      String name;
-     private String longName;
+     String longName;
     /**
      * @create a new object ExpenseType
      */    
