@@ -5,18 +5,27 @@
 package Model;
 
 import eapli.util.DateTime;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import javax.persistence.*;
 
 
 /**
  *
  * @author Paulo Gandra Sousa
  */
-
-public class Expense extends Movimentos {
-    ExpenseType tipo;
-    MeioPagamento meioPag;
+@Entity
+@Table(name="Expense")
+public class Expense extends Movimentos implements Serializable {
+    @OneToOne
+    @JoinColumn(name="ExpenseType")
+    private ExpenseType tipo;
+    @OneToOne
+    @JoinColumn(name="MeioPagamento")
+    private MeioPagamento meioPag;
+    @Id
+    private int id;
     
     protected Expense() {}
     
@@ -45,6 +54,14 @@ public class Expense extends Movimentos {
     @Override
     public String toString() {
         return String.format("%s\nTipo de despesa: %s\nMeio de pagamento: %s", super.toString(), tipo.getName(), meioPag.getDescricao());
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
 }
