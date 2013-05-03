@@ -48,7 +48,7 @@ public class ExpenseTypeRegisterControllerTest {
         String name = "xpto";
         String longName = "xptoLong";
         ExpenseTypeRegisterController instance = new ExpenseTypeRegisterController();
-        instance.registerTypeExpense(name);
+        instance.registerTypeExpense(name,longName);
         ExpenseTypeRepository repo = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
         ExpenseType e = new ExpenseType(name, longName);
         
