@@ -15,9 +15,9 @@ public class ExpenseTypeRegisterController extends BaseController{
     public ExpenseTypeRegisterController() {
     }
 
-    public void registerTypeExpense(String name) {
-        // ToDo name=name ???
-        ExpenseType expenseType = new ExpenseType(name,name);
+    public void registerTypeExpense(String name, String longName) {
+        
+        ExpenseType expenseType = new ExpenseType(name,longName);
         
         ExpenseTypeRepository repo = PersistenceFactory.buildPersistenceFactory().expenseTypeRepository();
 
