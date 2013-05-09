@@ -28,7 +28,7 @@ public class PersistenceFactory {
 		String PROPERTIES_PATH = "config/config.properties";
                 
 		try{
-	
+	 
                         persistence.load(new FileInputStream(PROPERTIES_PATH));
 			String property = PersistenceFactory.class.getSimpleName() + ".useFactory";
                         
