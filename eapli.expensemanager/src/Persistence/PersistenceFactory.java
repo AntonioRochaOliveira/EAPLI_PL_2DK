@@ -23,17 +23,24 @@ public class PersistenceFactory {
     }
 
 	private static RepositoryFactory loadRepositoryFactoryFromFile() {
-		Properties persistence = new Properties();
+		
+            Properties persistence = new Properties();
 		String PROPERTIES_PATH = "config/config.properties";
+                
 		try{
-			persistence.load(new FileInputStream(PROPERTIES_PATH));
+	
+                        persistence.load(new FileInputStream(PROPERTIES_PATH));
 			String property = PersistenceFactory.class.getSimpleName() + ".useFactory";
+                        
 			Class factoryClass = Class.forName(persistence.getProperty(property));
 			return (RepositoryFactory) factoryClass.newInstance();
-		}catch(Exception e){
-			System.err.println("Unable to load persistence factory");
+                    
+                }catch(Exception e){
+		
+                        System.err.println("Não foi possível carregar a persistence factory");
 			e.printStackTrace(System.err);
-			System.err.println("Reverting to Memory");
+                        
+			System.err.println("Usando memory");
 			return new InMemoryRepositoryFactory();
 		}
 	}
