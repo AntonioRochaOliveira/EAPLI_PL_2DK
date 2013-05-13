@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.ContaCorrente;
 import Model.Income;
+import Persistence.InMemory.*;
 import Persistence.IncomeRepository;
 import java.util.Date;
 
@@ -13,11 +14,12 @@ import java.util.Date;
  *
  * @author TOSHIBA
  */
+/* Eu Antonio , alterei a classe para usar o repositorio de rendimentos de memoria , saldo nao inicia*/
 public class SaldoController {
     IncomeRepository inco;
     
     public SaldoController() {
-        inco = IncomeRepository.getUniqueRepo();
+        inco = IncomeRepositoryImpl.getUniqueRepo();
     }
 
     public float Saldo(){

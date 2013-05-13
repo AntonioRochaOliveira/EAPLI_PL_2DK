@@ -3,11 +3,14 @@ package Controllers;
 import Model.Income;
 import Model.IncomeTypes;
 import Model.Saving;
+import Persistence.InMemory.*;
 import Persistence.IncomeRepository;
 import Persistence.SavingRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/* Eu Antonio , alterei a classe para usar o repositorio de rendimentos de memoria */
+/* Eu Antonio , alterei a classe para usar o repositorio de rendimentos de memoria , saldo nao inicia*/
 public class WithdrawfromSavingController extends BaseController {
     
     public WithdrawfromSavingController(){}
@@ -32,7 +35,7 @@ public class WithdrawfromSavingController extends BaseController {
    }
    
    public void adicionarRendimentoPoupança(Income i){
-       IncomeRepository.getUniqueRepo().getLista_rendimentos().add(i);
+       IncomeRepositoryImpl.getUniqueRepo().getListIncome().add(i);
    }
     
 }

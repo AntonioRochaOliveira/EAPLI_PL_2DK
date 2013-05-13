@@ -7,6 +7,7 @@ package Controllers;
 import Model.ContaCorrente;
 import Model.Income;
 import Model.IncomeTypes;
+import Persistence.InMemory.*;
 import Persistence.IncomeRepository;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -18,13 +19,14 @@ import Model.IncomeTypes;
  * 
  * Paulo Monteiro 1110255
 */
+/* Eu Antonio , alterei a classe para usar o repositorio de rendimentos de memoria , saldo nao inicia*/
 
 public class InitSaldoController  extends BaseController{
     IncomeRepository inco;
     IncomeTypes tipoS;
     
     public InitSaldoController() {
-        inco = IncomeRepository.getUniqueRepo();
+        inco = IncomeRepositoryImpl.getUniqueRepo();
     }
     
         public void inicializar(BigDecimal valor, Date date, String descriçao, IncomeTypes Tipo) {

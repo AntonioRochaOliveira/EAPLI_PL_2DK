@@ -7,6 +7,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 import Persistence.*;
+import Persistence.InMemory.*;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
@@ -84,14 +85,14 @@ public class ContaCorrente {
     
     
     public float getSaldo(){
-        rendimentos = IncomeRepository.getUniqueRepo();
+        rendimentos = IncomeRepositoryImpl.getUniqueRepo();
         float saldoPositivo=0;
         float saldoNegativo=0;
         float saldo;
         BigDecimal bd1, bd2;
         
         lista_despesas=despesas.getListExpense();
-        lista_rendimentos=rendimentos.getLista_rendimentos();
+        lista_rendimentos=rendimentos.getListIncome();
         
         for(int i=0;i<lista_despesas.size();i++){
             bd1=lista_despesas.get(i).getAmount();
