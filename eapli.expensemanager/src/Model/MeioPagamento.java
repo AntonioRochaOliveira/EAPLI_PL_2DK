@@ -10,7 +10,7 @@ public class MeioPagamento implements Serializable {
     @Id
     @Column(name="DESCRICAO")
     private String descricao;
-    @OneToOne
+    @OneToMany
     @JoinColumn(name="TIPO_PAGAMENTO")
     private TipoPagamento tipo;
     
