@@ -2,20 +2,23 @@ package Controllers;
 
 import Model.Saving;
 import Persistence.DuplicateSavingException;
-import java.util.ArrayList;
+import Persistence.PersistenceFactory;
+import java.util.List;
 import Persistence.SavingRepository;
 
 public class StablishSavingController extends BaseController{
-    public static void stablishSaving( String nome , double valor , String descricao ) throws DuplicateSavingException{
+    SavingRepository savings = PersistenceFactory.buildPersistenceFactory().SavingRepository();
+    
+    public void stablishSaving( String nome , double valor , String descricao ) throws DuplicateSavingException{
         Saving tmp = new Saving( nome , valor , descricao );
         addSaving( tmp );
     }
     
-    public static void addSaving( Saving toAdd ) throws DuplicateSavingException{
-        SavingRepository.addSaving( toAdd );
+    public void addSaving( Saving toAdd ) throws DuplicateSavingException{
+        savings.addSaving( toAdd );
     }
     
-    public static ArrayList<Saving> getList(){
-        return SavingRepository.getList();
+    public List<Saving> getLista(){
+        return savings.getLista();
     }
 }

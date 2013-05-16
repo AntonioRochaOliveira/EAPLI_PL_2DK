@@ -6,6 +6,7 @@ import eapli.util.Console;
 import java.util.ArrayList;
 import Controllers.StablishSavingController;
 import Persistence.DuplicateSavingException;
+import java.util.List;
 
 public class StablishSavingUI extends BaseUI {
 
@@ -24,7 +25,7 @@ public class StablishSavingUI extends BaseUI {
     }
 
     public void mainLoop() {
-        ArrayList<Saving> lista = cn.getList();
+        List<Saving> lista = cn.getLista();
         if (lista.size() != 0) {
             System.out.println("Objectivos de poupança já existentes:");
             for (int a = 0; a < lista.size(); a++) {
