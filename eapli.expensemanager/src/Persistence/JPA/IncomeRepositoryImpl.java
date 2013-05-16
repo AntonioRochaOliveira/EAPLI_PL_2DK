@@ -4,10 +4,7 @@
  */
 package Persistence.JPA;
 
-import Model.ExpenseType;
 import Model.Income;
-import Persistence.ExpenseTypeRepository;
-import Persistence.IncomeRepository;
 import Persistence.IncomeTypeRepository;
 import java.util.ArrayList;
 
@@ -15,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author José
  */
-/*public class IncomeRepositoryImpl extends JpaRepository<IncomeTypeRepository, String> implements IncomeTypeRepository{
+public class IncomeRepositoryImpl extends JpaRepository<IncomeTypeRepository, String>{
     public class IncomeRepository {
     // class member
     int i = 0;
@@ -59,4 +56,3 @@ import java.util.ArrayList;
    }
    }
 }
-*/
