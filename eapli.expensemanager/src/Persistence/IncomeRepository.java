@@ -17,6 +17,5 @@ public interface IncomeRepository {
     public ArrayList<Income> getListIncome();
     public Income save(Income exp);  
 
-    public Income getLista_rendimentos();
     
 }

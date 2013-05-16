@@ -59,9 +59,5 @@ public class IncomeRepositoryImpl implements IncomeRepository{
         }
     }   
 
-    @Override
-    public Income getLista_rendimentos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
 }
