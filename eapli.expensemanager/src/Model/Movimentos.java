@@ -3,17 +3,21 @@ package Model;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
+
 /**
  *
  * @author Antonio
  */
+ @Entity
+ @Inheritance(strategy=InheritanceType.JOINED)
 public class Movimentos {
-    //@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
     BigDecimal amount;
     String descricao;
+     @Temporal(javax.persistence.TemporalType.DATE)
     Date data;   
+    @Id
+    private int id;
     
     
     protected Movimentos() {}
@@ -58,6 +62,14 @@ public class Movimentos {
     @Override
     public String toString() {
         return "Amount:" + amount + "\nDescricao: " + descricao + "\nData: " + data;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     
