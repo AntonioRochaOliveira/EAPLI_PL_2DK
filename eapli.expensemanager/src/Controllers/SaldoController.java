@@ -30,7 +30,7 @@ public class SaldoController {
         return saldo;
     }
     
-        public void inicializar(int valor, Date date, String descriçao, String Tipo) {
+    public void inicializar(int valor, Date date, String descriçao, String Tipo) {
         //Income inc = new Income( valor, date, descriçao , Tipo);      
         //inco.save(inc);
     }
