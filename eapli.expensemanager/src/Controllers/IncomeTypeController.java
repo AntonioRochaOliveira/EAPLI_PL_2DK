@@ -1,29 +1,30 @@
 package Controllers;
 
 import Persistence.IncomeTypeRepository;
-import java.util.ArrayList;
 import Model.IncomeTypes;
 import Persistence.DuplicateIncomeTypeException;
+import Persistence.PersistenceFactory;
+import java.util.List;
 
 //Eu Antonio Carvalho alterei esta classe para ter acesso a alguns metodos que nao estava a conseguir
 //nomeadamente aceder ao repositorio
 public class IncomeTypeController extends BaseController {
-    IncomeTypeRepository inct;
+    IncomeTypeRepository inct = PersistenceFactory.buildPersistenceFactory().IncomeTypeRepository();
     
-    public IncomeTypeController() {
+    /*public IncomeTypeController() {
         inct = IncomeTypeRepository.getUniqueRepo();
-    }
+    }*/
     
-    public static void createIncomeType(String IncomeTypeString) throws DuplicateIncomeTypeException{
+    public void createIncomeType(String IncomeTypeString) throws DuplicateIncomeTypeException{
         IncomeTypes IncType = new IncomeTypes(IncomeTypeString);
         addIncomeType( IncType );
     }
     
-    public static void addIncomeType( IncomeTypes IncType ) throws DuplicateIncomeTypeException{
-        IncomeTypeRepository.addIncomeType( IncType );
+    public void addIncomeType( IncomeTypes IncType ) throws DuplicateIncomeTypeException{
+        inct.addIncomeType( IncType );
     }
     
-    public static ArrayList<IncomeTypes> getLista(){
-        return IncomeTypeRepository.getLista();
+    public List<IncomeTypes> getLista(){
+        return inct.getLista();
     }
 }

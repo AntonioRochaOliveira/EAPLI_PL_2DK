@@ -1,7 +1,7 @@
 package Presentation;
 
 import eapli.util.Console;
-import java.util.ArrayList;
+import java.util.List;
 
 import Controllers.IncomeTypeController;
 import Controllers.BaseController;
@@ -27,7 +27,7 @@ public class DefIncomeTypesUI extends BaseUI{
     public void mainLoop(){
         System.out.println("");
         
-        ArrayList lista = IncTC.getLista();
+        List lista = IncTC.getLista();
         if ( lista.size() != 0 ){
             System.out.println( "Tipos de rendimentos já existentes:" );
             for ( int a = 0 ; a < lista.size() ; a++ ){
