@@ -14,7 +14,7 @@ public class RepositorioMeiosPagamentoImpl extends JpaRepository<MeioPagamento, 
         EntityManager em = getEntityManager();
         assert em != null;
 
-        Query q = em.createQuery("INSERT INTO MEIO_PAGAMENTO VALUES (:type1,:type)").setParameter(":type", meio_pag.getTipo().getDescricao()).setParameter(":type1", meio_pag.getDescricao());
+        Query q = em.createQuery("INSERT INTO MEIO_PAGAMENTO VALUES (:type1,:type)").setParameter(":type", meio_pag.getTipo_descricao()).setParameter(":type1", meio_pag.getDescricao());
     }
 
     @Override
@@ -25,8 +25,11 @@ public class RepositorioMeiosPagamentoImpl extends JpaRepository<MeioPagamento, 
         ArrayList<MeioPagamento> m;
         
         Query q = em.createQuery("SELECT * FROM MEIO_PAGAMENTO");
-
+        
         m = (ArrayList<MeioPagamento>) q.getResultList();
+        /*for(int i=0;i<q.getResultList().size();i++){
+            q.getResultList().get(i);
+        }*/
 
         return m;
     }

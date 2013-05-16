@@ -10,10 +10,11 @@ public class MeioPagamento implements Serializable {
     @Id
     @Column(name="DESCRICAO")
     private String descricao;
+    private TipoPagamento tipo;
     @OneToMany
     @JoinColumn(name="TIPO_PAGAMENTO")
-    private TipoPagamento tipo;
-    
+    private String tipo_descricao = tipo.getDescricao();
+            
     protected MeioPagamento(){}
     
     public MeioPagamento(TipoPagamento tipo, String descricao){
@@ -30,6 +31,10 @@ public class MeioPagamento implements Serializable {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public String getTipo_descricao() {
+        return tipo_descricao;
     }
     
 }
