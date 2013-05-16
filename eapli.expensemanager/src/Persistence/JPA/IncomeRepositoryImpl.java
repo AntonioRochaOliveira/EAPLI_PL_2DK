@@ -31,20 +31,23 @@ public class IncomeRepositoryImpl extends JpaRepository<IncomeTypeRepository, St
         public ArrayList<Income> getLista_rendimentos() {
         return listincome;
     }
-        public Persistence.IncomeRepository getUniqueRepo() {
+       public Persistence.IncomeRepository getUniqueRepo() {
         if (uniqueRepo == null) {
             return uniqueRepo = new Persistence.IncomeRepository() {
 
                 @Override
                 public ArrayList<Income> getListIncome() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                return listincome;
                 }
 
                 @Override
                 public Income save(Income exp) {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                if (exp == null) {
+                throw new IllegalArgumentException();
                 }
-
+                listincome.add(exp);
+                return exp;
+                }
             };
         } else {
             return uniqueRepo;
