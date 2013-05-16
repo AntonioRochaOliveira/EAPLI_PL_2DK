@@ -5,20 +5,23 @@ import Model.IncomeTypes;
 import Model.Saving;
 import Persistence.InMemory.*;
 import Persistence.IncomeRepository;
+import Persistence.PersistenceFactory;
 import Persistence.SavingRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /* Eu Antonio , alterei a classe para usar o repositorio de rendimentos de memoria */
 /* Eu Antonio , alterei a classe para usar o repositorio de rendimentos de memoria , saldo nao inicia*/
+
 public class WithdrawfromSavingController extends BaseController {
     
+    SavingRepository saving_rep = PersistenceFactory.buildPersistenceFactory().SavingRepository();
     public WithdrawfromSavingController(){}
     
     public void ListarPoupanças(){
     System.out.println("Poupanças Estabelecidas:\n");
         int i=0;
-        for(Saving s : SavingRepository.getList()){
+        for(Saving s : saving_rep.getLista()){
            i++;
            System.out.println(i+" - "+s.getNome()+" - "+s.getAtual()+" Euros;");
         }
@@ -26,7 +29,7 @@ public class WithdrawfromSavingController extends BaseController {
    }
     
    public boolean tirarDePoupança(int escolha, double valor){
-       return SavingRepository.getList().get(escolha).retiraDPoupança(valor);
+       return saving_rep.getLista().get(escolha).retiraDPoupança(valor);
    } 
    
    public Income criarRendimentoPoupança(double valor, String descricao){
