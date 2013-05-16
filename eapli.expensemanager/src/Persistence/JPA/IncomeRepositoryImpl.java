@@ -45,10 +45,6 @@ public class IncomeRepositoryImpl extends JpaRepository<IncomeTypeRepository, St
                     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
 
-                @Override
-                public Income getLista_rendimentos() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
             };
         } else {
             return uniqueRepo;
