@@ -4,10 +4,16 @@
  */
 package Presentation;
 
+import Model.Expense;
+import Model.ExpenseType;
+import Model.MeioPagamento;
+import Model.TipoPagamento;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import Persistence.PersistenceFactory;
 import eapli.util.Console;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  *
@@ -18,7 +24,8 @@ public class MainMenu {
     public void mainLoop() {
 
         while (true) {
-           
+            ExpenseRepository despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
+            despesas.getListExpense().add(new Expense(new BigDecimal(12), new Date(113, 04, 10), "aasdasdasd", new ExpenseType("asdasd", "adasd"), new MeioPagamento(new TipoPagamento("asd"), "asdasd")));            
             System.out.println("===================");
             System.out.println("  EXPENSE MANAGER  ");
             System.out.println("===================\n");

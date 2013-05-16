@@ -45,7 +45,7 @@ public class ContaCorrente {
     public int GastosMensalActual() {
         int total = 0;
         Date dataActual = new Date();
-        lista_despesas = despesas.getListExpense();
+        List<Expense> lista_despesas = despesas.getListExpense();        
         for(int i=0; i<lista_despesas.size(); i++) {
             if(lista_despesas.get(i).getData().getMonth()==dataActual.getMonth() 
                     && lista_despesas.get(i).getData().getYear()==dataActual.getYear()) {
@@ -56,7 +56,7 @@ public class ContaCorrente {
     }
     
     public int GastosSemanalAnterior() {
-        lista_despesas = despesas.getListExpense();
+        List<Expense> lista_despesas = despesas.getListExpense();
         Calendar dataActual = Calendar.getInstance();
         dataActual.setTime(new Date());
         int total = 0;
@@ -70,7 +70,7 @@ public class ContaCorrente {
     }
     
     public int GastosSemanalActual() {
-        lista_despesas = despesas.getListExpense();
+        List<Expense> lista_despesas = despesas.getListExpense();
         Calendar dataActual = Calendar.getInstance();
         dataActual.setTime(new Date());
         int total = 0;
