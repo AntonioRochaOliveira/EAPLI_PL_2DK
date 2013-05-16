@@ -6,14 +6,17 @@ import javax.persistence.*;
 @Entity
 public class Saving implements Serializable{
     @Id
-    private static int pk=0;
+    private int pk;
     private String nome;
     private double quantidade;
     private double atual;
     private String descriçao;
 
-    public Saving(String Nome, double Quantidade, double Atual, String Descriçao) {
-        pk=pk++;
+    public Saving() {
+    }
+
+    public Saving(String Nome, double Quantidade, double Atual, String Descriçao, int pk) {
+        this.pk=pk;
         setNome(Nome);
         setQuantidade(Quantidade);
         setAtual(Atual);
@@ -21,7 +24,7 @@ public class Saving implements Serializable{
     }
 
     public Saving(String Nome, double Quantidade, String Descriçao) {
-        this(Nome, Quantidade, (double) 0, Descriçao);
+        this(Nome, Quantidade, (double) 0, Descriçao,1);
     }
 
     public Saving(String Nome, double Quantidade) {
