@@ -4,6 +4,7 @@
  */
 package Persistence;
 
+
 /**
  *
  * @author arocha
@@ -17,4 +18,5 @@ public interface RepositoryFactory {
     AlertasRepository alertasRepository();
     TipoAlertasRepository tipoAlertasRepository();
     SavingRepository SavingRepository();
+    ContaCorrenteRep contaCorrenteRep();
 }

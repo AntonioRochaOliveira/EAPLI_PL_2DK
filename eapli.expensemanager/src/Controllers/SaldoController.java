@@ -23,7 +23,7 @@ public class SaldoController {
     }
 
     public float Saldo(){
-        ContaCorrente cc = new ContaCorrente();
+        ContaCorrente cc = new ContaCorrente("Paulo");
         float saldo;
         
         saldo=cc.getSaldo();

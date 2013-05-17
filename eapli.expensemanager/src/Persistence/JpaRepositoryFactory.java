@@ -63,5 +63,10 @@ class JpaRepositoryFactory implements RepositoryFactory {
         return new Persistence.JPA.SavingRepositoryImpl();
     }
 
+    @Override
+    public ContaCorrenteRep contaCorrenteRep() {
+        return new Persistence.JPA.ContaCorrenteRepImpl();
+    }
+
 }
 

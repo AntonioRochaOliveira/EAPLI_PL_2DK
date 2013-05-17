@@ -56,4 +56,9 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
         return new Persistence.InMemory.SavingRepositoryImpl();
     }
 
+    @Override
+    public ContaCorrenteRep contaCorrenteRep() {
+        return new Persistence.InMemory.ContaCorrenteRepImpl();
+    }
+
 }
