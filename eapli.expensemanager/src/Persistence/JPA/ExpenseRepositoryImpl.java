@@ -5,24 +5,21 @@
 package Persistence.JPA;
 import Model.Expense;
 import Persistence.*;
-import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
  * @author i110558
  */
  public class ExpenseRepositoryImpl extends JpaRepository<Expense, String> implements ExpenseRepository {
-    
-     
+        
     @Override
-    public List<Expense> getListExpense() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-  
-    public static ExpenseRepository instance() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    
+    public List<Expense> getListExpense() {       
+        EntityManager em = getEntityManager();
+        assert em != null;        
+        Query q = em.createQuery("SELECT * FROM Expense");
+        return q.getResultList();
+    }      
 }
