@@ -38,7 +38,7 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
 
     @Override
     public Persistence.IncomeTypeRepository IncomeTypeRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Persistence.InMemory.IncomeTypeRepositoryImpl();
     }
 
     @Override
@@ -53,7 +53,7 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
 
     @Override
     public Persistence.SavingRepository SavingRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Persistence.InMemory.SavingRepositoryImpl();
     }
 
 }
