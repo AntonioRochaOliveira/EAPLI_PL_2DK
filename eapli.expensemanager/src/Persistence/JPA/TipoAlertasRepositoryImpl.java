@@ -35,7 +35,7 @@ public class TipoAlertasRepositoryImpl extends JpaRepository<TipoAlertas, String
     
     
     @Override
-    public List<TipoAlertas> getListAlertas() {
+    public List<TipoAlertas> getListTipoAlertas() {
                 
         EntityManager em = getEntityManager();
         assert em != null;

@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface TipoAlertasRepository {
     
-    public List<TipoAlertas> getListAlertas();
+    public List<TipoAlertas> getListTipoAlertas();
     public TipoAlertas save(TipoAlertas ta);
 }
