@@ -6,8 +6,12 @@
     <class>Model.Expense</class>
     <class>Model.Saving</class>
     <class>Model.IncomeTypes</class>
-    <class>Model.Model.TipoPagamento</class>
-    <class>Model.Model.MeioPagamento</class>
+    <class>Model.ContaCorrente</class>
+    <class>Model.MeioPagamento</class>
+    <class>Model.Alertas</class>
+    <class>Model.Movimentos</class>
+    <class>Model.TipoAlertas</class>
+    <class>Model.TipoPagamento</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
