@@ -36,4 +36,24 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
         return new Persistence.InMemory.RepositorioMeiosPagamentoImpl();
     }
 
+    @Override
+    public Persistence.IncomeTypeRepository IncomeTypeRepository() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public AlertasRepository alertasRepository() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public TipoAlertasRepository tipoAlertasRepository() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Persistence.SavingRepository SavingRepository() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }
