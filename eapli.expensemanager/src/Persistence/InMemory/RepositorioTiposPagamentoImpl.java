@@ -21,12 +21,14 @@ public class RepositorioTiposPagamentoImpl implements RepositorioTiposPagamento 
         return uniqueInstance;
     }
     
-    public void AdicionarTipoPagamento(TipoPagamento tipo_pag){
+    @Override
+    public TipoPagamento save(TipoPagamento tipo_pag){
         
         if (tipo_pag==null){
             throw new IllegalArgumentException();
         }
         getLista_tipos().add(tipo_pag);
+        return tipo_pag;
     }
 
     public ArrayList<TipoPagamento> getLista_tipos() {

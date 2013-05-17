@@ -16,7 +16,7 @@ public class DefMeioPagamentoController extends BaseController {
     
     public void NovoMeioPagamento(TipoPagamento tipo, String descricao){
         MeioPagamento meio_pagamento = new MeioPagamento(tipo, descricao);
-        rep.AdicionarMeioPagamento(meio_pagamento);
+        rep.save(meio_pagamento);
     }
     
     public void ListarMeiosPagamento(){

@@ -12,7 +12,7 @@ public class DefTipoPagamentoController extends BaseController {
     
     public void NovoTipoPagamento(String descricao){
         TipoPagamento tipo_pagamento = new TipoPagamento(descricao);
-        rep.AdicionarTipoPagamento(tipo_pagamento);
+        rep.save(tipo_pagamento);
     }
     
 }

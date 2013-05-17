@@ -14,16 +14,19 @@ public class RepositorioMeiosPagamentoImpl implements RepositorioMeiosPagamento 
     private static RepositorioMeiosPagamento uniqueInstance = null;
     private static ArrayList<MeioPagamento> lista_meiosPagamento = new ArrayList<MeioPagamento>();
     
-    public void AdicionarMeioPagamento(MeioPagamento meio_pag){
+    @Override
+    public MeioPagamento save(MeioPagamento meio_pag) {
         
         if (meio_pag==null){
             throw new IllegalArgumentException();
         }
         lista_meiosPagamento.add(meio_pag);
+        return meio_pag;
     }
     
     
 
+    @Override
     public ArrayList<MeioPagamento> getLista_meiosPagamento() {
         return lista_meiosPagamento;
     }
@@ -35,6 +38,7 @@ public class RepositorioMeiosPagamentoImpl implements RepositorioMeiosPagamento 
         return uniqueInstance;
     }
     
+    @Override
     public MeioPagamento getMeioPagamento(String descricao){
         MeioPagamento tmp = null;
         for(MeioPagamento m : lista_meiosPagamento){

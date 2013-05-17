@@ -2,7 +2,7 @@ package Persistence.JPA;
 
 import Model.*;
 import Persistence.*;
-import java.util.ArrayList;
+import java.util.*;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
@@ -10,15 +10,7 @@ import javax.persistence.Query;
 public class RepositorioMeiosPagamentoImpl extends JpaRepository<MeioPagamento, String> implements RepositorioMeiosPagamento {
 
     @Override
-    public void AdicionarMeioPagamento(MeioPagamento meio_pag) {
-        EntityManager em = getEntityManager();
-        assert em != null;
-
-        Query q = em.createQuery("INSERT INTO MEIO_PAGAMENTO VALUES (:type1,:type)").setParameter(":type", meio_pag.getTipo_descricao()).setParameter(":type1", meio_pag.getDescricao());
-    }
-
-    @Override
-    public ArrayList<MeioPagamento> getLista_meiosPagamento() {
+    public List<MeioPagamento> getLista_meiosPagamento() {
         EntityManager em = getEntityManager();
         assert em != null;
 
@@ -26,12 +18,8 @@ public class RepositorioMeiosPagamentoImpl extends JpaRepository<MeioPagamento, 
         
         Query q = em.createQuery("SELECT * FROM MEIO_PAGAMENTO");
         
-        m = (ArrayList<MeioPagamento>) q.getResultList();
-        /*for(int i=0;i<q.getResultList().size();i++){
-            q.getResultList().get(i);
-        }*/
-
-        return m;
+       return q.getResultList();
+ 
     }
 
     @Override
