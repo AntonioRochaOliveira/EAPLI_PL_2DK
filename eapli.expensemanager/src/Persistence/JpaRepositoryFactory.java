@@ -63,5 +63,10 @@ class JpaRepositoryFactory implements RepositoryFactory {
         return new Persistence.JPA.SavingRepositoryImpl();
     }
 
+    @Override
+    public IncomeRepository IncomeRepository() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
 

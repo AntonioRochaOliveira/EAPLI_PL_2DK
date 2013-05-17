@@ -17,4 +17,5 @@ public interface RepositoryFactory {
     AlertasRepository alertasRepository();
     TipoAlertasRepository tipoAlertasRepository();
     SavingRepository SavingRepository();
+    IncomeRepository IncomeRepository();
 }
