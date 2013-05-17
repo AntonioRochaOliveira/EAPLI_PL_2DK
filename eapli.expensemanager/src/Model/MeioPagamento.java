@@ -8,12 +8,12 @@ import javax.persistence.*;
 public class MeioPagamento implements Serializable {
     
     @Id
+    private int id;
     @Column(name="DESCRICAO")
     private String descricao;
-    private TipoPagamento tipo;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name="TIPO_PAGAMENTO")
-    private String tipo_descricao = tipo.getDescricao();
+    private TipoPagamento tipo;
             
     protected MeioPagamento(){}
     
@@ -31,10 +31,6 @@ public class MeioPagamento implements Serializable {
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public String getTipo_descricao() {
-        return tipo_descricao;
     }
     
 }
