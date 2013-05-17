@@ -18,5 +18,5 @@ public interface RepositoryFactory {
     AlertasRepository alertasRepository();
     TipoAlertasRepository tipoAlertasRepository();
     SavingRepository SavingRepository();
-    ContaCorrenteRep contaCorrenteRep();
+    IncomeRepository IncomeRepository();
 }

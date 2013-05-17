@@ -21,6 +21,7 @@ import javax.persistence.Id;
  * @author TOSHIBA
  */
 
+
 @Entity
 public class ContaCorrente implements Serializable{
    
@@ -30,10 +31,8 @@ public class ContaCorrente implements Serializable{
   protected ContaCorrente() {
         owner ="";
     }
-    
-   
-    
-    public ContaCorrente( String owner) {
+
+  public ContaCorrente( String owner) {
         if (owner == null || owner == "") {
             throw new IllegalArgumentException();
         }

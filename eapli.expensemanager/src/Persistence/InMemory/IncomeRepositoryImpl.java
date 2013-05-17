@@ -7,6 +7,7 @@ package Persistence.InMemory;
 import Model.Income;
 import Persistence.IncomeRepository;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,11 +16,11 @@ import java.util.ArrayList;
 public class IncomeRepositoryImpl implements IncomeRepository{
     int i=0;
     private static IncomeRepository uniqueRepo = new IncomeRepositoryImpl();;
-    private static ArrayList<Income> listIncome = new ArrayList<Income>();
+    private static List<Income> listIncome = new ArrayList<Income>();
     
     
     @Override
-    public ArrayList<Income> getListIncome() {
+    public List<Income> getListIncome() {
         return listIncome;
     }
 

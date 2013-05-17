@@ -56,9 +56,13 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
         return new Persistence.InMemory.SavingRepositoryImpl();
     }
 
-    @Override
     public ContaCorrenteRep contaCorrenteRep() {
         return new Persistence.InMemory.ContaCorrenteRepImpl();
+    }
+
+    @Override
+    public IncomeRepository IncomeRepository() {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
 }
