@@ -6,6 +6,7 @@ package Persistence;
 
 import Model.Income;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 
 //Eu Pedro Passo alterei esta classe para se tornar um singleton e adicionei o metodo getUniqueRepo()
 public interface IncomeRepository {
-    public ArrayList<Income> getListIncome();
+    public List<Income> getListIncome();
     public Income save(Income exp);  
 
     

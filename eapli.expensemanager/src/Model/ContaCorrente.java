@@ -21,7 +21,7 @@ public class ContaCorrente {
     private static ExpenseRepository despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository();
     private static IncomeRepository rendimentos;
     private static List <Expense> lista_despesas = new ArrayList();
-    private static ArrayList <Income> lista_rendimentos = new ArrayList();
+    private static List <Income> lista_rendimentos = new ArrayList();
     
     public ContaCorrente() {}
     
