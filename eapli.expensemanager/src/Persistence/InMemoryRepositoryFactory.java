@@ -42,13 +42,13 @@ class InMemoryRepositoryFactory implements RepositoryFactory {
     }
 
     @Override
-    public AlertasRepository alertasRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Persistence.AlertasRepository alertasRepository() {
+        return new Persistence.InMemory.AlertasRepositoryImpl();
     }
 
     @Override
-    public TipoAlertasRepository tipoAlertasRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Persistence.TipoAlertasRepository tipoAlertasRepository() {
+        return new Persistence.InMemory.TipoAlertasRepositoryImpl();
     }
 
     @Override

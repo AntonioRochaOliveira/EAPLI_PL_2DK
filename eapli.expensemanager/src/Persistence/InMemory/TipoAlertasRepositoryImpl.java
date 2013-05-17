@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author TOSHIBA
  */
-public class TipoAlertasRepositoryImpl {
+public class TipoAlertasRepositoryImpl implements TipoAlertasRepository{
     
     private static TipoAlertasRepository uniqueTipoAlertasRepo = null;
     private static List<TipoAlertas> listTipoAlertas= new ArrayList<TipoAlertas>();
@@ -20,14 +20,17 @@ public class TipoAlertasRepositoryImpl {
         return uniqueTipoAlertasRepo;
     }
     
+    @Override
     public List<TipoAlertas> getListTipoAlertas(){
         return listTipoAlertas;
     }
     
-    public void save(TipoAlertas ta)
+    @Override
+    public TipoAlertas save(TipoAlertas ta)
     {  if (ta == null) {
             throw new IllegalArgumentException();
         }
         listTipoAlertas.add(ta);
+        return ta;
     }
 }
