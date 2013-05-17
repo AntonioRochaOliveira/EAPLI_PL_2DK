@@ -21,7 +21,7 @@ public class Expense extends Movimentos implements Serializable {
     @JoinColumn(name="ExpenseType")
     private ExpenseType tipo;
     @OneToOne
-    @JoinColumn(name="MeioPagamento")
+    @JoinColumn(name="MEIO_PAGAMENTO")
     private MeioPagamento meioPag;
     @Id
     private int id;
