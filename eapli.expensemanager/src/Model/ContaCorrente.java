@@ -106,30 +106,25 @@ public class ContaCorrente implements Serializable{
     
     
    public float getSaldo(){
-//       List<Income> lista_rendimentos = PersistenceFactory.buildPersistenceFactory().
-//        float saldoPositivo=0;
-//        float saldoNegativo=0;
-//        float saldo;
-//        BigDecimal bd1, bd2;
-//        
-//        lista_despesas=despesas.getListExpense();
-//        lista_rendimentos=rendimentos.getListIncome();
-//        
-//        for(int i=0;i<lista_despesas.size();i++){
-//            bd1=lista_despesas.get(i).getAmount();
-//            saldoNegativo+=bd1.floatValue();
-//        }
-//        
-//        for(int i=0;i<lista_rendimentos.size();i++){
-//            bd2=lista_rendimentos.get(i).getValor();
-//            saldoPositivo+=bd2.floatValue();
-//        }
-//        
-//        saldo=saldoPositivo-saldoNegativo;
-//        
-//        return saldo;
-          return 0;
-    }
-    
-    
+        List<Expense> lista_despesas = PersistenceFactory.buildPersistenceFactory().expenseRepository().getListExpense();
+        List<Income> lista_rendimentos = PersistenceFactory.buildPersistenceFactory().IncomeRepository().getListIncome();
+        float saldoPositivo=0;
+        float saldoNegativo=0;
+        float saldo;
+        BigDecimal bd1, bd2;
+        
+        for(int i=0;i<lista_despesas.size();i++){
+            bd1=lista_despesas.get(i).getAmount();
+            saldoNegativo+=bd1.floatValue();
+        }
+        
+        for(int i=0;i<lista_rendimentos.size();i++){
+            bd2=lista_rendimentos.get(i).getValor();
+            saldoPositivo+=bd2.floatValue();
+        }
+        
+        saldo=saldoPositivo-saldoNegativo;
+        
+        return saldo;
+    }  
 }
