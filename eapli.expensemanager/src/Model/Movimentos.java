@@ -13,12 +13,10 @@ import javax.persistence.*;
  @Inheritance(strategy=InheritanceType.JOINED)
 public class Movimentos {
     BigDecimal amount;
+    @Id
     String descricao;
      @Temporal(javax.persistence.TemporalType.DATE)
     Date data;   
-    @Id
-    private int id;
-    
     
     protected Movimentos() {}
     
@@ -64,14 +62,6 @@ public class Movimentos {
         return "Amount:" + amount + "\nDescricao: " + descricao + "\nData: " + data;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    
+   
 }
 

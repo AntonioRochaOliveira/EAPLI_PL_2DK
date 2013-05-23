@@ -121,19 +121,19 @@ public  class JpaRepository<T, PK extends Serializable> {
         EntityManager em = getEntityManager();
         assert em != null;
 
-        String tableName = entityClass.getName(); //entityClass.getAnnotation(Table.class).name();
+        String tableName = entityClass.getSimpleName(); //entityClass.getAnnotation(Table.class).name();
         Query q = em.createQuery("SELECT it FROM " + tableName + " it");
         List<T> all = q.getResultList();
         return all;
     }
 
-//    public List<T> match(String where) {
-//        EntityManager em = getEntityManager();
-//        assert em != null;
-//
-//        String tableName = entityClass.getSimpleName(); //entityClass.getAnnotation(Table.class).name();
-//        Query q = em.createQuery("SELECT it FROM " + tableName + " it WHERE " + where);
-//        List<T> some = q.getResultList();
-//        return some;
-//    }
+    public List<T> match(String where) {
+       EntityManager em = getEntityManager();
+        assert em != null;
+
+        String tableName = entityClass.getSimpleName(); //entityClass.getAnnotation(Table.class).name();
+        Query q = em.createQuery("SELECT it FROM " + tableName + " it WHERE " + where);
+        List<T> some = q.getResultList();
+        return some;
+    }
 }

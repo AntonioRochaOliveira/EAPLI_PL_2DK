@@ -8,7 +8,6 @@ import javax.persistence.*;
 public class MeioPagamento implements Serializable {
     
     @Id
-    private int id;
     @Column(name="DESCRICAO")
     private String descricao;
     @ManyToOne

@@ -1,11 +1,11 @@
 package Persistence;
 
 import Model.TipoPagamento;
-import java.util.ArrayList;
+import java.util.List;
 
 public interface RepositorioTiposPagamento {
 
     public TipoPagamento save(TipoPagamento tipo_pag);
-    public ArrayList<TipoPagamento> getLista_tipos();
+    public List<TipoPagamento> getLista_tipos();
     
 }

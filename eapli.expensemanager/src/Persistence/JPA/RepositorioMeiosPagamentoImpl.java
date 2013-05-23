@@ -11,15 +11,7 @@ public class RepositorioMeiosPagamentoImpl extends JpaRepository<MeioPagamento, 
 
     @Override
     public List<MeioPagamento> getLista_meiosPagamento() {
-        EntityManager em = getEntityManager();
-        assert em != null;
-
-        ArrayList<MeioPagamento> m;
-        
-        Query q = em.createQuery("SELECT * FROM MEIO_PAGAMENTO");
-        
-       return q.getResultList();
- 
+        return all(); 
     }
 
     @Override
@@ -27,9 +19,13 @@ public class RepositorioMeiosPagamentoImpl extends JpaRepository<MeioPagamento, 
         
         EntityManager em = getEntityManager();
         assert em != null;
-
+        
+        String tableName = entityClass.getSimpleName();
+        
         MeioPagamento m, meio;
-        Query q = em.createQuery("SELECT * FROM MEIO_PAGAMENTO WHERE DECRICAO = :type").setParameter("type", descricao);
+        Query q = em.createQuery("SELECT it FROM " + tableName + " it WHERE it.descricao LIKE '"+ descricao + "'");
+        
+        System.out.println(q.toString());
 
         m = (MeioPagamento) q.getSingleResult();
         meio = new MeioPagamento(new TipoPagamento(m.getTipo().getDescricao()),m.getDescricao());
