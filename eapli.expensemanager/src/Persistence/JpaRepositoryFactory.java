@@ -34,6 +34,11 @@ class JpaRepositoryFactory implements RepositoryFactory {
     }
 
     @Override
+    public ContaCorrenteRep contaCorrenteRep() {
+        return new Persistence.JPA.ContaCorrenteRepImpl();
+    }
+    
+    @Override
     public Persistence.RepositorioTiposPagamento RepositorioTiposPagamento() {
          return new Persistence.JPA.RepositorioTiposPagamentoImpl();
     }
@@ -63,9 +68,7 @@ class JpaRepositoryFactory implements RepositoryFactory {
         return new Persistence.JPA.SavingRepositoryImpl();
     }
 
-    public ContaCorrenteRep contaCorrenteRep() {
-        return new Persistence.JPA.ContaCorrenteRepImpl();
-    }
+
     @Override
     public IncomeRepository IncomeRepository() {
          return new Persistence.JPA.IncomeRepositoryImpl();

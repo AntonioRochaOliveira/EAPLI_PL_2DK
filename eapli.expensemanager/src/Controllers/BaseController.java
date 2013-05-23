@@ -10,8 +10,6 @@ public class BaseController {
     }
 
     public float getSaldo() {
-      // ToDo
-        return 0;
-//        return contaCorr.getSaldo();
+        return contaCorr.getSaldo();
     }
 }

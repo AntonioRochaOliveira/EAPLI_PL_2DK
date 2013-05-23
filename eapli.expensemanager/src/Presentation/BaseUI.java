@@ -1,6 +1,7 @@
 package Presentation;
 
 import Controllers.BaseController;
+import Persistence.PersistenceFactory;
 
 public abstract class BaseUI {
     
