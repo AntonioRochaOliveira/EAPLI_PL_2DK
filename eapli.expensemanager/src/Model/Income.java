@@ -24,10 +24,6 @@ public class Income extends Movimentos implements Serializable{
     @OneToOne
     @JoinColumn(name="IncomeType")
     private IncomeTypes Tipo;
-//    @OneToOne
-//    @JoinColumn(name="Valor Rendimento")
-    @Id
-    String descricao;
     
     protected Income() {}
     
@@ -42,10 +38,7 @@ public class Income extends Movimentos implements Serializable{
 
     public void setTipo(IncomeTypes Tipo) {
         this.Tipo = Tipo;
-    }
-    
-    public BigDecimal getValor(){
-        return amount;
-    }
-    
+
+    } 
+
 }

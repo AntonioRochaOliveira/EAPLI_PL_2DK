@@ -119,12 +119,12 @@ public class ContaCorrente implements Serializable{
         }
         
         for(int i=0;i<lista_rendimentos.size();i++){
-            bd2=lista_rendimentos.get(i).getValor();
+            bd2=lista_rendimentos.get(i).getAmount();
             saldoPositivo+=bd2.floatValue();
         }
-        
-        saldo=saldoPositivo-saldoNegativo;
-        
+              
+        saldo=saldoPositivo-saldoNegativo;       
+       
         return saldo;
     }  
 }

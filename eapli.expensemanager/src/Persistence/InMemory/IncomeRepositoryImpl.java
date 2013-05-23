@@ -45,7 +45,7 @@ public class IncomeRepositoryImpl implements IncomeRepository{
         System.out.println("Rendimentos Disponiveis:\n");
         for(Income ic : getListIncome()){
             i++;
-            System.out.println(i+ " - " + " Rendimento: "+ ic.getValor()+";");
+            System.out.println(i+ " - " + " Rendimento: "+ ic.getAmount()+";");
         }
         System.out.println("\n");
     }
