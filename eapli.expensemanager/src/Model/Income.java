@@ -27,8 +27,6 @@ public class Income extends Movimentos implements Serializable{
 //    @OneToOne
 //    @JoinColumn(name="Valor Rendimento")
     private BigDecimal amount;
-    @Id
-    private int id;
     
     protected Income() {}
     
@@ -47,14 +45,6 @@ public class Income extends Movimentos implements Serializable{
     
     public BigDecimal getValor(){
         return amount;
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
     
 }
