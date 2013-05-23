@@ -33,16 +33,33 @@ public class IncomeRegisterUI extends BaseUI{
 
     @Override
     public void showBody() {
+        
         System.out.println("* * *  REGISTER AN INCOME  * * *\n");
         int valor = Console.readInteger("Income Value:");
         BigDecimal amount = new BigDecimal(valor);
         Date date = Console.readDate("Date:");
         String descriçao = Console.readLine("Description:");
-        String TipoInc = Console.readLine("Type of Income:");
-        IncomeTypes Tipo = new IncomeTypes(TipoInc);
-        IncomeRegisterController controller = new IncomeRegisterController();
-        controller.registerIncome(amount, date, descriçao, Tipo);
-        
+        String abc = Console.readLine("Tipos de Rendimento:\n 1- Cheque \n 2- Salario \n 3- Outro");
+        int b = Integer.parseInt(abc);
+        if (b==1){
+            String TipoInc = "Cheque";
+            IncomeTypes Tipo = new IncomeTypes(TipoInc);
+            IncomeRegisterController controller = new IncomeRegisterController();
+            controller.registerIncome(amount, date, descriçao, Tipo);
+        }
+        if (b==2){
+            String TipoInc  = "Cheque";
+            IncomeTypes Tipo = new IncomeTypes(TipoInc);
+            IncomeRegisterController controller = new IncomeRegisterController();
+            controller.registerIncome(amount, date, descriçao, Tipo);
+        }
+        if (b==3){
+            String TipoInc  = "Outro";   
+            IncomeTypes Tipo = new IncomeTypes(TipoInc);
+            IncomeRegisterController controller = new IncomeRegisterController();
+            controller.registerIncome(amount, date, descriçao, Tipo);
+        }  
+
         System.out.println("Income recorded.");
     }
 }
