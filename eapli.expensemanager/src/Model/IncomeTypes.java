@@ -13,15 +13,17 @@ public class IncomeTypes implements Serializable {
 
     public IncomeTypes() {
     }
-    public IncomeTypes(String IncomeType){
-        this(IncomeType,1);
+
+    public IncomeTypes(String IncomeType) {
+        this(IncomeType, 1);
     }
+
     public IncomeTypes(String IncomeType, int pk) {
-        if (IncomeType == null || IncomeType == "" || pk == 0 ) {
+        if (IncomeType == null || IncomeType == "" || pk == 0) {
             throw new IllegalArgumentException();
         }
         this.IncomeType = IncomeType;
-        this.pk=pk;
+        this.pk = pk;
     }
 
     public String getIncomeType() {

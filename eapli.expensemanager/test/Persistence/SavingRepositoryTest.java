@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Persistence;
 
 import Model.Saving;
@@ -13,10 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author i110353
- */
 public class SavingRepositoryTest {
     
     public SavingRepositoryTest() {

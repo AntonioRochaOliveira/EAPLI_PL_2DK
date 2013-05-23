@@ -38,5 +38,7 @@ public class Income extends Movimentos implements Serializable{
 
     public void setTipo(IncomeTypes Tipo) {
         this.Tipo = Tipo;
-    }    
+
+    } 
+
 }
