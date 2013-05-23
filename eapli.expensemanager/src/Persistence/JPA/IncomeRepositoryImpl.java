@@ -27,8 +27,8 @@ public class IncomeRepositoryImpl extends JpaRepository<Income, String> implemen
         return q.getResultList();
     }
 
-    @Override
-    public Income save(Income exp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    @Override
+//    public Income save(Income exp) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 }    

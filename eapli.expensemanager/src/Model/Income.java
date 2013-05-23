@@ -22,18 +22,18 @@ import javax.persistence.Table;
 @Table(name="Income")
 public class Income extends Movimentos implements Serializable{
     @OneToOne
-    @JoinColumn(name="Income Type")
+    @JoinColumn(name="IncomeType")
     private IncomeTypes Tipo;
-    @OneToOne
-    @JoinColumn(name="Valor Rendimento")
-    private BigDecimal valor;
+//    @OneToOne
+//    @JoinColumn(name="Valor Rendimento")
+    private BigDecimal amount;
     @Id
     private int id;
     
     protected Income() {}
     
-    public Income( BigDecimal valor, Date dateOccurred, String descricao , IncomeTypes Tipo) {
-        super(valor,dateOccurred,descricao);
+    public Income( BigDecimal amount, Date dateOccurred, String descricao , IncomeTypes Tipo) {
+        super(amount,dateOccurred,descricao);
         this.Tipo=Tipo;
     }
   
