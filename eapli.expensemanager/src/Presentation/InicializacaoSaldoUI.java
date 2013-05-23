@@ -26,7 +26,6 @@ public class InicializacaoSaldoUI extends BaseUI{
     
      @Override
     public void showBody() {
-        System.out.println("* * *  INICIALIZAR SALDO  * * *\n");
         int valorS = Console.readInteger("Inserir valor:");
         BigDecimal amount = new BigDecimal(valorS);
         Date data = Console.readDate("Data:");
