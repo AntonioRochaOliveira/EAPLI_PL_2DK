@@ -6,15 +6,30 @@ package Model;
 
 import eapli.util.DateTime;
 import java.util.Date;
-import Model.Movimentos;
+import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author Antonio
  */
-public class Income extends Movimentos{
-    IncomeTypes Tipo;
+@Entity
+@Table(name="Income")
+public class Income extends Movimentos implements Serializable{
+    @OneToOne
+    @JoinColumn(name="Income Type")
+    private IncomeTypes Tipo;
+    @OneToOne
+    @JoinColumn(name="Valor Rendimento")
+    private BigDecimal valor;
+    @Id
+    private int id;
+    
     protected Income() {}
     
     public Income( BigDecimal valor, Date dateOccurred, String descricao , IncomeTypes Tipo) {
@@ -32,6 +47,14 @@ public class Income extends Movimentos{
     
     public BigDecimal getValor(){
         return amount;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
 }
