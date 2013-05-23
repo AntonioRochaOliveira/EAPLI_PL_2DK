@@ -63,30 +63,7 @@ public class ExpenseTypeRepositoryImpl extends JpaRepository<ExpenseType, String
     }
         
     public  List<ExpenseType> getListExpenseType() {
-        List<ExpenseType> list = new ArrayList<ExpenseType>();
-        // To Do: See All
-         
-        
-        EntityManager em = getEntityManager();
-        assert em != null;
-
-        
-        Query q = em.createQuery("SELECT et FROM ExpenseType");
-        list = q.getResultList();
-       
-        /*
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).getName());
-        }
-        */
-        
-//        list.add(new ExpenseType("xx", "xx"));
-        
-        
-//        for (ExpenseType e : listExpenseType) {
-//            list.add(new ExpenseType(e.getName(), e.getlongName()));
-//        }
-        return list;
+        return all();
     }
     
     

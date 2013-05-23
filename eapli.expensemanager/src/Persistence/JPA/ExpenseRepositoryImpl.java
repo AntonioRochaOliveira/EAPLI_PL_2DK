@@ -17,9 +17,6 @@ import javax.persistence.Query;
         
     @Override
     public List<Expense> getListExpense() {       
-        EntityManager em = getEntityManager();
-        assert em != null;        
-        Query q = em.createQuery("SELECT * FROM Expense");
-        return q.getResultList();
+        return all();
     }      
 }

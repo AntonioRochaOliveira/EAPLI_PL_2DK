@@ -50,7 +50,7 @@ public class ExpenseRegisterUI extends BaseUI {
                 opc_tipo = Console.readInteger("Não existe esse tipo de despesa, Insira um válido: ");
             }
             BigDecimal amount = new BigDecimal(value);
-            cont.registerExpense(what, date, amount, cont.getTypeExpense().get(opc_tipo-1), cont.getTypeExpense().get(opc_meio-1));
+            cont.registerExpense(what, date, amount, cont.getTypeExpense().get(opc_tipo-1), cont.getMeioDePagamento().get(opc_meio-1));
             System.out.println("Despesa guardada com sucesso!\n");
         }
         else

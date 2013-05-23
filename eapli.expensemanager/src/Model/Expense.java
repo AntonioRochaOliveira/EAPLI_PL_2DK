@@ -23,9 +23,7 @@ public class Expense extends Movimentos implements Serializable {
     @OneToOne
     @JoinColumn(name="MEIO_PAGAMENTO")
     private MeioPagamento meioPag;
-    @Id
-    private int id;
-    
+
     protected Expense() {}
     
     public Expense(BigDecimal amount, Date dateOccurred, String descricao, ExpenseType tipo, MeioPagamento mp) {
@@ -55,12 +53,4 @@ public class Expense extends Movimentos implements Serializable {
         return String.format("%s\nTipo de despesa: %s\nMeio de pagamento: %s", super.toString(), tipo.getName(), meioPag.getDescricao());
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
 }
