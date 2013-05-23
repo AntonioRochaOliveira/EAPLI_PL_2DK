@@ -30,17 +30,17 @@ class JpaRepositoryFactory implements RepositoryFactory {
 
     @Override
     public ExpenseRepository expenseRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Persistence.JPA.ExpenseRepositoryImpl();
     }
 
     @Override
     public Persistence.RepositorioTiposPagamento RepositorioTiposPagamento() {
-        throw new UnsupportedOperationException("Not supported yet.");
+         return new Persistence.JPA.RepositorioTiposPagamentoImpl();
     }
 
     @Override
     public Persistence.RepositorioMeiosPagamento RepositorioMeiosPagamento() {
-        throw new UnsupportedOperationException("Not supported yet.");
+         return new Persistence.JPA.RepositorioMeiosPagamentoImpl();
     }
 
     @Override
@@ -68,7 +68,7 @@ class JpaRepositoryFactory implements RepositoryFactory {
     }
     @Override
     public IncomeRepository IncomeRepository() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+         return new Persistence.JPA.IncomeRepositoryImpl();
     }
 
 }
