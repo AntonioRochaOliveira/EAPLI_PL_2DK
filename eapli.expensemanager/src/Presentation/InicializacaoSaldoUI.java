@@ -24,29 +24,24 @@ public class InicializacaoSaldoUI extends BaseUI{
      private String title = "Inicializar Saldo";
      private InitSaldoController controlador = new InitSaldoController();
     
+     @Override
     public void showBody() {
-        
+        System.out.println("* * *  INICIALIZAR SALDO  * * *\n");
         int valorS = Console.readInteger("Inserir valor:");
         BigDecimal amount = new BigDecimal(valorS);
         Date data = Console.readDate("Data:");
         String descricao = Console.readLine("Descricao:");  
         IncomeTypes tipoS = new IncomeTypes("Saldo");
-        
-        
         controlador.inicializar(amount, data, descricao, tipoS);
         System.out.println("Saldo inicializado com o valor: "+valorS+".\n");
     }
     
-    /**
-     * @return the title
-     */
+     @Override
     public String getTitle() {
         return title;
     }
 
-    /**
-     * @return the controller
-     */
+     @Override
     public BaseController getController() {
         return controlador;
     }
