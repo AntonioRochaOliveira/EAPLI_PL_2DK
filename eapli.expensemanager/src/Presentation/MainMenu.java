@@ -40,6 +40,8 @@ public class MainMenu {
             System.out.println("9. Estabelecer poupanças");
             System.out.println("10. Definir meios de pagamento.");
             System.out.println("11. Gastos");
+            System.out.println("12. Configurar Limites");
+            System.out.println("13. Configurar Tipo de Limites");
             System.out.println("0. Sair\n\n");
             
             int option = Console.readInteger("Escolhe uma opcao");  
@@ -92,6 +94,15 @@ public class MainMenu {
                 case 11:
                     GastosUI g = new GastosUI();
                     g.show();
+                    break;
+                case 12:
+                    AlertasUI al = new AlertasUI();
+                    al.show();
+                    break;
+                case 13:
+                    TipoAlertasUI ta = new TipoAlertasUI();
+                    ta.show();
+                    break;
                 default:
                     break;
             }
