@@ -2,8 +2,10 @@ package Presentation;
 
 import Controllers.AlertasController;
 import Controllers.BaseController;
+import Model.TipoAlertas;
 import eapli.util.Console;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  *
@@ -13,36 +15,30 @@ public class AlertasUI extends BaseUI {
     
     private AlertasController cont = new AlertasController();
     
+    public AlertasUI(){}
+    
     @Override
     public void showBody(){
         
-        double a_s = Console.readDouble("Limite de Despesas Semanal Amarelo: ");
-        double v_s = Console.readDouble("Limite de Despesas Semanal vermelho: ");
-        BigDecimal amarelo_semanal = new BigDecimal(a_s);
-        BigDecimal vermelho_semanal = new BigDecimal(v_s);
+        List<TipoAlertas> lista = cont.getListTipoAlertas();
+        int contador=0;
+        for(TipoAlertas limite : lista){
+            System.out.println(contador + " - " + limite.getNome());
+            contador++;
+        }
         
-        cont.criarAlerta(0, amarelo_semanal, vermelho_semanal);
+        int qqr = Console.readInteger("Selecione o tipo de Limite: ");
         
-        double a_m = Console.readDouble("Limite de Despesas Mensal Amarelo: ");
-        double v_m = Console.readDouble("Limite de Despesas Mensal Vermelho: ");
-        BigDecimal amarelo_mensal = new BigDecimal(a_m);
-        BigDecimal vermelho_mensal = new BigDecimal(v_m);
+        double a = Console.readDouble("Limite Amarelo: ");
+        double v = Console.readDouble("Limite vermelho: ");
+        BigDecimal amarelo = new BigDecimal(a);
+        BigDecimal vermelho = new BigDecimal(v);
         
-        cont.criarAlerta(1, amarelo_mensal, vermelho_mensal);
+        TipoAlertas ta = lista.get(qqr);
         
-        double a_d = Console.readDouble("Desvio Amarelo em relação à média das despesas de um dado tipo: ");
-        double v_d = Console.readDouble("Desvio Vermelho em relação à média das despesas de um dado tipo: ");
-        BigDecimal amarelo_desvio = new BigDecimal(a_d);
-        BigDecimal vermelho_desvio = new BigDecimal(v_d);
+        cont.criarAlerta(ta, amarelo, vermelho);
         
-        cont.criarAlerta(2, amarelo_desvio, vermelho_desvio);
-        
-        double a_m_s = Console.readDouble("Limite Mínimo de Saldo Amarelo: ");
-        double v_m_s = Console.readDouble("Limite Mínimo de Saldo Vermelho: ");
-        BigDecimal amarelo_minimo_saldo = new BigDecimal(a_m_s);
-        BigDecimal vermelho_minimo_saldo = new BigDecimal(v_m_s);
-        
-        cont.criarAlerta(3, amarelo_minimo_saldo, vermelho_minimo_saldo);
+        System.out.println("Limite guardado");
     }
     
     @Override

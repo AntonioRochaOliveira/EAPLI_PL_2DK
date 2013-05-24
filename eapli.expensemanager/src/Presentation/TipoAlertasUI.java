@@ -19,6 +19,8 @@ public class TipoAlertasUI extends BaseUI{
         int id = Console.readInteger("Numero do Limite: ");
         String nome = Console.readLine("Nome do Limite: ");
         cont.criarTipoAlertas(id, nome);
+        
+        System.out.println("Tipo de Limite Guardado");
     }
     
     @Override
